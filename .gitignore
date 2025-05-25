@@ -1,0 +1,42 @@
+# === System ===
+.DS_Store
+Thumbs.db
+
+# === Node.js (if we're gonna use npm for tooling like Sass, PostCSS, etc.) ===
+node_modules/
+package-lock.json
+npm-debug.log
+yarn.lock
+.pnpm-debug.log
+
+# === Logs ===
+*.log
+
+# === OS junk ===
+*.swp
+*.tmp
+*.bak
+*.orig
+
+# === Optional: GitHub Actions Secrets ===
+.env
+.env.local
+.env.*.local
+
+# === Build Tools (if we're gonna use tools like Jekyll, Eleventy, Astro etc.) ===
+.cache/
+dist/
+build/
+public/
+
+# === VSCode or other IDE configs ===
+.vscode/
+.idea/
+
+# === Custom or Experimental Files ===
+*.old
+*.backup
+*.test.*
+
+# === Images or files for previewing only ===
+*_preview.*
