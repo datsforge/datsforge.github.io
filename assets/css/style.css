@@ -1,0 +1,57 @@
+/* Base Styles */
+body {
+  background-color: #0f0f0f;
+  color: #f8f8f8;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  text-align: left;
+}
+
+/* Container */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Logo Image */
+img {
+  width: 64px;
+  height: 64px;
+}
+
+/* Headings and Paragraphs */
+h1 {
+  font-size: 2em;
+  margin: 0.2em 0;
+}
+
+p {
+  font-size: 1em;
+  opacity: 0.75;
+  margin: 0.2em 0;
+}
+
+/* Tagline */
+.tagline {
+  font-style: italic;
+  font-size: 0.95em;
+  color: #ff914d;
+  margin-top: 1em;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75em;
+  color: #888;
+  opacity: 0.5;
+}
