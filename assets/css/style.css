@@ -1,22 +1,82 @@
-/* Base Styles */
-body {
-  background-color: #0f0f0f;
-  color: #f8f8f8;
+:root {
+  --main-color: #5a1d1d;
+  --secondary-color: rgb(32, 21, 21);
+
+  --main-text: #f8f8f8;
+  --accent: #ff914d;
+  --footer-text: #acacac;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 0.5rem 1rem;
+    height: auto;
+  }
+  .header-banner {
+    min-height: 180px;
+    padding: 0 5px;
+  }
+  .logo {
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+  }
+  .logo span {
+    font-size: 1.2em;
+  }
+}
+
+header {
   font-family: 'Courier New', monospace;
+}
+
+nav {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.header-banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
-  text-align: left;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 300px;
 }
 
-/* Container */
-.container {
+.header-content {
+  text-align: center;
+  color: var(--main-text);
+  gap: 20px;
+}
+
+.logo {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 0 20px;
+  gap: 10px;
+  padding: 1rem 2rem; 
+  text-decoration: none;       
+  font-size: 1.4em;      
+  color: var(--main-text);     
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--main-text);
+  margin: 0;
 }
 
 /* Logo Image */
@@ -27,7 +87,7 @@ img {
 
 /* Headings and Paragraphs */
 h1 {
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 0.2em 0;
 }
 
@@ -41,7 +101,7 @@ p {
 .tagline {
   font-style: italic;
   font-size: 0.95em;
-  color: #ff914d;
+  color: var(--accent);
   margin-top: 1em;
 }
 
@@ -51,7 +111,7 @@ footer {
   bottom: 10px;
   width: 100%;
   text-align: center;
-  font-size: 0.75em;
-  color: #888;
+  font-size: 0.85em;
+  color: var(--footer-text);
   opacity: 0.5;
 }
