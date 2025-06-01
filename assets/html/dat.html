@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About datsforge - learn more about our creative lab.">
+    <title>About | datsforge.com</title>
+    <link rel="icon" type="image/png" href="../images/icons/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+
+<body>
+   <nav id="main-nav"></nav>
+    <script>
+        fetch('./nav.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('main-nav').innerHTML = html);
+    </script>
+
+    <main>
+        <article class="article-intro">
+            <h1>Hey there!</h1>
+            <p> Game development, pixel art? Isn't it a perfect combo? -tell me we got something in common there!</p>
+            <p> I'm a seasoned Java game developer specializing in highly custom-built games, RPGs, and pixel art, yeah
+                I make pixel art on games too.</p>
+            <p> I don't just develop games, I help make and build dream ideas came into realty. I love building games
+                that don't just function-I want it to feel alive and unique. Worlds and arts with personality,
+                characters with charm. And mechanics that keep players coming back to the fantasy world! </p>
+            <p>All projects in this site are my personal solo projects, I made everything from coding to graphics and
+                designs, (and yeah including this web site) feel free to check it out.</p>
+            <p>If you're building something cool, let's bring it into life!</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2025 datsforge. All rights reserved.</p>
+    </footer>
+    <script src="../js/nav-scroll.js"></script>
+</body>
+
+</html>

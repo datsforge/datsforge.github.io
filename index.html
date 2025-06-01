@@ -17,59 +17,42 @@
 </head>
 
 <body>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="assets/images/datsforge_64x64.png"
-                alt="Pixel art anvil surrounded by bright flame on a dark background, symbolizing the datsforge brand, conveying creativity, energy, and strength">
-            <span>datsforge</span>
-        </a>
-        <div class="nav-links">
-            <a href="">Game Projects</a>
-            <a href="">App Projects</a>
-            <a href="">Gallery</a>
-            <a href="">About</a>
-        </div>
-    </nav>
+    <nav id="main-nav"></nav>
+    <script>
+        fetch('assets/html/nav.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('main-nav').innerHTML = html);
+    </script>
 
     <header>
         <div class="header-banner">
             <div class="header-content">
                 <h1>Welcome to datsforge!</h1>
                 <p>Forge lighted. Ideas brewing. Stay tuned.</p>
-                <p class="tagline">"Not just built, forged!"</p>
+                <p class="tagline">"Your ideas - <em>Not just built, forged!</em>"</p>
             </div>
         </div>
     </header>
 
     <main>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore commodi harum est quibusdam possimus atque?
-            Blanditiis in similique at ullam fugit voluptas alias incidunt ex, quasi a vel dolores adipisci.</p>
+        <article class="article-intro">
+            <h2>Build more than just games and apps</h2>
+            <p>Lets create digital experiences! Whether it’s a
+                pixel RPG, a quirky mobile app, or a tool designed to make life smoother, <br>everything we craft is
+                made
+                with purpose, passion, and a bit of playful magic.</p>
+            <h2>Specialties : </h2>
+            <ul>
+                <li>Retro-inspired RPGs with rich stories and engaging mechanics</li>
+                <li>Pixel art games that blend nostalgia with innovation</li>
+                <li>Smart apps that solve real problems and spark joy</li>
+                <li>Creative tools and experiences that users actually want to use</li>
+            </ul>
+            <p>We’re a studio where imagination meets execution, and where every project — big or small — is forged with
+                care</p>
+            <p>You’ve Got theSpark. We’ve Got the Forge! Let's build something brilliant together!</p>
+        </article>
+
     </main>
 
     <footer>
