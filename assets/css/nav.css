@@ -1,0 +1,61 @@
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Navbar styles */
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: var(--font-nav);
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 1rem 4rem;
+    z-index: 1000;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.50);
+    box-sizing: border-box;
+    border-bottom: 1.5px solid var(--primary-dark);
+    transition: transform 0.3s ease;
+}
+
+/* Hide nav on scroll */
+nav.hide-on-scroll {
+    transform: translateY(-100%);
+}
+
+/* Nav links container */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Nav links and logo text */
+.nav-links a,
+.logo span {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+
+/* Hover/focus effect for nav links and logo text */
+.nav-links a:hover,
+.nav-links a:focus,
+.logo:hover span,
+.logo:focus span {
+    color: var(--color-accent-secondary);
+    text-decoration: none;
+}

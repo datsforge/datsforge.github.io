@@ -1,0 +1,42 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #740e0e;
+  --color-primary-dark: #5a0b0b;
+  --color-accent: #E04E4E;
+  --color-accent-secondary: #ff914d;
+
+  /* Surface & Background */
+  --color-surface: #2B1515;
+  --color-bg: #1A0E0E;
+  --color-border: #3A2A2A;
+  --color-shadow: rgba(0, 0, 0, 0.25);
+
+  /* Text Colors */
+  --color-text-primary: #F5F5F5;
+  --color-text-muted: #BFAFAF;
+  --color-text-accent: #FFDADA;
+  --color-text-accent-secondary: #ff914d;
+  --color-footer-text: #acacac;
+
+  /* State Colors */
+  --color-success: #3DA35D;
+  --color-warning: #D96B6B;
+
+  /* Typography */
+  --font-main: 'Courier New', monospace;
+  --font-nav: 'Lato', 'Courier New', monospace;
+  --font-size-base: 1em;
+  --font-size-lg: 1.4em;
+  --font-size-xl: 2.2em;
+  --font-size-footer: 0.85em;
+
+  /* Spacing */
+  --spacing-xs: 0.2em;
+  --spacing-sm: 0.5em;
+  --spacing-md: 1em;
+  --spacing-lg: 2em;
+  --spacing-xl: 4em;
+
+  /* Layout */
+  --nav-height: 80px;
+}
