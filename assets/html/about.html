@@ -13,11 +13,14 @@
 </head>
 
 <body>
-   <nav id="nav-bar"></nav>
+    <nav id="navbar"></nav>
+    <script src="/assets/js/component-loader.js"></script>
     <script>
-        fetch('./nav.html')
-            .then(res => res.text())
-            .then(html => document.getElementById('nav-bar').innerHTML = html);
+        loadComponent({
+            url: './nav.html',
+            targetSelector: '.navbar-main',
+            mountPoint: '#navbar'
+        });
     </script>
 
     <main>

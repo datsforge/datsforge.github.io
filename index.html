@@ -12,16 +12,18 @@
     <title>datsforge.com</title>
     <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/nav.css">
 </head>
 
 <body>
-    <nav id="nav-bar"></nav>
+    <nav id="navbar"></nav>
+    <script src="assets/js/component-loader.js"></script>
     <script>
-        fetch('assets/html/nav.html')
-            .then(res => res.text())
-            .then(html => document.getElementById('nav-bar').innerHTML = html);
+        loadComponent({
+            url: '/assets/html/nav.html',
+            targetSelector: '.navbar-main',
+            mountPoint: '#navbar'
+        });
     </script>
 
     <header>
@@ -41,7 +43,7 @@
                 pixel RPG, a quirky mobile app, or a tool designed to make life smoother, <br>everything we craft is
                 made
                 with purpose, passion, and a bit of playful magic.</p>
-            <h2>Specialties : </h2>
+            <h3>Specialties : </h3>
             <ul>
                 <li>Retro-inspired RPGs with rich stories and engaging mechanics</li>
                 <li>Pixel art games that blend nostalgia with innovation</li>
@@ -49,14 +51,16 @@
                 <li>Creative tools and experiences that users actually want to use</li>
             </ul>
             <p>We’re a studio where imagination meets execution, and where every project — big or small — is forged with
-                care</p>
-            <p>You’ve Got theSpark. We’ve Got the Forge! Let's build something brilliant together!</p>
+                care.</p>
+            <p>You’ve Got theSpark. We’ve Got the Forge! Let's create something brilliant together!</p>
         </article>
 
     </main>
 
     <footer>
         <p>© 2025 datsforge. All rights reserved.</p>
+        <a href="/assets/html/legal.html">Legal</a>
+        <!-- <a href="/assets/html/legal.html" target="_blank" rel="noopener noreferrer">Legal</a> -->
     </footer>
 
 </body>

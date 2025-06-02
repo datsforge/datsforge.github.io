@@ -1,3 +1,5 @@
+@import url(/assets/css/variables.css);
+
 /* Logo styles */
 .logo {
     display: flex;
@@ -9,31 +11,35 @@
     padding: 0 2%;
 }
 
-/* Navbar styles */
-#nav-bar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-family: var(--font-nav);
-    background-color: var(--color-primary);
-    color: var(--color-text-primary);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: var(--nav-height);
-    margin: 0;
-    padding: 0 2%;
-    z-index: 1000;
-    box-shadow: 0 12px 17px 4px var(--color-shadow);
-    box-sizing: border-box;
-    border-bottom: 1.75px solid var(--color-primary-dark);
-    transition: transform 0.3s ease;
+/* Navbar */
+/* navbar is the target for the scroll animation */
+#navbar {
+  height: var(--nav-height);  /* Force wrapper to hold space */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform var(--transition-nav);
 }
 
-nav.hide-on-scroll {
-    transform: translateY(-100%);
+/* and this is the actual nav content */
+.navbar-main,
+.navbar-legal {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  border-bottom: 1.75px solid var(--color-primary-dark);
+  box-shadow: 0 12px 17px 4px var(--color-shadow);
+  font-family: var(--font-nav);
+  box-sizing: border-box;
+}
+
+/* Scroll animation happens here */
+#navbar.hide-on-scroll {
+  transform: translateY(-100%);
 }
 
 .nav-links {
@@ -46,17 +52,17 @@ nav.hide-on-scroll {
 .logo span {
     color: var(--color-text-primary);
     text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.2s;
+    font-size: 1.2rem;
+    transition: var(--transition-text);
 }
 
-.menu-toggle {
+.menu-toggle{
     display: none;
 }
 
 .menu-icon {
     color: var(--color-text-primary);
-    transition: color 0.2s;
+   transition: var(--transition-text);
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
@@ -76,7 +82,7 @@ nav.hide-on-scroll {
     color: var(--color-accent-secondary);
 }
 
-@media (max-width: 1768px) {
+@media (max-width: 768px) {
     .menu-icon {
         display: block;
     }

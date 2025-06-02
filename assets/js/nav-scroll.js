@@ -1,8 +1,8 @@
 let lastScroll = 0;
 
 function setupNavScroll() {
-  const nav = document.getElementById('nav-bar');
-  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('navbar');
+  const menuToggle = document.querySelector('.menu-toggle');
 
   if (!nav) return;
 
