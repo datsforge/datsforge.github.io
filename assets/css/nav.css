@@ -2,14 +2,15 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 1%;
     font-size: var(--font-size-lg);
     text-decoration: none;
     cursor: pointer;
+    padding: 0 2%;
 }
 
 /* Navbar styles */
-nav {
+#nav-bar {
     position: sticky;
     top: 0;
     left: 0;
@@ -21,9 +22,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: var(--nav-height);
     margin: 0;
-    padding: 1rem 4rem;
+    padding: 0 2%;
     z-index: 1000;
     box-shadow: 0 12px 17px 4px var(--color-shadow);
     box-sizing: border-box;
@@ -31,18 +32,16 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* Hide nav on scroll */
 nav.hide-on-scroll {
     transform: translateY(-100%);
 }
 
-/* Nav links container */
 .nav-links {
+    list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
-/* Nav links and logo text */
 .nav-links a,
 .logo span {
     color: var(--color-text-primary);
@@ -51,11 +50,68 @@ nav.hide-on-scroll {
     transition: color 0.2s;
 }
 
-/* Hover/focus effect for nav links and logo text */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    color: var(--color-text-primary);
+    transition: color 0.2s;
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    user-select: none;
+    margin-right: var(--margin-horizontal-main);
+}
+
 .nav-links a:hover,
 .nav-links a:focus,
 .logo:hover span,
-.logo:focus span {
+.logo:focus span{
     color: var(--color-accent-secondary);
     text-decoration: none;
+}
+
+.menu-toggle:checked+.menu-icon {
+    color: var(--color-accent-secondary);
+}
+
+@media (max-width: 1768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-primary-dark);
+        padding: var(--spacing-lg) 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        gap: var(--spacing-sm);
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition:
+            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s,
+            transform 0.3s;
+    }
+
+    .menu-toggle:checked+.menu-icon+.nav-links {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: var(--spacing-md) 0;
+    }
 }

@@ -17,11 +17,11 @@
 </head>
 
 <body>
-    <nav id="main-nav"></nav>
+    <nav id="nav-bar"></nav>
     <script>
         fetch('assets/html/nav.html')
             .then(res => res.text())
-            .then(html => document.getElementById('main-nav').innerHTML = html);
+            .then(html => document.getElementById('nav-bar').innerHTML = html);
     </script>
 
     <header>
@@ -58,6 +58,7 @@
     <footer>
         <p>© 2025 datsforge. All rights reserved.</p>
     </footer>
+
 </body>
 
 <script src="assets/js/nav-scroll.js"></script>

@@ -13,11 +13,11 @@
 </head>
 
 <body>
-   <nav id="main-nav"></nav>
+   <nav id="nav-bar"></nav>
     <script>
         fetch('./nav.html')
             .then(res => res.text())
-            .then(html => document.getElementById('main-nav').innerHTML = html);
+            .then(html => document.getElementById('nav-bar').innerHTML = html);
     </script>
 
     <main>
