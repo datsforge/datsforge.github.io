@@ -86,9 +86,18 @@
     border: none;
   }
 
-  .logo {
+  .logo,
+  .app-logo {
     padding-left: 0;
+    gap: 2%;
+    padding: 0;
   }
+
+  .logo span,
+  .app-logo span {
+    font-size: var(--font-size-base);
+  }
+
 
   .nav-links {
     display: flex;
