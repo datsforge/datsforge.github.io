@@ -1,3 +1,8 @@
+/* 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+*/
+
 import { loadComponent } from './component-loader.js';
 
 export async function loadTPNavComponent() {

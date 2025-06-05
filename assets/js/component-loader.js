@@ -1,3 +1,8 @@
+/* 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+*/
+
 /**
  * Dynamically loads an HTML component and mounts it in the DOM.
  * @param {Object} options

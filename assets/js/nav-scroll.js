@@ -1,3 +1,8 @@
+/* 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+*/
+
 let lastScroll = 0;
 
 function setupNavScroll() {
