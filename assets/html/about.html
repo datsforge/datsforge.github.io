@@ -7,41 +7,60 @@
     <meta name="description" content="About datsforge - learn more about our creative lab.">
     <title>About | datsforge.com</title>
     <link rel="icon" type="image/png" href="../images/icons/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/mobile.css" />
 </head>
 
 <body>
     <nav id="navbar"></nav>
-    <script src="/assets/js/component-loader.js"></script>
-    <script>
+
+    <main>
+        <div class="container">
+            <article class="content">
+                <h1>Hey there!</h1>
+                <p> Game development, pixel art? Isn't it a perfect combo? -tell me we got something in common there!
+                </p>
+                <p> I'm a seasoned Java game developer specializing in highly custom-built games, RPGs, and pixel art,
+                    yeah
+                    I make pixel art on games too.</p>
+                <p> I don't just develop games, I help make and build dream ideas came into realty. I love building
+                    games
+                    that don't just function-I want it to feel alive and unique. Worlds and arts with personality,
+                    characters with charm. And mechanics that keep players coming back to the fantasy world! </p>
+                <p>All projects in this site are my personal solo projects, I made everything from coding to graphics
+                    and
+                    designs, (and yeah including this web site) feel free to check it out.</p>
+                <h3>Specialties : </h3>
+                <ul>
+                    <li>Retro-inspired RPGs with rich stories and engaging mechanics</li>
+                    <li>Pixel art games that blend nostalgia with innovation</li>
+                    <li>Smart apps that solve real problems and spark joy</li>
+                    <li>Creative tools and experiences that users actually want to use</li>
+                </ul>
+                <p>If you're building something cool, let's bring it into life!</p>
+            </article>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
         loadComponent({
-            url: './nav.html',
+            url: '/assets/html/nav.html',
             targetSelector: '.navbar-main',
             mountPoint: '#navbar'
         });
+        loadComponent({
+            url: '/assets/html/footer.html',
+            targetSelector: '.footer-main',
+            mountPoint: 'footer'
+        });
     </script>
 
-    <main>
-        <article class="article-intro">
-            <h1>Hey there!</h1>
-            <p> Game development, pixel art? Isn't it a perfect combo? -tell me we got something in common there!</p>
-            <p> I'm a seasoned Java game developer specializing in highly custom-built games, RPGs, and pixel art, yeah
-                I make pixel art on games too.</p>
-            <p> I don't just develop games, I help make and build dream ideas came into realty. I love building games
-                that don't just function-I want it to feel alive and unique. Worlds and arts with personality,
-                characters with charm. And mechanics that keep players coming back to the fantasy world! </p>
-            <p>All projects in this site are my personal solo projects, I made everything from coding to graphics and
-                designs, (and yeah including this web site) feel free to check it out.</p>
-            <p>If you're building something cool, let's bring it into life!</p>
-        </article>
-    </main>
-
-    <footer>
-        <p>© 2025 datsforge. All rights reserved.</p>
-    </footer>
-    <script src="../js/nav-scroll.js"></script>
 </body>
+<script src="../js/nav-scroll.js"></script>
 
 </html>

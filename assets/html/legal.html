@@ -7,73 +7,98 @@
     <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
     <title>datsforge.com</title>
     <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/mobile.css" />
 </head>
 
 <body>
     <nav id="navbar"></nav>
+
+    <main>
+        <div class="container">
+            <h1>Legal Pages</h1>
+            <section class="content-sectioned">
+                <h2>Rent finder</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
+                    saepe
+                    consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
+                    veritatis.
+                </p>
+                <ul>
+                    <li><a href="https://sites.google.com/view/rentfinder/terms-of-use"
+                            aria-label="Read the terms of use for Rent finder" target="_blank"
+                            rel="noopener noreferrer">Terms of Use</a></li>
+                    <li><a href="https://sites.google.com/view/rentfinder/privacy-policy"
+                            aria-label="Read the privacy-policy for Rent finder" target="_blank"
+                            rel="noopener noreferrer">Privacy Policy</a></li>
+                </ul>
+            </section>
+
+            <section class="content-sectioned">
+                <h2>Swords and Legends</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
+                    saepe
+                    consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
+                    veritatis.
+                </p>
+                <ul>
+                    <li><a href="/projects/games/sal/terms.html" target="_blank"
+                            rel="noopener noreferrer">Terms of Use</a></li>
+                    <li><a href="/projects/games/sal/privacy.html" target="_blank"
+                            rel="noopener noreferrer">Privacy Policy</a></li>
+                </ul>
+            </section>
+
+            <section class="content-sectioned">
+                <h2>Shooting Marbles</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
+                    saepe
+                    consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
+                    veritatis.
+                </p>
+                <ul>
+                    <li><a href="/projects/games/shootingmarbles/terms.html" target="_blank"
+                            rel="noopener noreferrer">Terms of Use</a></li>
+                    <li><a href="/projects/games/shootingmarbles/privacy.html" target="_blank"
+                            rel="noopener noreferrer">Privacy Policy</a></li>
+                </ul>
+            </section>
+
+            <section class="content-sectioned">
+                <h2>Spidee Tap</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
+                    saepe
+                    consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
+                    veritatis.
+                </p>
+                <ul>
+                    <li><a href="/projects/games/spideetap/terms.html" target="_blank" rel="noopener noreferrer">Terms
+                            of Use</a></li>
+                    <li><a href="/projects/games/spideetap/privacy.html" target="_blank"
+                            rel="noopener noreferrer">Privacy Policy</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+
     <script src="/assets/js/component-loader.js"></script>
-    <script>
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
         loadComponent({
             url: '/assets/html/nav.html',
             targetSelector: '.navbar-legal',
             mountPoint: '#navbar'
         });
+        loadComponent({
+            url: '/assets/html/footer.html',
+            targetSelector: '.footer-legal',
+            mountPoint: 'footer'
+        });
     </script>
-
-    <main>
-        <section class="sectioned-left">
-        <h1>Legal Pages</h1>
-        <section>
-            <h2>Rent finder</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque saepe
-                consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
-                veritatis.
-            </p>
-            <ul>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-            </ul>
-        </section>
-
-        <section >
-            <h2>Swords and Legends</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque saepe
-                consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
-                veritatis.
-            </p>
-            <ul>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-            </ul>
-        </section>
-
-        <section >
-            <h2>Shooting Marbles</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque saepe
-                consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
-                veritatis.
-            </p>
-            <ul>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-            </ul>
-        </section>
-
-        <section >
-            <h2>Spidee Tap</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque saepe
-                consequatur odio, iusto amet, molestiae, ipsa sequi ratione in ad quod mollitia vitae molestias
-                veritatis.
-            </p>
-            <ul>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-            </ul>
-        </section>
-        </section>
-    </main>
 
 </body>
 

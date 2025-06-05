@@ -2,15 +2,15 @@
 
  :root {
    /* Brand Colors */
-   --color-primary: #740e0e;
+   --color-primary: #890d0d;
    --color-primary-dark: #5a0808;
    --color-accent: #E04E4E;
    --color-accent-secondary: #ff914d;
 
    /* Surface & Background */
-   --color-surface: #2B1515;
+   --color-surface: #351919;
    --color-bg: #1A0E0E;
-   --color-border: #3A2A2A;
+   --color-border: #9f9595;
    --color-shadow: rgba(0, 0, 0, 0.25);
 
    /* Text Colors */
@@ -27,7 +27,7 @@
    --font-nav: 'Lato', Arial, sans-serif;
    --font-main: 'Inter', sans-serif, monospace;
    --font-banner: 'Courier New', sans-serif, monospace;
-   --font-size-sm: 0.9rem;
+   --font-size-sm: 1.0rem;
    --font-size-base: 1.2rem;
    --font-size-lg: 1.5rem;
    --font-size-xl: 1.8rem;
@@ -39,11 +39,14 @@
 
    /* Spacing */
    --margin-horizontal-main: 3.7%;
+   --margin-horizontal-content: 13%;
+   --container-padding:0.5% 13%;
+   --border-size:0.12rem;
+
    --spacing-xs: 0.25em;
    --spacing-sm: 0.5em;
-   --spacing-md: 1em;
+   --spacing-md: 1.2em;
    --spacing-lg: 2em;
-   ;
    --spacing-xl: 4em;
 
    /*Radius*/

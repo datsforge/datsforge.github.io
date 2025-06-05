@@ -1,11 +1,11 @@
 /**
  * Dynamically loads an HTML component and mounts it in the DOM.
  * @param {Object} options
- * @param {string} options.url - The URL of the HTML file to fetch.
- * @param {string} options.targetSelector - Selector for the element to extract from the fetched HTML.
- * @param {string} options.mountPoint - Selector for the element in the current document to mount into.
+ * @param {string} options.url
+ * @param {string} options.targetSelector
+ * @param {string} options.mountPoint
  */
-window.loadComponent = async function({ url, targetSelector, mountPoint }) {
+export async function loadComponent({ url, targetSelector, mountPoint }) {
     try {
         const res = await fetch(url);
         if (!res.ok) throw new Error(`HTTP error ${res.status}`);
@@ -23,4 +23,9 @@ window.loadComponent = async function({ url, targetSelector, mountPoint }) {
     } catch (err) {
         console.error('[loadComponent]', err.message);
     }
-};
+}
+
+// EXPOSE to global if running in browser
+if (typeof window !== 'undefined') {
+    window.loadComponent = loadComponent;
+}

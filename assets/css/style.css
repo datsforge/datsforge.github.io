@@ -1,115 +1,125 @@
-@import url(/assets/css/mobile.css);
-@import url(/assets/css/variables.css);
+/* Global Reset & Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-  background-color: var(--color-bg);
   margin: 0;
-}
-
-.header-banner {
-  background: var(--surface);
-  color: var(--color-text-primary);
-  font-family: var(--font-banner);
-  display: flex;
-  width: 100%;
-  min-height: var(--header-banner-size);
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2%;
-  gap: 20px;
-  font-size: var(--font-size-xxl);
-}
-
-img {
-  width: 64px;
-  height: 64px;
-}
-
-h1,
-h2,
-h3,
-p {
+  padding: 0;
   font-family: var(--font-main);
   color: var(--color-text-primary);
+  background-color: var(--color-bg);
 }
 
+/* Typography */
 h1 {
   font-size: var(--font-size-xxl);
-  line-height: 1.2;
+  line-height: 1.0;
 }
 
 h2 {
   font-size: var(--font-size-xl);
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: var(--font-size-lg);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 p,
+a,
 li {
   font-size: var(--font-size-base);
 }
 
-.header-content {
-  font-size: var(--font-size-base);
+a {
+  color: var(--color-text-primary);
+  transition: var(--transition-text);
 }
 
+a:hover,
+a:focus,
+a:active {
+  color: var(--color-text-accent-secondary);
+}
+
+/* Special case: standalone link blocks (optional styling) */
+a.block {
+  display: block;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Tagline */
 .tagline {
   font-size: var(--font-size-lg);
   color: var(--color-text-accent-secondary);
   margin-top: 1em;
 }
 
-main {
-  background-color: var(--color-surface);
+/* Images */
+img.logo {
+  width: 64px;
+  height: 64px;
 }
 
-.article-intro {
+/* Header Banner */
+.header-banner {
+  background: var(--surface);
   display: flex;
-  flex-direction: column;
-  margin: auto var(--margin-horizontal-main);
-  background-color: var(--color-surface);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  min-height: var(--header-banner-size);
+  padding: 0 2%;
+  text-align: center;
   color: var(--color-text-primary);
-  /* font-size: var(--font-size-base); */
-  font-family: var(--font-main);
 }
 
-.sectioned-left {
+.header-banner h1 {
+  font-family: var(--font-banner);
+}
+
+/* Containers & Layout */
+.container {
+  background-color: var(--color-surface);
+  padding: var(--container-padding);
+}
+
+.content,
+.content-sectioned {
   display: flex;
   flex-direction: column;
-  margin: auto var(--margin-horizontal-main);
-  background-color: var(--color-surface);
-  border: none;
-  border-top: 2px solid var(--color-primary-dark);
-  text-align: left;
+  padding-bottom: var(--spacing-sm);
 }
 
+.content-sectioned {
+  border-top: var(--border-size) solid var(--color-border);
+}
+
+/* Footer */
 footer {
   background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-main);
-  width: 100%;
   text-align: center;
   margin-top: auto;
   padding: 4rem 0;
-  text-decoration: none;
   font-size: var(--font-size-sm);
 }
 
-/* why this wont work on footer? */
-footer p{
-   font-size: var(--font-size-sm);
+footer p {
+  font-size: var(--font-size-sm);
 }
 
 footer a {
+  font-size: var(--font-size-sm);
+  font-family: var(--font-main);
   color: var(--color-text-primary);
   transition: var(--transition-text);
 }
-
 
 footer a:hover,
 footer a:focus,
@@ -117,8 +127,4 @@ footer a:active {
   color: var(--color-text-accent-secondary);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+

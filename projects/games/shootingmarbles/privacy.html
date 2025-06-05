@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
+  <title>datsforge.com</title>
+  <link rel="icon" type="image/png" href="/assets/images/icons/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="stylesheet" href="/assets/css/mobile.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main navigation"></nav>
+
+  <!-- Main content area -->
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <section id="privacy-policy" aria-labelledby="privacy-heading" class="container content">
+        <div id="privacy-content">Loading Privacy Policy...</div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Site Footer"></footer>
+
+  <!-- Component Loader Scripts -->
+  <script type="module">
+    import { loadTPNavComponent } from '/assets/js/nav-tp-loader.js';
+    import { loadComponent } from '/assets/js/component-loader.js';
+
+    loadTPNavComponent();
+
+    loadComponent({
+      url: '/assets/html/footer.html',
+      targetSelector: '.footer-legal',
+      mountPoint: 'footer'
+    });
+  </script>
+
+  <!-- Markdown Renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('/projects/games/shootingmarbles/privacy.md')
+      .then(res => res.text())
+      .then(text => {
+        document.getElementById('privacy-content').innerHTML = marked.parse(text);
+      })
+      .catch(err => {
+        document.getElementById('privacy-content').innerText = "Failed to load privacy policy.";
+        console.error(err);
+      });
+  </script>
+
+  <!-- Scroll Behavior -->
+  <script src="/assets/js/nav-scroll.js"></script>
+
+</body>
+
+</html>

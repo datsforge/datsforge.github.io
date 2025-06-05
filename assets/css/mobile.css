@@ -1,5 +1,124 @@
 @media (max-width: 768px) {
-  body {
-    font-size: 0.8rem;
+  .header-banner {
+    flex-direction: column;
+    gap: 10px;
+    min-height: 260px;
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+
+
+  /* Typography */
+  h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  h3 {
+    font-size: var(--font-size-md);
+  }
+
+  p,
+  a,
+  li {
+    font-size: var(--font-size-sm);
+  }
+
+
+  .tagline {
+    font-size: 1rem;
+    margin-top: 0.5em;
+  }
+
+  .container {
+    padding: 0.7rem 0.5rem;
+  }
+
+  .content,
+  .content-sectioned {
+    padding-bottom: 0.5rem;
+  }
+
+  .content-sectioned {
+    border-top-width: 1px;
+  }
+
+  img.logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 2rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.9rem;
+  }
+
+  /**======== Nav bar =========**/
+  .navbar-main,
+  .navbar-legal,
+  .navbar-terms-privacy {
+    flex-direction: row;
+    padding: 0 1rem;
+    min-height: 56px;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+    background: none;
+    border: none;
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary-dark);
+    padding: var(--spacing-lg) 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    gap: var(--spacing-sm);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1099;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition:
+      max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s,
+      transform 0.3s;
+
+  }
+
+  .menu-toggle:checked+.menu-icon+.nav-links {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: var(--spacing-md) 0;
   }
 }

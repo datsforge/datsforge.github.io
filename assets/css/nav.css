@@ -5,41 +5,42 @@
     display: flex;
     align-items: center;
     gap: 1%;
-    font-size: var(--font-size-lg);
-    text-decoration: none;
     cursor: pointer;
     padding: 0 2%;
+    text-decoration: none;
 }
 
 /* Navbar */
 /* navbar is the target for the scroll animation */
 #navbar {
-  height: var(--nav-height);  /* Force wrapper to hold space */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: transform var(--transition-nav);
+    height: var(--nav-height);
+    /* Force wrapper to hold space */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform var(--transition-nav);
 }
 
 /* and this is the actual nav content */
 .navbar-main,
-.navbar-legal {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2%;
-  background-color: var(--color-primary);
-  color: var(--color-text-primary);
-  border-bottom: 1.75px solid var(--color-primary-dark);
-  box-shadow: 0 12px 17px 4px var(--color-shadow);
-  font-family: var(--font-nav);
-  box-sizing: border-box;
+.navbar-legal,
+.navbar-terms-privacy {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    border-bottom: 1.75px solid var(--color-primary-dark);
+    box-shadow: 0 12px 17px 4px var(--color-shadow);
+    font-family: var(--font-nav);
+    box-sizing: border-box;
 }
 
 /* Scroll animation happens here */
 #navbar.hide-on-scroll {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .nav-links {
@@ -52,17 +53,22 @@
 .logo span {
     color: var(--color-text-primary);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: var(--font-size-base);
     transition: var(--transition-text);
 }
 
-.menu-toggle{
+.nav-links a.active {
+    font-weight: bold;
+    color: var(--color-accent-secondary);
+}
+
+.menu-toggle {
     display: none;
 }
 
 .menu-icon {
     color: var(--color-text-primary);
-   transition: var(--transition-text);
+    transition: var(--transition-text);
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
@@ -73,51 +79,11 @@
 .nav-links a:hover,
 .nav-links a:focus,
 .logo:hover span,
-.logo:focus span{
+.logo:focus span {
     color: var(--color-accent-secondary);
     text-decoration: none;
 }
 
 .menu-toggle:checked+.menu-icon {
     color: var(--color-accent-secondary);
-}
-
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--color-primary-dark);
-        padding: var(--spacing-lg) 0;
-        margin: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        gap: var(--spacing-sm);
-        pointer-events: none;
-        transform: translateY(-10px);
-        transition:
-            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-            opacity 0.3s,
-            transform 0.3s;
-    }
-
-    .menu-toggle:checked+.menu-icon+.nav-links {
-        max-height: 500px;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: var(--spacing-md) 0;
-    }
 }

@@ -6,65 +6,104 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
     <title>datsforge.com</title>
-    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/nav.css">
+
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.png" />
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/mobile.css" />
 </head>
 
 <body>
-    <nav id="navbar"></nav>
-    <script src="assets/js/component-loader.js"></script>
-    <script>
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
+
+    <!-- Header -->
+    <header class="header-banner" role="banner">
+        <div class="header-content">
+            <h1>Welcome to datsforge!</h1>
+            <p>Forge lighted. Ideas brewing. Stay tuned.</p>
+            <p class="tagline" aria-label="Tagline">"Your ideas — <em>Not just built, forged!</em>"</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main" id="main-content">
+        <div class="container">
+            <article class="content" aria-labelledby="section-intro">
+                <h2 id="section-intro">Build more than just games and apps</h2>
+                <p>Let's create digital experiences! Whether it’s a pixel RPG, a quirky mobile app, or a tool designed
+                    to make life smoother — everything we craft is made with purpose, passion, and a bit of playful
+                    magic.</p>
+                <p>This is a studio where imagination meets execution, and where every project — big or small — is
+                    forged with care. <em>You’ve</em> got the spark. <em>We’ve</em> got the forge!</p>
+            </article>
+        </div>
+
+        <div class="container">
+            <section class="content-sectioned" aria-labelledby="section-apps">
+                <h2 id="section-apps">Apps that solve real problems</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </section>
+        </div>
+
+        <div class="container">
+            <section class="content-sectioned" aria-labelledby="section-games">
+                <h2 id="section-games">Chill with casual games</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </section>
+        </div>
+
+        <div class="container">
+            <section class="content-sectioned" aria-labelledby="section-rpg">
+                <h2 id="section-rpg">RPG adventures!</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </section>
+        </div>
+
+        <div class="container">
+            <section class="content-sectioned" aria-labelledby="section-tools">
+                <h2 id="section-tools">Useful tools</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </section>
+        </div>
+
+        <div class="container">
+            <section class="content-sectioned" aria-labelledby="section-contact">
+                <h2 id="section-contact">Get in touch!</h2>
+                <p>Drop me an email anytime:</p>
+                <p>
+                    <a href="mailto:contact@datsforge.com" aria-label="Email datsforge">contact@datsforge.com</a>
+                </p>
+            </section>
+        </div>
+
+    </main>
+
+    <footer role="contentinfo"></footer>
+
+     <!-- Scripts -->
+      
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
         loadComponent({
             url: '/assets/html/nav.html',
             targetSelector: '.navbar-main',
             mountPoint: '#navbar'
         });
+        loadComponent({
+            url: '/assets/html/footer.html',
+            targetSelector: '.footer-main',
+            mountPoint: 'footer'
+        });
     </script>
 
-    <header>
-        <div class="header-banner">
-            <div class="header-content">
-                <h1>Welcome to datsforge!</h1>
-                <p>Forge lighted. Ideas brewing. Stay tuned.</p>
-                <p class="tagline">"Your ideas - <em>Not just built, forged!</em>"</p>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <article class="article-intro">
-            <h2>Build more than just games and apps</h2>
-            <p>Lets create digital experiences! Whether it’s a
-                pixel RPG, a quirky mobile app, or a tool designed to make life smoother, <br>everything we craft is
-                made
-                with purpose, passion, and a bit of playful magic.</p>
-            <h3>Specialties : </h3>
-            <ul>
-                <li>Retro-inspired RPGs with rich stories and engaging mechanics</li>
-                <li>Pixel art games that blend nostalgia with innovation</li>
-                <li>Smart apps that solve real problems and spark joy</li>
-                <li>Creative tools and experiences that users actually want to use</li>
-            </ul>
-            <p>We’re a studio where imagination meets execution, and where every project — big or small — is forged with
-                care.</p>
-            <p>You’ve Got theSpark. We’ve Got the Forge! Let's create something brilliant together!</p>
-        </article>
-
-    </main>
-
-    <footer>
-        <p>© 2025 datsforge. All rights reserved.</p>
-        <a href="/assets/html/legal.html">Legal</a>
-        <!-- <a href="/assets/html/legal.html" target="_blank" rel="noopener noreferrer">Legal</a> -->
-    </footer>
-
+    <!-- Navigation Scroll Script -->
+    <script src="assets/js/nav-scroll.js"></script>
 </body>
-
-<script src="assets/js/nav-scroll.js"></script>
 
 </html>
