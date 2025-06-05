@@ -1,13 +1,23 @@
 @import url(/assets/css/variables.css);
 
 /* Logo styles */
-.logo {
+.logo,
+.app-logo {
     display: flex;
     align-items: center;
-    gap: 1%;
+    gap: 4%;
     cursor: pointer;
     padding: 0 2%;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo img,
+.app-logo img {
+    height: 100%;
+    width: auto;
+    max-height: 3.7rem;
+    transition: var(--transition-text);
 }
 
 /* Navbar */
@@ -49,13 +59,21 @@
     gap: var(--spacing-lg);
 }
 
-.nav-links a,
-.logo span {
+.nav-links a {
     color: var(--color-text-primary);
     text-decoration: none;
     font-size: var(--font-size-base);
     transition: var(--transition-text);
 }
+
+.logo span,
+.app-logo span {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-xl);
+    transition: var(--transition-text);
+}
+
 
 .nav-links a.active {
     font-weight: bold;
@@ -79,7 +97,9 @@
 .nav-links a:hover,
 .nav-links a:focus,
 .logo:hover span,
-.logo:focus span {
+.logo:focus span,
+.app-logo:hover span,
+.app-logo:focus span {
     color: var(--color-accent-secondary);
     text-decoration: none;
 }

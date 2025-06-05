@@ -1,7 +1,5 @@
 
-# Terms of Use for Swords and Legends
-
-**Effective Date: April 24, 2025**
+# Terms of Use
 
 Welcome to **Swords and Legends** ("the App"), a mobile game developed by **datsforge**. By using or accessing the App, you agree to be bound by the following terms and conditions. If you do not agree with any part of these terms, please do not use the App.
 
@@ -64,13 +62,12 @@ These terms shall be governed by and construed in accordance with the laws of th
 
 If you have any questions about these Terms, please contact us at:
 
-**contact@datsforge.com**
+**contact@datsforge.com**  
+ Website: [https://datsforge.com](https://datsforge.com)  
 
 ---
 
 Thanks for playing **Swords and Legends**! May your blade be sharp, your journey epic, and your rage-quits minimal.
-
- Website: [https://datsforge.com](https://datsforge.com)  
 
 **-Effective Date:** June 05, 2025
 

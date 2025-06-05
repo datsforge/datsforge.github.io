@@ -35,13 +35,13 @@ We may update the game or these terms at any time. Continued use after updates m
 If you have any questions, complaints, or random compliments about Spidee Tap, you can reach out to us:
 
 📧 **contact@datsforge.com**    
+ Website: [https://datsforge.com](https://datsforge.com)  
 
 ---
 
 Thanks for playing! And don’t forget-tap fast, or be spider snack.
 
 🔗 [Spidee Tap on Google Play](https://play.google.com/store/apps/details?id=com.datsgud.speederTap)  
- Website: [https://datsforge.com](https://datsforge.com)  
 
 **-Effective Date:** June 05, 2025
 

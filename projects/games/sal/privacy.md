@@ -1,5 +1,5 @@
 
-# Privacy Policy for Swords and Legends
+# Privacy Policy
 
 ## 1. Introduction
 Welcome to **datsforge!** ("we", "our", or "us"). Here we respect your privacy and are committed to protecting any information you may provide while using our game, **Swords and Legends**. This privacy policy outlines the types of information we collect and how we use it.
@@ -56,7 +56,8 @@ We may update this Privacy Policy from time to time. Any changes will be posted 
 ## 8. Contact Us
 
 If you have any questions or concerns about this Privacy Policy, please contact us at:  
-**contact@datsforge.com**
+**contact@datsforge.com**  
+ Website: [https://datsforge.com](https://datsforge.com)  
 
 ---
 

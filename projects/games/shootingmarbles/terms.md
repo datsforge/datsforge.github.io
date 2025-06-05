@@ -48,12 +48,12 @@ We may update these Terms of Use at any time. Updates will be posted within the 
 If you have any questions about these Terms of Use, feel free to contact us at:
 
 📧 **contact@datsforge.com**    
+**Website:**  [https://datsforge.com](https://datsforge.com)  
 
 ---
 
 Thank you for accepting our totally serious and extremely legal terms. Now go play Shooting Marbles and pretend you didn't skim this whole thing.
  
 🔗 [Shooting Marbles on Google Play](https://play.google.com/store/apps/details?id=com.datsgud.shootingMarbles)  
-**Website:**  [https://datsforge.com](https://datsforge.com)  
 
 **-Effective Date:** June 05, 2025

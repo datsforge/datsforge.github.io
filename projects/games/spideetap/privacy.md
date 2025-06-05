@@ -1,10 +1,10 @@
-# Privacy Policy for Spidee Tap
+# Privacy Policy
 
 ---
 
 ## 1. Introduction
 
-Welcome to **datsforge** ("we", "our", or "us"). We respect your privacy and are committed to protecting any information you may provide while using our game, *Spidee Tap*. This privacy policy outlines the types of information we collect and how we use it.
+Welcome to **datsforge** ("we", "our", or "us"). We respect your privacy and are committed to protecting any information you may provide while using our game, **Spidee Tap**. This privacy policy outlines the types of information we collect and how we use it.
 
 ## 2. Information We Collect
 
@@ -69,7 +69,8 @@ Please review this policy periodically for any updates.
 ## 8. Contact Us
 
 If you have any questions or concerns about this Privacy Policy, please contact us at:  
-📧 **contact@datsforge.com**
+📧 **contact@datsforge.com**  
+Website: [https://datsforge.com](https://datsforge.com)  
 
 ---
 

@@ -1,10 +1,5 @@
-import { loadComponent } from './component-loader.js'; 
+import { loadComponent } from './component-loader.js';
 
-/**
- * Loads the Terms and Privacy navigation component and sets the correct links.
- * This function fetches the HTML for the terms and privacy links, mounts it in the navbar,
- * and updates the links based on the current page.
- */
 export async function loadTPNavComponent() {
     await loadComponent({
         url: '/assets/html/nav.html',
@@ -12,6 +7,7 @@ export async function loadTPNavComponent() {
         mountPoint: '#navbar'
     });
 
+    // --- Set Terms/Privacy Links ---
     const links = document.querySelectorAll('.navbar-terms-privacy .nav-links a');
     if (links.length >= 2) {
         const parts = window.location.pathname.split('/');
@@ -23,5 +19,25 @@ export async function loadTPNavComponent() {
 
         if (currentPage === 'terms.html') links[0].classList.add('active');
         if (currentPage === 'privacy.html') links[1].classList.add('active');
+    }
+
+    // --- Dynamic Logo, Brand Text, and Alt ---
+    const logoImg = document.querySelector('.navbar-terms-privacy .app-logo img');
+    const logoText = document.querySelector('.navbar-terms-privacy .app-logo span');
+
+    const customLogoSrc = document.body.dataset.logoSrc;
+    const customBrandName = document.body.dataset.brandName;
+    const customLogoAlt = document.body.dataset.logoAlt;
+
+    if (customLogoSrc && logoImg) {
+        logoImg.src = customLogoSrc;
+    }
+
+    if (customLogoAlt && logoImg) {
+        logoImg.alt = customLogoAlt;
+    }
+
+    if (customBrandName && logoText) {
+        logoText.textContent = customBrandName;
     }
 }
