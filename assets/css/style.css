@@ -73,16 +73,34 @@ img.logo {
 
 /* Header Banner */
 .header-banner {
-  background: var(--surface);
+  background-image: url('/assets/images/datsforge/banner/datsforge_banner_v003_1920x1080.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; /* ensure no scrollbar */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 100%;
+  position: relative;
+  padding: 0; 
   min-height: var(--header-banner-size);
-  padding: 0 2%;
+  height: var(--header-banner-size);
   text-align: center;
   color: var(--color-text-primary);
+}
+
+.header-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.30);
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  line-height: 1.2;
 }
 
 .header-banner h1 {

@@ -6,9 +6,8 @@
 @media (max-width: 768px) {
   .header-banner {
     flex-direction: column;
-    gap: 10px;
-    min-height: 260px;
-    padding: 1rem 0.5rem;
+    height: var(--header-banner-size-mobile);
+    min-height: var(--header-banner-size-mobile);
     text-align: center;
   }
 
