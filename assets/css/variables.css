@@ -12,15 +12,16 @@
  :root {
    /* Brand Colors */
    --color-primary: #890d0d;
-   --color-primary-dark: #5a0808;
+   --color-primary-dark: #5f1010;
    --color-accent: #E04E4E;
    --color-accent-secondary: #ff914d;
+   --color-secondary: #373335;
 
    /* Surface & Background */
-   --color-surface: #351919;
+   --color-surface: #361111;
    --color-bg: #1A0E0E;
    --color-border: #9f9595;
-   --color-shadow: rgba(0, 0, 0, 0.25);
+   --color-shadow: rgba(0, 0, 0, 0.2);
 
    /* Text Colors */
    --color-text-primary: #F5F5F5;
@@ -49,16 +50,17 @@
    /* Spacing */
    --margin-horizontal-main: 3.7%;
    --margin-horizontal-content: 13%;
-   --container-padding: 0.5% 13%;
+   --container-padding: 0.5% 15%;
    --border-size: 0.12rem;
 
-   --spacing-xs: 0.25em;
-   --spacing-sm: 0.5em;
-   --spacing-md: 1.2em;
+   --spacing-xs: 0.15rem;
+   --spacing-sm: 2.2rem;
+   --spacing-md: 2.7em;
    --spacing-lg: 2em;
    --spacing-xl: 4em;
 
    /*Radius*/
+   --radius-xs: 0.7rem;
    --radius-sm: 2.5%;
 
    /* Layout */

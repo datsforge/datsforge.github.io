@@ -38,6 +38,7 @@ p,
 a,
 li {
   font-size: var(--font-size-base);
+  line-height: 1.4;
 }
 
 a {
@@ -77,12 +78,13 @@ img.logo {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden; /* ensure no scrollbar */
+  overflow: hidden;
+  /* ensure no scrollbar */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0; 
+  padding: 0;
   min-height: var(--header-banner-size);
   height: var(--header-banner-size);
   text-align: center;
@@ -113,11 +115,37 @@ img.logo {
   padding: var(--container-padding);
 }
 
+.mockup_left_aligned {
+  border-radius: var(--radius-xs);
+  background-color: var(--color-secondary);
+  box-shadow: 2px 3px 4px 3px var(--color-shadow);
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  max-height: 27rem;
+  border-bottom: var(--border-size) solid var(--color-border);
+  text-align: start;
+  gap: 2rem;
+}
+
+.mockup_right_aligned {
+  border-radius: var(--radius-xs);
+  background-color: var(--color-secondary);
+  box-shadow: 2px 3px 4px 3px var(--color-shadow);
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  max-height: 27rem;
+  border-bottom: var(--border-size) solid var(--color-border);
+  text-align: end;
+  gap: 2rem;
+}
+
 .content,
 .content-sectioned {
   display: flex;
   flex-direction: column;
-  padding-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
 }
 
 .content-sectioned {
@@ -149,5 +177,3 @@ footer a:focus,
 footer a:active {
   color: var(--color-text-accent-secondary);
 }
-
-
