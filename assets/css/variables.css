@@ -36,7 +36,7 @@
    /* Typography */
    --font-nav: 'Lato', Arial, sans-serif;
    --font-main: 'Roboto', sans-serif, monospace;
-   --font-banner: 'Courier Prime', sans-serif, monospace;
+   --font-banner: 'Courier Prime', 'Courier N', monospace;
    --font-size-sm: 1.0rem;
    --font-size-base: 1.3rem;
    --font-size-lg: 1.5rem;
@@ -50,13 +50,13 @@
    /* Spacing */
    --margin-horizontal-main: 3.7%;
    --margin-horizontal-content: 13%;
-   --container-padding: 0.5% 15%;
+   --container-padding: 0.5% 13%;
    --border-size: 0.12rem;
 
-   --spacing-xs: 0.15rem;
-   --spacing-sm: 2.2rem;
-   --spacing-md: 2.7em;
-   --spacing-lg: 2em;
+   --spacing-xs: 1.5rem;
+   --spacing-s: 2.2rem;
+   --spacing-m: 2.7em;
+   --spacing-l: 2em;
    --spacing-xl: 4em;
 
    /*Radius*/
@@ -64,7 +64,7 @@
    --radius-sm: 2.5%;
 
    /* Layout */
-   --nav-height: 5.7em;
+   --nav-height: 5.7rem;
    --header-banner-size: 27rem;
    --header-banner-size-mobile: 17rem;
 

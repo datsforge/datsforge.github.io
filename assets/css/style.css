@@ -59,53 +59,63 @@ a.block {
   border-radius: var(--radius-sm);
 }
 
-/* Tagline */
-.tagline {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-accent-secondary);
-  margin-top: 1em;
-}
-
 /* Images */
 img.logo {
   width: 64px;
   height: 64px;
 }
 
-/* Header Banner */
+/* Header Banner (ps: when I say banner, I'm not referring to the image, but for page main top header*/
 .header-banner {
-  background-image: url('/assets/images/datsforge/banner/datsforge_banner_v003_1920x1080.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  /* ensure no scrollbar */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+
+  background-image: url('/assets/images/datsforge/banner/datsforge_banner_v003_1920x1080.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   padding: 0;
   min-height: var(--header-banner-size);
   height: var(--header-banner-size);
-  text-align: center;
   color: var(--color-text-primary);
+  text-align: center;
 }
 
 .header-content {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.30);
-  text-align: center;
-  padding: 1rem;
+  padding: var(--spacing-xs);
   box-sizing: border-box;
-  line-height: 1.2;
 }
 
-.header-banner h1 {
+.slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.slogan h1 {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-size: var(--font-size-xxl);
+  font-family: var(--font-banner);
+}
+
+.slogan p {
+  margin: 0;
+  text-align: left;
+  color: var(--color-text-accent-secondary);
+  font-size: var(--font-size-xl);
   font-family: var(--font-banner);
 }
 
@@ -115,37 +125,40 @@ img.logo {
   padding: var(--container-padding);
 }
 
-.mockup_left_aligned {
+.mockup_left_aligned,
+.mockup_right_aligned {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 1.5rem;
   border-radius: var(--radius-xs);
   background-color: var(--color-secondary);
   box-shadow: 2px 3px 4px 3px var(--color-shadow);
-  display: flex;
-  flex-direction: row;
-  padding: 1.5rem;
-  max-height: 27rem;
   border-bottom: var(--border-size) solid var(--color-border);
-  text-align: start;
-  gap: 2rem;
+
+  text-align: start; 
 }
 
 .mockup_right_aligned {
-  border-radius: var(--radius-xs);
-  background-color: var(--color-secondary);
-  box-shadow: 2px 3px 4px 3px var(--color-shadow);
-  display: flex;
-  flex-direction: row;
-  padding: 1.5rem;
-  max-height: 27rem;
-  border-bottom: var(--border-size) solid var(--color-border);
   text-align: end;
-  gap: 2rem;
 }
+
+.mockup_left_aligned img,
+.mockup_right_aligned img {
+  max-width: 35vw;
+  max-height: 70vh;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
 
 .content,
 .content-sectioned {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-s) 0;
 }
 
 .content-sectioned {

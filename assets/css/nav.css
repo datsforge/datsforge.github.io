@@ -61,7 +61,7 @@
 .nav-links {
     list-style: none;
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-l);
 }
 
 .nav-links a {
@@ -78,7 +78,6 @@
     font-size: var(--font-size-xl);
     transition: var(--transition-text);
 }
-
 
 .nav-links a.active {
     font-weight: bold;
