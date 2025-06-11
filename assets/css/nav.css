@@ -66,9 +66,35 @@
 
 .nav-links a {
     color: var(--color-text-primary);
-    text-decoration: none;
     font-size: var(--font-size-base);
-    transition: var(--transition-text);
+    position: relative;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: color 0.2s;
+}
+
+/* Underline Animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    width: 0;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 2px;
+    /* <-- Add this line for rounded corners */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* Underline Animation */
+.nav-links a:hover::after,
+.nav-links a:focus::after,
+.nav-links a:active::after {
+    width: 100%;
+    left: 50%;
 }
 
 .logo span,

@@ -25,9 +25,9 @@
 
    /* Text Colors */
    --color-text-primary: #F5F5F5;
+   --color-text-secondary: #fffd6a;
    --color-text-muted: #BFAFAF;
-   --color-text-accent: #FFDADA;
-   --color-text-accent-secondary: #fddc24;
+   --color-text-accent: #fddc24;
 
    /* State Colors */
    --color-success: #3DA35D;
