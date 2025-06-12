@@ -1,0 +1,124 @@
+/* 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+*/
+
+/* Base body styles */
+body {
+  font-family: var(--md-sys-font-family-primary);
+  font-size: var(--md-sys-typescale-body-large);
+  margin: 0;
+  padding: 0;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1 {
+  font-size: var(--md-sys-typescale-display-large);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+h2 {
+  font-size: var(--md-sys-typescale-display-medium);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+h3 {
+  font-size: var(--md-sys-typescale-display-small);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+h4 {
+  font-size: var(--md-sys-typescale-headline-large);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+h5 {
+  font-size: var(--md-sys-typescale-headline-medium);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+h6 {
+  font-size: var(--md-sys-typescale-headline-small);
+  font-weight: 400;
+  margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-sm);
+}
+
+/* Paragraph */
+p {
+  margin: 0 0 var(--md-sys-spacing-md);
+  font-size: var(--md-sys-typescale-body-large);
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--md-sys-motion-short);
+}
+
+a:hover,
+a:focus {
+  color: var(--md-sys-color-primary-dark);
+  outline: none;
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: var(--md-sys-spacing-lg);
+  margin: var(--md-sys-spacing-md) 0;
+}
+
+/* List items */
+li {
+  margin-bottom: var(--md-sys-spacing-xs);
+}
+
+/* === Footer ===*/
+footer {
+  background-color: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: center;
+
+  padding: var(--md-sys-spacing-3xl) 0;
+  font-size: var(--md-sys-typescale-body-small);
+  font-family: var(--md-sys-font-primary);
+  margin-top: auto;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+/* Paragraph text inside footer */
+footer p {
+  margin: 0;
+  font-size: var(--md-sys-typescale-body-small);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Footer links */
+footer a {
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--md-sys-typescale-body-small);
+  transition: color var(--md-sys-motion-short);
+}
+
+/* Interaction states for links */
+footer a:hover,
+footer a:focus,
+footer a:active {
+  color: var(--md-sys-color-primary-dark);
+}

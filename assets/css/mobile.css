@@ -3,6 +3,8 @@
   Proprietary – See LICENSE for details. 
 */
 
+
+/* === Responsive Typography: Mobile Adjustments === */
 @media (max-width: 768px) {
   .header-banner {
     flex-direction: column;
@@ -11,60 +13,80 @@
     text-align: center;
   }
 
-  /* Typography */
+  body {
+    font-size: var(--md-sys-typescale-body-medium);
+    line-height: 1.6;
+  }
+
   h1 {
-    font-size: var(--font-size-xl);
+    font-size: var(--md-sys-typescale-display-medium);
+    margin: var(--md-sys-spacing-md) 0 var(--md-sys-spacing-xs);
   }
 
   h2 {
-    font-size: var(--font-size-lg);
+    font-size: var(--md-sys-typescale-display-small);
   }
 
   h3 {
-    font-size: var(--font-size-md);
+    font-size: var(--md-sys-typescale-headline-large);
   }
 
-  p,
-  a,
+  h4 {
+    font-size: var(--md-sys-typescale-headline-medium);
+  }
+
+  h5 {
+    font-size: var(--md-sys-typescale-headline-small);
+  }
+
+  h6 {
+    font-size: var(--md-sys-typescale-title-large);
+  }
+
+  p {
+    font-size: var(--md-sys-typescale-body-medium);
+  }
+
+  a {
+    font-size: var(--md-sys-typescale-body-medium);
+    padding: 0.25rem 0;
+  }
+
+  ul,
+  ol {
+    padding-left: var(--md-sys-spacing-md);
+  }
+
   li {
-    font-size: var(--font-size-sm);
-  }
-
-  .slogan {
-    padding: 0;
+    font-size: var(--md-sys-typescale-body-small);
   }
 
   .slogan h1 {
     margin: 0 0 2rem 0;
     text-align: center;
-    font-size: var(--font-size-xl);
-    font-family: var(--font-banner);
-    line-height: 1.4;
+    font-size: var(--md-sys-typescale-display-medium);
+    line-height: 1;
   }
 
   .slogan p {
     margin: 0;
-    text-align: left;
-    color: var(--color-text-accent);
-    font-size: var(--font-size-l);
-    font-family: var(--font-banner);
+    color: var(--md-sys-color-on-primary-container);
+    font-size: var(--md-sys-typescale-headline-small);
   }
 
   .container {
-    padding: 0.7rem 0.5rem;
+    margin: var(--md-sys-spacing-lg) var(--md-sys-spacing-md);
   }
 
-  .content,
-  .content-sectioned {
-    padding-bottom: 0.5rem;
+  .container .card {
+    /* Cancels out the margin set by the container, 
+    the puspose is to make the card extends out of the container to fill screen width for mobile*/
+    margin-left: calc(-1 * var(--md-sys-spacing-md));
+    margin-right: calc(-1 * var(--md-sys-spacing-md));
   }
 
-  .content-sectioned {
-    border-top-width: 1px;
-  }
-
-  .mockup_left_aligned,
-  .mockup_right_aligned {
+  .card.card.align-right,
+  .card.card.align-left {
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -74,8 +96,7 @@
     text-align: left;
   }
 
-  .mockup_left_aligned img,
-  .mockup_right_aligned img {
+  .card-media {
     max-width: 70vw;
     max-height: 140vh;
     height: auto;
@@ -83,8 +104,7 @@
     align-self: center;
   }
 
-  .mockup_left_aligned .mockup_descriptions,
-  .mockup_right_aligned .mockup_descriptions {
+  .card-content {
     align-items: flex-start;
   }
 
@@ -95,11 +115,11 @@
     align-items: start;
   }
 
-  .mockup_descriptions {
+  .card-content {
     order: 2;
   }
 
-  .mockup_left_aligned img {
+  .carc-media {
     order: 1;
   }
 
@@ -160,33 +180,70 @@
     top: 100%;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: var(--md-sys-z-index-navbar);
 
-    background: var(--color-primary-dark);
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    padding: var(--md-sys-spacing-sm) 0;
+
+    border-radius: 0 0 var(--md-sys-shape-medium) var(--md-sys-shape-medium);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.07),
+      0 3px 6px rgba(0, 0, 0, 0.08),
+      0 5px 10px rgba(0, 0, 0, 0.09);
+
     margin: 0;
-    padding: var(--spacing-xs) 0;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 0 0 var(--radius-xs) var(--radius-xs);
-
     pointer-events: none;
     max-height: 0;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-4px);
     transition:
-      max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s,
-      transform 0.3s;
+      max-height var(--md-sys-motion-medium) ,
+      opacity var(--md-sys-motion-short) ,
+      transform var(--md-sys-motion-short);
   }
 
   .nav-links li {
-    margin: 0;
     text-align: center;
-    padding: var(--spacing-xs) 0;
+    padding: var(--md-sys-spacing-sm);
+    font-family: var(--md-sys-font-family-primary);
+    font-size: var(--md-sys-typescale-label-large);
+    color: var(--md-sys-color-on-surface-variant);
   }
 
-  .menu-toggle:checked+.menu-icon+.nav-links {
-    max-height: 500px;
+  /* === Menu Toggle Input + Label Button === */
+  .toggle-input {
+    display: none;
+  }
+
+  .icon-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--md-sys-spacing-sm);
+    margin-right: var(--md-sys-spacing-lg);
+    border: none;
+    border-radius: var(--md-sys-shape-medium);
+    color: var(--md-sys-color-on-surface-variant);
+    cursor: pointer;
+    transition: background-color var(--md-sys-motion-medium), color var(--md-sys-motion-medium);
+  }
+
+  .icon-toggle .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-input:checked+.icon-toggle,
+  .toggle-input:hover+.icon-toggle {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-secondary);
+  }
+
+  /* === Reveal Menu on Toggle === */
+  .toggle-input:checked+.icon-toggle+.nav-links {
+    max-height: 800px;
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);

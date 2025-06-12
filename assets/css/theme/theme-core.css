@@ -1,0 +1,128 @@
+/* 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+:root {
+  /* The pallete I used in the themes */
+  --color-red:#910013;
+  --color-black:#000000;
+  --color-yellow:#edc605;
+
+  --header-banner-size: 27rem;
+  --header-banner-size-mobile: 17rem;
+
+  /* === Font Families === */
+  --md-sys-font-family-primary: 'Ubuntu', sans-serif, monospace;
+  --md-sys-font-family-secondary: 'Courier Prime', sans-serif, monospace;
+
+  /* Use primary as default */
+  --md-sys-typescale-font-family: var(--md-sys-font-family-primary);
+
+  /* === Typography (using rem for scalability) === */
+  --md-sys-typescale-display-large: 3.563rem;
+  /* 57px */
+  --md-sys-typescale-display-medium: 2.813rem;
+  /* 45px */
+  --md-sys-typescale-display-small: 2.25rem;
+  /* 36px */
+
+  --md-sys-typescale-headline-large: 2rem;
+  /* 32px */
+  --md-sys-typescale-headline-medium: 1.75rem;
+  /* 28px */
+  --md-sys-typescale-headline-small: 1.5rem;
+  /* 24px */
+
+  --md-sys-typescale-title-large: 1.375rem;
+  /* 22px */
+  --md-sys-typescale-title-medium: 1rem;
+  /* 16px */
+  --md-sys-typescale-title-small: 0.875rem;
+  /* 14px */
+
+  --md-sys-typescale-body-large: 1.2rem;
+  /* 16px */
+  --md-sys-typescale-body-medium: 1.075rem;
+  /* 14px */
+  --md-sys-typescale-body-small: 0.95rem;
+  /* 12px */
+
+  --md-sys-typescale-label-large: 0.975rem;
+  /* 14px */
+  --md-sys-typescale-label-medium: 0.85rem;
+  /* 12px */
+  --md-sys-typescale-label-small: 0.788rem;
+  /* 11px */
+
+  /* === Shape (Border Radius - px for precision) === */
+  --md-sys-shape-extra-small: 4px;
+  --md-sys-shape-small: 8px;
+  --md-sys-shape-medium: 12px;
+  --md-sys-shape-large: 16px;
+  --md-sys-shape-extra-large: 28px;
+  --md-sys-shape-full: 999px;
+
+  /* === Elevation (Shadows - px for fidelity) === */
+  --md-sys-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-2: 0px 2px 4px rgba(0, 0, 0, 0.14);
+  --md-sys-elevation-3: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  --md-sys-elevation-4: 0px 8px 12px rgba(0, 0, 0, 0.18);
+
+  /* === Borders & Outlines === */
+  --md-sys-border-thin: 1px;
+  --md-sys-border-thick: 2px;
+
+  /* === Opacity Levels === */
+  --md-sys-opacity-disabled: 0.38;
+  --md-sys-opacity-hover: 0.08;
+  --md-sys-opacity-focus: 0.12;
+  --md-sys-opacity-pressed: 0.12;
+
+  /* === Transitions (Motion) === */
+  --md-sys-motion-short: 150ms ease-in-out;
+  --md-sys-motion-medium: 300ms ease;
+  --md-sys-motion-long: 500ms ease-in-out;
+
+  /* === Spacing (Margins & Padding - rem for layout scaling) === */
+  --md-sys-spacing-xs: 0.25rem;
+  --md-sys-spacing-sm: 0.5rem;
+  --md-sys-spacing-md: 0.75rem;
+  --md-sys-spacing-lg: 1rem;
+  --md-sys-spacing-xl: 1.5rem;
+  --md-sys-spacing-2xl: 2rem;
+  --md-sys-spacing-3xl: 2.5rem;
+  --md-sys-spacing-4xl: 3rem;
+  --md-sys-spacing-5xl: 5rem;
+  --md-sys-spacing-6xl: 7rem;
+
+  /* === Container Widths === */
+  --md-sys-layout-max-width: 1440px;
+  --md-sys-layout-content-width: 960px;
+  --md-sys-layout-narrow-width: 640px;
+
+  /* === Layering === */
+  /* === Z-Index Layering (Semantic Stack Order) === */
+  --md-sys-z-index-content: 1;
+  /* Default content */
+  --md-sys-z-index-header: 10;
+  /* Top app bars*/
+  --md-sys-z-index-navbar: 20;
+  /* Nav bars */
+  --md-sys-z-index-drawer: 30;
+  /* Side navigation drawers */
+  --md-sys-z-index-banner: 40;
+  /* Banners / Snackbars */
+  --md-sys-z-index-modal: 50;
+  /* Dialogs / Overlays */
+  --md-sys-z-index-tooltip: 60;
+  /* Tooltips or most elevated items */
+  --md-sys-z-index-fab: 70;
+  /* Floating Action Button on top */
+
+}
