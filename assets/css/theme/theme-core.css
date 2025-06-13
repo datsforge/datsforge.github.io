@@ -10,9 +10,10 @@
 
 :root {
   /* The pallete I used in the themes */
-  --color-red:#910013;
   --color-black:#000000;
-  --color-yellow:#edc605;
+  --color-red:#8B0000;
+  --color-orange:#FF6F00;
+  --color-yellow:#FFD54F; 
 
   --header-banner-size: 27rem;
   --header-banner-size-mobile: 17rem;
