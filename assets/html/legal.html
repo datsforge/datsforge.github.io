@@ -11,8 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
     <title>datsforge.com</title>
-    <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/datsforge_icon_v006_64x64.png">
-  
+    <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png">
     <link rel="stylesheet" href="../css/theme/dark-mc.css" />
     <link rel="stylesheet" href="../css/theme/theme-core.css" />
     <link rel="stylesheet" href="../css/nav.css" />
@@ -52,10 +51,10 @@
                     veritatis.
                 </p> -->
                 <ul>
-                    <li><a href="/projects/games/sal/terms.html" target="_blank"
-                            rel="noopener noreferrer">Terms of Use</a></li>
-                    <li><a href="/projects/games/sal/privacy.html" target="_blank"
-                            rel="noopener noreferrer">Privacy Policy</a></li>
+                    <li><a href="/projects/games/sal/terms.html" target="_blank" rel="noopener noreferrer">Terms of
+                            Use</a></li>
+                    <li><a href="/projects/games/sal/privacy.html" target="_blank" rel="noopener noreferrer">Privacy
+                            Policy</a></li>
                 </ul>
             </section>
 
@@ -93,6 +92,18 @@
 
     <footer></footer>
 
+    <!-- Scripts -->
+
+    <!-- Load Icons -->
+    <div id="svg-sprite-container"></div>
+    <script>
+        fetch('/assets/html/icons.html')
+            .then(res => res.text())
+            .then(svg => {
+                document.getElementById('svg-sprite-container').innerHTML = svg;
+            });
+    </script>
+
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
         loadComponent({
@@ -106,6 +117,7 @@
             mountPoint: 'footer'
         });
     </script>
+    
 
 </body>
 
