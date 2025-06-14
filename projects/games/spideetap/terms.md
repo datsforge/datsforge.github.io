@@ -1,8 +1,3 @@
-# Terms of Use
----
-
-Welcome to **Spidee Tap**, a casual mobile game created by **datsforge**. By using this app, you agree to the following terms. If you don't agree, don't use the game -simple as that.
-
 ## 1. Acceptance of Terms
 
 By downloading, installing, or playing Spidee Tap, you are agreeing to be bound by these Terms of Use and our [Privacy Policy](/projects/games/spideetap/privacy.html). If you’re under legal age in your jurisdiction, get permission from a parent or guardian first.

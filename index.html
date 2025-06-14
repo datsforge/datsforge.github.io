@@ -12,13 +12,15 @@
     <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
     <title>datsforge.com</title>
     <link rel="icon" type="image/png" href="assets/images/datsforge/icon/favicon.png" />
-    <link rel="stylesheet" href="assets/css/theme/dark.css" />
+    <link id="dark-theme" rel="stylesheet" href="assets/css/theme/dark.css">
+    <link id="light-theme" rel="stylesheet" href="assets/css/theme/light.css" disabled>
     <link rel="stylesheet" href="assets/css/theme/theme-core.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/mobile.css" />
 </head>
+
 
 <body>
     <!-- Navigation -->
@@ -128,7 +130,8 @@
                                 This project is not just a game—it's a living proof of what passion-driven, solo indie
                                 development can achieve.</p>
                         </div>
-                        <a href="mailto:sal@datsforge.com" class="button-text-icon" aria-label="Email sal@datsforge.com">
+                        <a href="mailto:sal@datsforge.com" class="button-text-icon"
+                            aria-label="Email sal@datsforge.com">
                             Be part of the development!
                             <svg class="icon">
                                 <use href="#mail_icon"></use>
@@ -174,7 +177,8 @@
                 <h2 id="section-contact">Let’s build something!</h2>
                 <div class="mockup_descriptions">
                     <p>Drop me an email anytime:</p>
-                    <a href="mailto:contact@datsforge.com" class="button-text-icon" aria-label="Email sal@datsforge.com">
+                    <a href="mailto:contact@datsforge.com" class="button-text-icon"
+                        aria-label="Email sal@datsforge.com">
                         contact@datsforge.com
                         <svg class="icon">
                             <use href="#mail_icon"></use>
@@ -183,9 +187,11 @@
             </section>
         </div>
 
+
+
     </main>
 
-    <footer role="contentinfo"></footer>
+    <footer></footer>
 
     <!-- Scripts -->
 
@@ -201,16 +207,26 @@
 
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
-        loadComponent({
-            url: '/assets/html/nav.html',
-            targetSelector: '.navbar-main',
-            mountPoint: '#navbar'
-        });
-        loadComponent({
-            url: '/assets/html/footer.html',
-            targetSelector: '.footer-main',
-            mountPoint: 'footer'
-        });
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+
+        try {
+            await loadComponent({
+                url: '/assets/html/nav/navbar-main.html',
+                targetSelector: '#navbar-main',
+                mountPoint: '#navbar'
+            });
+            setupMobileNavToggles();
+            await loadComponent({
+                url: '/assets/html/footer.html',
+                targetSelector: '.footer-main',
+                mountPoint: 'footer'
+            });
+            setupThemeToggle();
+        } catch (err) {
+            // TODO Handle error
+            // ex. showErrorToUser('Failed to load component');
+        }
     </script>
 
     <!-- Navigation Scroll Script -->

@@ -88,6 +88,9 @@ li {
 
 /* === Footer ===*/
 footer {
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-on-surface-variant);
   text-align: center;
@@ -121,4 +124,8 @@ footer a:hover,
 footer a:focus,
 footer a:active {
   color: var(--md-sys-color-primary-dark);
+}
+
+footer .container{
+  background-color: transparent;
 }

@@ -10,9 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
-    <title>datsforge.com</title>
+    <title>Legal | datsforge.com</title>
     <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png">
-    <link rel="stylesheet" href="../css/theme/dark-mc.css" />
+    <link rel="stylesheet" href="../css/theme/dark.css" />
     <link rel="stylesheet" href="../css/theme/theme-core.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/base.css" />
@@ -43,7 +43,7 @@
                 </ul>
             </section>
 
-            <section class="layout-column section-divider">
+            <section class="layout-column">
                 <h2>Swords and Legends</h2>
                 <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
                     saepe
@@ -58,7 +58,7 @@
                 </ul>
             </section>
 
-            <section class="layout-column section-divider">
+            <section class="layout-column">
                 <h2>Shooting Marbles</h2>
                 <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
                     saepe
@@ -73,7 +73,7 @@
                 </ul>
             </section>
 
-            <section class="layout-column section-divider">
+            <section class="layout-column">
                 <h2>Spidee Tap</h2>
                 <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur excepturi quo vel atque
                     saepe
@@ -92,8 +92,6 @@
 
     <footer></footer>
 
-    <!-- Scripts -->
-
     <!-- Load Icons -->
     <div id="svg-sprite-container"></div>
     <script>
@@ -106,16 +104,23 @@
 
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
-        loadComponent({
-            url: '/assets/html/nav.html',
-            targetSelector: '.navbar-legal',
-            mountPoint: '#navbar'
-        });
-        loadComponent({
-            url: '/assets/html/footer.html',
-            targetSelector: '.footer-legal',
-            mountPoint: 'footer'
-        });
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        try {
+            await loadComponent({
+                url: '/assets/html/nav/navbar-legal.html',
+                targetSelector: '#navbar-legal',
+                mountPoint: '#navbar'
+            });
+            setupMobileNavToggles();
+            await loadComponent({
+                url: '/assets/html/footer.html',
+                targetSelector: '.footer-legal',
+                mountPoint: 'footer'
+            });
+        } catch (err) {
+            // TODO Handle error
+            // ex. showErrorToUser('Failed to load component');
+        }
     </script>
     
 

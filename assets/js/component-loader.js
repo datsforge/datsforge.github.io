@@ -3,13 +3,6 @@
   Proprietary – See LICENSE for details. 
 */
 
-/**
- * Dynamically loads an HTML component and mounts it in the DOM.
- * @param {Object} options
- * @param {string} options.url
- * @param {string} options.targetSelector
- * @param {string} options.mountPoint
- */
 export async function loadComponent({ url, targetSelector, mountPoint }) {
     try {
         const res = await fetch(url);
@@ -24,13 +17,21 @@ export async function loadComponent({ url, targetSelector, mountPoint }) {
         if (!element) throw new Error(`Selector "${targetSelector}" not found in ${url}`);
         if (!mount) throw new Error(`Mount point "${mountPoint}" not found in current document`);
 
-        mount.appendChild(element);
+        // Use its content if it's a template
+        let nodeToInsert;
+        if (element.tagName === 'TEMPLATE') {
+            nodeToInsert = element.content.cloneNode(true);
+        } else {
+            nodeToInsert = element.cloneNode(true);
+        }
+
+        mount.innerHTML = '';
+        mount.appendChild(nodeToInsert);
     } catch (err) {
         console.error('[loadComponent]', err.message);
     }
 }
 
-// EXPOSE to global if running in browser
 if (typeof window !== 'undefined') {
     window.loadComponent = loadComponent;
 }

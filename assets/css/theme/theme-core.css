@@ -9,11 +9,11 @@
 
 
 :root {
-  /* The pallete I used in the theme */
-  --color-black: #000000;
-  --color-red: #8B0000;
-  --color-orange: #FF6F00;
-  --color-yellow: #FFD54F;
+  /* The pallete I used in the themes */
+  --color-black:#000000;
+  --color-red:#8B0000;
+  --color-orange:#FF6F00;
+  --color-yellow:#FFD54F; 
 
   --header-banner-size: 27rem;
   --header-banner-size-mobile: 17rem;
@@ -26,14 +26,14 @@
   --md-sys-typescale-font-family: var(--md-sys-font-family-primary);
 
   /* === Typography (using rem for scalability) === */
-  --md-sys-typescale-display-large: 3.563rem;
+  --md-sys-typescale-display-large: 3.56rem;
   /* 57px */
-  --md-sys-typescale-display-medium: 2.813rem;
+  --md-sys-typescale-display-medium: 2.71rem;
   /* 45px */
-  --md-sys-typescale-display-small: 2.25rem;
+  --md-sys-typescale-display-small: 2.2rem;
   /* 36px */
 
-  --md-sys-typescale-headline-large: 2rem;
+  --md-sys-typescale-headline-large: 1.8rem;
   /* 32px */
   --md-sys-typescale-headline-medium: 1.75rem;
   /* 28px */

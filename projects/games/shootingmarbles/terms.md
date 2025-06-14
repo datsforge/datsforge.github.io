@@ -1,7 +1,3 @@
-# Terms of Use for Shooting Marbles
-
-Welcome to **Shooting Marbles**, a mobile game developed by **datsforge**. By downloading or using the app, you agree to be bound by these Terms of Use. If you do not agree with these terms, please do not use the game.
-
 ## 1. Use of the App
 
 Shooting Marbles is provided for entertainment purposes only. You agree to use the app in accordance with all applicable laws and not to misuse it in any way.
