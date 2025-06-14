@@ -4,16 +4,17 @@
 */
 
 import { loadComponent } from './component-loader.js';
+import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
 
 export async function loadTPNavComponent() {
     await loadComponent({
-        url: '/assets/html/nav.html',
-        targetSelector: '.navbar-terms-privacy',
+        url: '/assets/html/nav/navbar-tp.html',
+        targetSelector: '#navbar-tp',
         mountPoint: '#navbar'
     });
 
     // --- Set Terms/Privacy Links ---
-    const links = document.querySelectorAll('.navbar-terms-privacy .nav-links a');
+    const links = document.querySelectorAll('.navbar-tp .nav-links a');
     if (links.length >= 2) {
         const parts = window.location.pathname.split('/');
         const appBase = parts[3];
@@ -27,8 +28,8 @@ export async function loadTPNavComponent() {
     }
 
     // --- Dynamic Logo, Brand Text, and Alt ---
-    const logoImg = document.querySelector('.navbar-terms-privacy .app-logo img');
-    const logoText = document.querySelector('.navbar-terms-privacy .app-logo span');
+    const logoImg = document.querySelector('.navbar-tp .app-logo img');
+    const logoText = document.querySelector('.navbar-tp .app-logo span');
 
     const customLogoSrc = document.body.dataset.logoSrc;
     const customBrandName = document.body.dataset.brandName;
@@ -45,4 +46,6 @@ export async function loadTPNavComponent() {
     if (customBrandName && logoText) {
         logoText.textContent = customBrandName;
     }
+
+    setupMobileNavToggles();
 }

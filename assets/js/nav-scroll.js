@@ -7,7 +7,7 @@ let lastScroll = 0;
 
 function setupNavScroll() {
   const nav = document.getElementById('navbar');
-  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNavMenu = document.querySelector('.mobile-nav-menu');
 
   if (!nav) return;
 
@@ -16,8 +16,8 @@ function setupNavScroll() {
     if (currentScroll > lastScroll && currentScroll > 80) {
       nav.classList.add('hide-on-scroll');
       // Hide mobile menu if open
-      if (currentScroll > 200 && menuToggle && menuToggle.checked) {
-        menuToggle.checked = false;
+      if (currentScroll > 200 && mobileNavMenu && mobileNavMenu.checked) {
+        mobileNavMenu.checked = false;
       }
     } else {
       nav.classList.remove('hide-on-scroll');

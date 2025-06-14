@@ -46,15 +46,15 @@
 /* === Navbar Content === */
 .navbar-main,
 .navbar-legal,
-.navbar-terms-privacy {
+.navbar-tp {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
   padding: 0 var(--md-sys-spacing-xl);
 
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface-container);
 
   border-bottom: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant);
   box-shadow: var(--md-sys-elevation-3);
@@ -115,24 +115,8 @@
   color: var(--color-red);
 }
 
-/* === Mobile Menu Toggle === */
-.icon-toggle{
+/*  Hide Navigation Menu for mobile */
+.mobile-nav-menu,
+.mobile-nav-menu~.toggle-button-label {
   display: none;
 }
-
-.menu-icon {
-  background-color: aqua;
-  display: none;
-  font-size: var(--md-sys-typescale-headline-medium);
-  color: var(--md-sys-color-on-surface);
-  margin-right: var(--md-sys-spacing-lg);
-  cursor: pointer;
-  user-select: none;
-  transition: var(--md-sys-motion-short);
-}
-
-.menu-toggle:checked+.menu-icon {
-  background-color: aqua;
-  color: var(--md-sys-color-secondary);
-}
-

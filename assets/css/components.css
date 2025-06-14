@@ -77,7 +77,7 @@
 */
 .slogan h1 {
   margin: 0 0 var(--md-sys-spacing-lg) 0;
-  font-family:var(--md-sys-font-family-secondary);
+  font-family: var(--md-sys-font-family-secondary);
   font-size: var(--md-sys-typescale-display-large);
   font-weight: 300;
   line-height: 1.2;
@@ -98,275 +98,321 @@
     0 0 4px rgba(0, 0, 0, 0.6);
 }
 
+/* === CONTAINER === */
+
+/* Surface background for content wrapping */
+.container {
+  background-color: var(--md-sys-color-surface);
+  margin: var(--md-sys-spacing-4xl) var(--md-sys-spacing-6xl);
+}
+
+/* === SECTION VARIANTS === */
+
+.section {
+  padding-block: var(--md-sys-spacing-sm);
+}
+
+.section-divider {
+  padding-top: var(--md-sys-spacing-2xl);
+  border-top: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant);
+}
+
+.section-centered {
+  text-align: center;
+}
+
 /* === FLEX LAYOUT COMPONENTS === */
 /* Vertical stack layout */
 .layout-column {
-    display: flex;
-    flex-direction: column;
-    gap: var(--md-sys-spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--md-sys-spacing-sm);
 }
 
 /* Horizontal row layout */
 .layout-row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--md-sys-spacing-sm);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--md-sys-spacing-sm);
+}
+
+.layout-legal-page h2,
+.layout-legal-page h3 {
+  line-height: 3;
 }
 
 /* === ALIGNMENT UTILITIES === */
 
 /* Align items along the cross-axis (Y in row, X in column) */
 .align-start {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .align-center {
-    align-items: center;
-    text-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 .align-end {
-    align-items: flex-end;
-    text-align: end;
+  align-items: flex-end;
+  text-align: end;
 }
 
 .align-stretch {
-    align-items: stretch;
+  align-items: stretch;
 }
 
 /* Justify content along the main axis (X in row, Y in column) */
 .justify-start {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .justify-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .justify-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .justify-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .justify-evenly {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
-/* === CONTAINER === */
-
-/* Surface background for content wrapping */
-.container {
-    background-color: var(--md-sys-color-surface);
-    margin:  var(--md-sys-spacing-4xl) var(--md-sys-spacing-6xl); 
+/* === Toggle Button with icon(Invisible Checkbox) use on checkbox with label  === */
+.toggle-button {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* === SECTION VARIANTS === */
-
-.section {
-    padding-block: var(--md-sys-spacing-sm);
+/* Toggle Button Label  */
+.toggle-button-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--md-sys-spacing-xs);
+  border-radius: var(--md-sys-shape-small);
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color var(--md-sys-motion-medium), color var(--md-sys-motion-medium);
 }
 
-.section-divider {
-    padding-top: var(--md-sys-spacing-2xl);
-    border-top: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant);
+/*  Icon Sizes  */
+.toggle-button-label .icon-small {
+  width: 12px;
+  height: 12px;
 }
 
-.section-centered {
-    text-align: center;
+.toggle-button-label .icon {
+  width: 24px;
+  height: 24px;
 }
 
-/* Buttons */
-/* button {
-    font-family: var(--md-sys-font-family-primary);
-    font-size: var(--md-sys-typescale-body-large);
-    padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-md);
-    border-radius: var(--md-sys-shape-small);
-    border: none;
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    cursor: pointer;
-    transition: background-color var(--md-sys-motion-short);
+.toggle-button-label .icon-medium {
+  width: 42px;
+  height: 42px;
 }
 
-button:hover,
-button:focus {
-    background-color: var(--md-sys-color-primary-container);
-    outline: none;
-} */
+/* Shared Icon Styles */
+.toggle-button-label .icon,
+.toggle-button-label .icon-small,
+.toggle-button-label .icon-medium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--md-sys-motion-medium);
+}
 
-/* Inputs and Textareas */
+/*  Checked State (Active Toggle)  */
+.toggle-button:checked~.toggle-button-label, .toggle-button:hover~.toggle-button-label {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.toggle-button:checked~.toggle-button-label .icon,
+.toggle-button:checked~.toggle-button-label .icon-small,
+.toggle-button:checked~.toggle-button-label .icon-medium {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* === Inputs and Textareas === */
 input,
 textarea,
 select {
-    font-family: var(--md-sys-font-family-primary);
-    font-size: var(--md-sys-typescale-body-large);
-    padding: var(--md-sys-spacing-xs);
-    border: 1px solid var(--md-sys-color-outline, #ccc);
-    border-radius: var(--md-sys-shape-small);
-    transition: border-color var(--md-sys-motion-short);
+  font-family: var(--md-sys-font-family-primary);
+  font-size: var(--md-sys-typescale-body-large);
+  padding: var(--md-sys-spacing-xs);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-small);
+  transition: border-color var(--md-sys-motion-short);
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--md-sys-color-primary, #6200ee);
-    outline: none;
+  border-color: var(--md-sys-color-primary);
+  outline: none;
 }
 
 /* Tables */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: var(--md-sys-spacing-lg);
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--md-sys-spacing-lg);
 }
 
 th,
 td {
-    text-align: left;
-    padding: var(--md-sys-spacing-sm);
-    border-bottom: 1px solid var(--md-sys-color-outline, #ccc);
+  text-align: left;
+  padding: var(--md-sys-spacing-sm);
+  border-bottom: 1px solid var(--md-sys-color-outline);
 }
 
 /* Images */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Utility */
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .visually-hidden {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /* === Cards === */
 .card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--md-sys-spacing-2xl);
-    border-radius: var(--md-sys-shape-small);
-    background-color: var(--md-sys-color-surface-container);
-    box-shadow: var(--md-sys-elevation-1);
-    /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
-    text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--md-sys-spacing-2xl);
+  border-radius: var(--md-sys-shape-small);
+  background-color: var(--md-sys-color-surface-container);
+  box-shadow: var(--md-sys-elevation-1);
+  /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
+  text-align: start;
 }
 
 /* === Alignment Variant: Right Aligned === */
 .card.align-right {
-    text-align: end;
+  text-align: end;
 }
 
 /* === Card Media (Image) === */
 .card-media {
-    max-width: 35vw;
-    max-height: 70vh;
-    height: auto;
-    object-fit: contain;
-    align-self: flex-start;
+  max-width: 35vw;
+  max-height: 70vh;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
 }
 
 /* === Card Content === */
 .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--md-sys-spacing-md);
-    text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--md-sys-spacing-md);
+  text-decoration: none;
 }
 
 /* === Align Content Within Card === */
 .card.align-right .card-content {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .card.align-left .card-content {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 /* === Link Group Inside Cards === */
 .card .link-with-icon-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--md-sys-spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--md-sys-spacing-sm);
 }
 
 .card.align-left .link-with-icon-group {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .card.align-right .link-with-icon-group {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 /* === Text Button With Icon (Link Style) === */
 .button-text-icon {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--md-sys-spacing-xs);
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-xs);
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
 
-    /* color: var(--md-sys-color-on-surface-variant); */
-    font-size: var(--md-sys-typescale-label-large);
-    font-family: var(--md-sys-font-family-secondary);
+  /* color: var(--md-sys-color-on-surface-variant); */
+  font-size: var(--md-sys-typescale-label-large);
+  font-family: var(--md-sys-font-family-secondary);
 
-    transition: color var(--md-sys-motion-short);
+  transition: color var(--md-sys-motion-short);
 }
 
 /* === Underline Animation === */
 .button-text-icon::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    width: 80%;
-    height: 2px;
-    background-color: currentColor;
-    border-radius: 2px;
-    opacity: 0;
-    transform: translateX(-50%);
-    transition:
-        width var(--md-sys-motion-medium),
-        opacity var(--md-sys-motion-short);
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 80%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition:
+    width var(--md-sys-motion-medium),
+    opacity var(--md-sys-motion-short);
 }
 
 .button-text-icon:hover::after,
 .button-text-icon:focus::after,
 .button-text-icon:active::after {
-    width: 100%;
-    opacity: 1;
-    left: 50%;
+  width: 100%;
+  opacity: 1;
+  left: 50%;
 }
 
 .button-text-icon .icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 12px;
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
 }
 
 /* === Optional Modifier: Icon Before or After === */
 .button-text-icon.icon-start {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }

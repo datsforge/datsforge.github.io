@@ -12,7 +12,7 @@
     <meta name="description" content="About datsforge - learn more about our creative lab.">
     <title>About | datsforge.com</title>
     <link rel="icon" type="image/png" href="../images/datsforge/icon/favicon.png">
-    <link rel="stylesheet" href="../css/theme/dark-mc.css" />
+    <link rel="stylesheet" href="../css/theme/dark.css" />
     <link rel="stylesheet" href="../css/theme/theme-core.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/base.css" />
@@ -21,8 +21,10 @@
 </head>
 
 <body>
-    <nav id="navbar"></nav>
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
 
+    <!-- Main Content -->
     <main>
         <div class="container">
             <article class="layout-column">
@@ -41,12 +43,14 @@
                         architecture</strong> and <strong>reactive UI</strong> to <strong>smooth performance</strong>
                     and <strong>real-world utility</strong>—I bring ideas to life in app form too. Whether it's a smart
                     productivity tool or a feature-rich utility, I aim to make apps that are <strong>elegant, useful,
-                        and a joy to use</strong>.</p>
+                        and a joy to use</strong>.
+                </p>
 
                 <p>I don’t just develop things—I <strong>create them from scratch</strong>. Whether it's a world, a
                     tool, or an idea, I bring it to life with <strong>attention to detail</strong>,
                     <strong>functionality</strong>, and <strong>soul</strong>. Every project you’ll find here is a
-                    <strong>solo venture</strong>: coding, graphics, design—even this very website.</p>
+                    <strong>solo venture</strong>: coding, graphics, design—even this very website.
+                </p>
 
                 <h3><strong>What I specialize in:</strong></h3>
                 <ul>
@@ -68,21 +72,41 @@
 
     <footer></footer>
 
-    <script type="module">
-        import { loadComponent } from '/assets/js/component-loader.js';
-        loadComponent({
-            url: '/assets/html/nav.html',
-            targetSelector: '.navbar-main',
-            mountPoint: '#navbar'
-        });
-        loadComponent({
-            url: '/assets/html/footer.html',
-            targetSelector: '.footer-main',
-            mountPoint: 'footer'
-        });
+    <!-- Scripts -->
+
+    <!-- Load Icons -->
+    <div id="svg-sprite-container"></div>
+    <script>
+        fetch('/assets/html/icons.html')
+            .then(res => res.text())
+            .then(svg => {
+                document.getElementById('svg-sprite-container').innerHTML = svg;
+            });
     </script>
 
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        try {
+            await loadComponent({
+                url: '/assets/html/nav/navbar-main.html',
+                targetSelector: '#navbar-main',
+                mountPoint: '#navbar'
+            });
+            setupMobileNavToggles();
+            await loadComponent({
+                url: '/assets/html/footer.html',
+                targetSelector: '.footer-main',
+                mountPoint: 'footer'
+            });
+        } catch (err) {
+            // TODO Handle error
+            // ex. showErrorToUser('Failed to load component');
+        }
+    </script>
+
+    <!-- Navigation Scroll Script -->
+    <script src="../js/nav-scroll.js"></script>
 </body>
-<script src="../js/nav-scroll.js"></script>
 
 </html>

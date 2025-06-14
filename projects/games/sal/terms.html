@@ -10,11 +10,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
-  <title>datsforge.com</title>
+  <title>sal Terms of Use | datsforge.com</title>
   <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/variables.css">
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/theme/dark.css" />
+  <link rel="stylesheet" href="/assets/css/theme/theme-core.css" />
   <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
   <link rel="stylesheet" href="/assets/css/mobile.css" />
 </head>
 
@@ -24,8 +26,16 @@
 
   <!-- Main Content -->
   <main id="main-content" tabindex="-1">
-    <div class="container">
-      <section id="terms-of-use" aria-labelledby="terms-heading" class="container content">
+    <div class="container align-center">
+      <h1>Terms of Use</h1>
+      <p>Welcome to <strong>Swords and Legends</strong> ("the App"), a mobile game developed by
+        <strong>datsforge</strong>. By using or
+        accessing the App, you agree to be bound by the following terms and conditions. If you do not agree with any
+        part of these terms, please do not use the App.
+      </p>
+    </div>
+    <div class="container  section-divider ">
+      <section id="terms-of-use" aria-labelledby="terms-heading" class="layout-legal-page">
         <div id="terms-content">Loading Terms of use...</div>
       </section>
     </div>
@@ -34,7 +44,19 @@
   <!-- Footer -->
   <footer role="contentinfo" aria-label="Site Footer"></footer>
 
-  <!-- Component Loaders -->
+  <!-- Scripts -->
+
+  <!-- Load Icons -->
+  <div id="svg-sprite-container"></div>
+  <script>
+    fetch('/assets/html/icons.html')
+      .then(res => res.text())
+      .then(svg => {
+        document.getElementById('svg-sprite-container').innerHTML = svg;
+      });
+  </script>
+
+  <!-- Component Loader -->
   <script type="module">
     document.body.dataset.logoSrc = "/projects/games/sal/images/icon512x512.png";
     document.body.dataset.brandName = "Swords and Legends";
@@ -61,7 +83,7 @@
         document.getElementById('terms-content').innerHTML = marked.parse(text);
       })
       .catch(err => {
-        document.getElementById('terms-content').innerText = "Failed to load terms of use.";
+        document.getElementById('terms-content').innerText = "Failed to load terms of use, please check your internet connection.";
         console.error(err);
       });
   </script>

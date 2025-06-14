@@ -143,19 +143,8 @@
   .navbar-legal,
   .navbar-terms-privacy {
     flex-direction: row;
-    padding: 0 1rem;
+    padding: 0 0.2rem;
     min-height: 56px;
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1100;
-    background: none;
-    border: none;
   }
 
   .logo,
@@ -199,8 +188,8 @@
     opacity: 0;
     transform: translateY(-4px);
     transition:
-      max-height var(--md-sys-motion-medium) ,
-      opacity var(--md-sys-motion-short) ,
+      max-height var(--md-sys-motion-medium),
+      opacity var(--md-sys-motion-short),
       transform var(--md-sys-motion-short);
   }
 
@@ -212,40 +201,35 @@
     color: var(--md-sys-color-on-surface-variant);
   }
 
-  /* === Menu Toggle Input + Label Button === */
-  .toggle-input {
-    display: none;
-  }
-
-  .icon-toggle {
+  .mobile-nav-menu,
+  .mobile-nav-menu~.toggle-button-label {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--md-sys-spacing-sm);
-    margin-right: var(--md-sys-spacing-lg);
-    border: none;
-    border-radius: var(--md-sys-shape-medium);
-    color: var(--md-sys-color-on-surface-variant);
-    cursor: pointer;
-    transition: background-color var(--md-sys-motion-medium), color var(--md-sys-motion-medium);
   }
 
-  .icon-toggle .icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .toggle-input:checked+.icon-toggle,
-  .toggle-input:hover+.icon-toggle {
+  /* Important as touch on mobile behaves different than mouse clicks:
+   When you tap an element like a button or label, it gets :hover applied and stays in that state until you touch something else*/
+  .mobile-nav-menu:checked~.toggle-button-label {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-secondary);
   }
 
-  /* === Reveal Menu on Toggle === */
-  .toggle-input:checked+.icon-toggle+.nav-links {
+  .mobile-nav-menu:not(:checked):hover~.toggle-button-label {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  .mobile-nav-menu:checked~.toggle-button-label .icon,
+  .mobile-nav-menu:checked~.toggle-button-label .icon-small,
+  .mobile-nav-menu:checked~.toggle-button-label .icon-medium {
+    color: var(--md-sys-color-secondary);
+  }
+
+  /*  Reveal Navigation Menu  */
+  .mobile-nav-menu:checked~.nav-links {
     max-height: 800px;
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
+
 }

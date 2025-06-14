@@ -10,11 +10,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
-  <title>datsforge.com</title>
+  <title>sal Privacy Policy | datsforge.com</title>
   <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/variables.css">
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/theme/dark.css" />
+  <link rel="stylesheet" href="/assets/css/theme/theme-core.css" />
   <link rel="stylesheet" href="/assets/css/nav.css" />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
   <link rel="stylesheet" href="/assets/css/mobile.css" />
 </head>
 
@@ -22,10 +24,13 @@
   <!-- Navigation -->
   <nav id="navbar" aria-label="Main navigation"></nav>
 
-  <!-- Main content area -->
+  <!-- Main content -->
   <main id="main-content" tabindex="-1">
-    <div class="container">
-      <section id="privacy-policy" aria-labelledby="privacy-heading" class="container content">
+    <div class="container align-center">
+      <h1>Privacy Policy</h1>
+    </div>
+    <div class="container  section-divider ">
+      <section id="privacy-policy" aria-labelledby="privacy-heading" class="layout-legal-page">
         <div id="privacy-content">Loading Privacy Policy...</div>
       </section>
     </div>
@@ -33,8 +38,19 @@
 
   <!-- Footer -->
   <footer role="contentinfo" aria-label="Site Footer"></footer>
+  <!-- Scripts -->
 
-  <!-- Component Loader Scripts -->
+  <!-- Load Icons -->
+  <div id="svg-sprite-container"></div>
+  <script>
+    fetch('/assets/html/icons.html')
+      .then(res => res.text())
+      .then(svg => {
+        document.getElementById('svg-sprite-container').innerHTML = svg;
+      });
+  </script>
+
+  <!-- Component Loader -->
   <script type="module">
     document.body.dataset.logoSrc = "/projects/games/sal/images/icon512x512.png";
     document.body.dataset.brandName = "Swords and Legends";
@@ -61,7 +77,7 @@
         document.getElementById('privacy-content').innerHTML = marked.parse(text);
       })
       .catch(err => {
-        document.getElementById('privacy-content').innerText = "Failed to load privacy policy.";
+        document.getElementById('privacy-content').innerText = "Failed to load privacy policy, please check your internet connection.";
         console.error(err);
       });
   </script>

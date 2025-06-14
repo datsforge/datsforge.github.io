@@ -1,4 +1,3 @@
-# Privacy Policy
 ## 1. Introduction
 
 Welcome to **datsforge** ("we", "our", or "us"). We respect your privacy and are committed to protecting any information you may provide while using our game, **Shooting Marbles**. This privacy policy outlines the types of information we collect and how we use it.
