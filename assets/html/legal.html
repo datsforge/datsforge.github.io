@@ -12,7 +12,8 @@
     <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
     <title>Legal | datsforge.com</title>
     <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png">
-    <link rel="stylesheet" href="../css/theme/dark.css" />
+    <link id="dark-theme" rel="stylesheet" href="../css/theme/dark.css">
+    <link id="light-theme" rel="stylesheet" href="../css/theme/light.css" disabled>
     <link rel="stylesheet" href="../css/theme/theme-core.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/base.css" />
@@ -105,26 +106,29 @@
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
         try {
+
+            await loadComponent({
+                url: '/assets/html/footer.html',
+                targetSelector: '.footer-legal',
+                mountPoint: 'footer'
+            });
             await loadComponent({
                 url: '/assets/html/nav/navbar-legal.html',
                 targetSelector: '#navbar-legal',
                 mountPoint: '#navbar'
             });
             setupMobileNavToggles();
-            await loadComponent({
-                url: '/assets/html/footer.html',
-                targetSelector: '.footer-legal',
-                mountPoint: 'footer'
-            });
+            setupThemeToggle();
         } catch (err) {
             // TODO Handle error
             // ex. showErrorToUser('Failed to load component');
         }
     </script>
 
+    <!-- Navigation Scroll Script -->
+    <script src="/assets/js/nav-scroll.js"></script>
 </body>
-
-<script src="/assets/js/nav-scroll.js"></script>
 
 </html>

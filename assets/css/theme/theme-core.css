@@ -10,10 +10,10 @@
 
 :root {
   /* The pallete I used in the themes */
-  --color-black:#000000;
-  --color-red:#8B0000;
-  --color-orange:#FF6F00;
-  --color-yellow:#FFD54F; 
+  --color-black: #000000;
+  --color-red: #8B0000;
+  --color-orange: #FF6F00;
+  --color-yellow: #FFD54F;
 
   --header-banner-size: 27rem;
   --header-banner-size-mobile: 17rem;
@@ -26,40 +26,21 @@
   --md-sys-typescale-font-family: var(--md-sys-font-family-primary);
 
   /* === Typography (using rem for scalability) === */
-  --md-sys-typescale-display-large: 3.56rem;
-  /* 57px */
-  --md-sys-typescale-display-medium: 2.71rem;
-  /* 45px */
-  --md-sys-typescale-display-small: 2.2rem;
-  /* 36px */
-
-  --md-sys-typescale-headline-large: 1.8rem;
-  /* 32px */
-  --md-sys-typescale-headline-medium: 1.75rem;
-  /* 28px */
-  --md-sys-typescale-headline-small: 1.5rem;
-  /* 24px */
-
-  --md-sys-typescale-title-large: 1.375rem;
-  /* 22px */
+  --md-sys-typescale-display-large: 3.6rem;
+  --md-sys-typescale-display-medium: 2.3rem;
+  --md-sys-typescale-display-small: 1.9rem;
+  --md-sys-typescale-headline-large: 1.6rem;
+  --md-sys-typescale-headline-medium: 1.5rem;
+  --md-sys-typescale-headline-small: 1.4rem;
+  --md-sys-typescale-title-large: 1.3rem;
   --md-sys-typescale-title-medium: 1rem;
-  /* 16px */
-  --md-sys-typescale-title-small: 0.875rem;
-  /* 14px */
-
+  --md-sys-typescale-title-small: 0.8rem;
   --md-sys-typescale-body-large: 1.2rem;
-  /* 16px */
   --md-sys-typescale-body-medium: 1.075rem;
-  /* 14px */
   --md-sys-typescale-body-small: 0.95rem;
-  /* 12px */
-
   --md-sys-typescale-label-large: 0.975rem;
-  /* 14px */
   --md-sys-typescale-label-medium: 0.85rem;
-  /* 12px */
   --md-sys-typescale-label-small: 0.788rem;
-  /* 11px */
 
   /* === Shape (Border Radius - px for precision) === */
   --md-sys-shape-extra-small: 4px;
@@ -86,9 +67,9 @@
   --md-sys-opacity-pressed: 0.12;
 
   /* === Transitions (Motion) === */
-  --md-sys-motion-short: 150ms ease-in-out;
-  --md-sys-motion-medium: 300ms ease;
-  --md-sys-motion-long: 500ms ease-in-out;
+  --md-sys-motion-short: 0.15s ease-in-out;
+  --md-sys-motion-medium: 0.3s ease-in-out;
+  --md-sys-motion-long: 0.5s ease-in-out;
 
   /* === Spacing (Margins & Padding - rem for layout scaling) === */
   --md-sys-spacing-xs: 0.25rem;

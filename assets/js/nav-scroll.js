@@ -8,6 +8,9 @@ let lastScroll = 0;
 function setupNavScroll() {
   const nav = document.getElementById('navbar');
   const mobileNavMenu = document.querySelector('.mobile-nav-menu');
+  // Find the toggle label and icon use element
+  const toggleLabel = mobileNavMenu?.parentNode.querySelector('.toggle-button-label, .icon-toggle');
+  const icon = toggleLabel?.querySelector('svg use');
 
   if (!nav) return;
 
@@ -18,6 +21,11 @@ function setupNavScroll() {
       // Hide mobile menu if open
       if (currentScroll > 200 && mobileNavMenu && mobileNavMenu.checked) {
         mobileNavMenu.checked = false;
+        // Also reset icon to menu_icon
+        if (icon) {
+          icon.setAttribute('href', '#menu_icon');
+          toggleLabel.classList.remove('toggled');
+        }
       }
     } else {
       nav.classList.remove('hide-on-scroll');

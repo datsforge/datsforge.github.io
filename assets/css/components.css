@@ -139,7 +139,7 @@
 
 .layout-legal-page h2,
 .layout-legal-page h3 {
-  line-height: 3;
+  line-height: 2.7;
 }
 
 /* === ALIGNMENT UTILITIES === */
@@ -203,10 +203,10 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: var(--md-sys-color-surface-container-high,);
+  background: var(--md-sys-color-surface-container-high, );
   color: var(--md-sys-color-on-surface);
   border-radius: var(--md-sys-shape-medium, 1.5rem);
-  box-shadow: var(--md-sys-elevation-1, 0 1px 2px rgba(0,0,0,0.08));
+  box-shadow: var(--md-sys-elevation-1, 0 1px 2px rgba(0, 0, 0, 0.08));
   padding: 0.5rem;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
@@ -214,11 +214,11 @@
 }
 
 .icon-toggle-btn:focus-visible {
-  box-shadow: 0 0 0 2px var(--md-sys-color-primary, #6750a4);
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary);
 }
 
 .icon-toggle-btn .icon {
-  transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.2s;
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), opacity 0.2s;
   width: 24px;
   height: 24px;
 }
@@ -230,11 +230,10 @@
 
 .icon-toggle-btn:hover,
 .icon-toggle-btn:focus-visible {
-  background: var(--md-sys-color-secondary-container, #e8def8);
-  color: var(--md-sys-color-on-secondary-container, #1d192b);
-  box-shadow: 0 2px 8px rgba(103,80,164,0.10);
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  box-shadow: 0 2px 8px rgba(103, 80, 164, 0.10);
 }
-
 
 /* === Toggle Button with icon(Invisible Checkbox) use on checkbox with label  === */
 .toggle-button {

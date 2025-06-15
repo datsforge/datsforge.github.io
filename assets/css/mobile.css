@@ -70,12 +70,16 @@
 
   .slogan p {
     margin: 0;
-    color: var(--md-sys-color-on-primary-container);
     font-size: var(--md-sys-typescale-headline-small);
   }
 
   .container {
     margin: var(--md-sys-spacing-lg) var(--md-sys-spacing-md);
+  }
+
+  .layout-legal-page h2,
+  .layout-legal-page h3 {
+    line-height: 1.4;
   }
 
   .container .card {
@@ -141,7 +145,7 @@
   /**======== Nav bar =========**/
   .navbar-main,
   .navbar-legal,
-  .navbar-terms-privacy {
+  .navbar-tp {
     flex-direction: row;
     padding: 0 0.2rem;
     min-height: 56px;
@@ -157,6 +161,13 @@
   .logo span,
   .app-logo span {
     font-size: var(--font-size-base);
+  }
+
+  /* Remove button bg focus on hover as mobile touch don't handle focus state well */
+  .icon-toggle-btn:not(:checked):hover,
+  .icon-toggle-btn:not(:checked):focus-visible {
+    background: var(--md-sys-color-surface-container-high, );
+    color: inherit;
   }
 
   .nav-links {
@@ -230,6 +241,25 @@
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+  }
+
+  /* Animate the icon inside the toggle label */
+  .mobile-nav-menu~.toggle-button-label .icon,
+  .mobile-nav-menu~.toggle-button-label .icon-medium,
+  .mobile-nav-menu~.toggle-button-label .icon-small {
+    transition:
+      transform var(--md-sys-motion-medium),
+      opacity var(--md-sys-motion-short);
+    transform-origin: center center;
+    will-change: transform, color, filter;
+  }
+
+  /* When menu is open, rotate and scale the icon */
+  .mobile-nav-menu:checked~.toggle-button-label .icon,
+  .mobile-nav-menu:checked~.toggle-button-label .icon-medium,
+  .mobile-nav-menu:checked~.toggle-button-label .icon-small {
+    transform: rotate(180deg) scale(1);
+    color: var(--md-sys-color-secondary);
   }
 
 }
