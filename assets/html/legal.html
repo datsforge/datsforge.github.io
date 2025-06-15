@@ -108,10 +108,9 @@
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
         try {
-
             await loadComponent({
-                url: '/assets/html/footer.html',
-                targetSelector: '.footer-legal',
+                url: '/assets/html/footer/footer-legal.html',
+                targetSelector: '#footer-legal',
                 mountPoint: 'footer'
             });
             await loadComponent({

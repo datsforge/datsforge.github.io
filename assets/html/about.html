@@ -91,16 +91,16 @@
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
         try {
             await loadComponent({
+                url: '/assets/html/footer/footer-main.html',
+                targetSelector: '#footer-main',
+                mountPoint: 'footer'
+            });
+            await loadComponent({
                 url: '/assets/html/nav/navbar-main.html',
                 targetSelector: '#navbar-main',
                 mountPoint: '#navbar'
             });
             setupMobileNavToggles();
-            await loadComponent({
-                url: '/assets/html/footer.html',
-                targetSelector: '.footer-main',
-                mountPoint: 'footer'
-            });
             setupThemeToggle();
         } catch (err) {
             // TODO Handle error

@@ -5,6 +5,7 @@
 
 import { loadComponent } from './component-loader.js';
 import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+import { setupThemeToggle } from '/assets/js/theme-toggle.js';
 
 export async function loadTPNavComponent() {
     await loadComponent({
@@ -48,4 +49,5 @@ export async function loadTPNavComponent() {
     }
 
     setupMobileNavToggles();
+    setupThemeToggle();
 }

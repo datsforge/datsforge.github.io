@@ -12,7 +12,8 @@
   <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
   <title>Shooting Marbles Terms of Use | datsforge.com</title>
   <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/theme/dark.css" />
+   <link id="dark-theme" rel="stylesheet" href="/assets/css/theme/dark.css">
+  <link id="light-theme" rel="stylesheet" href="/assets/css/theme/light.css" disabled>
   <link rel="stylesheet" href="/assets/css/theme/theme-core.css" />
   <link rel="stylesheet" href="/assets/css/nav.css" />
   <link rel="stylesheet" href="/assets/css/base.css" />
@@ -64,13 +65,14 @@
     import { loadTPNavComponent } from '/assets/js/nav-tp-loader.js';
     import { loadComponent } from '/assets/js/component-loader.js';
 
-    loadTPNavComponent();
-
     loadComponent({
-      url: '/assets/html/footer.html',
-      targetSelector: '.footer-legal',
+      url: '/assets/html/footer/footer-legal.html',
+      targetSelector: '#footer-legal',
       mountPoint: 'footer'
     });
+
+    loadTPNavComponent();
+    
   </script>
 
   <!-- Markdown Renderer -->
