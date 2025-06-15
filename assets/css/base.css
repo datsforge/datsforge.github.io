@@ -2,7 +2,9 @@
   © 2025 datsforge 
   Proprietary – See LICENSE for details. 
 */
-
+html{
+  scroll-behavior: smooth;
+}
 /* Base body styles */
 body {
   font-family: var(--md-sys-font-family-primary);

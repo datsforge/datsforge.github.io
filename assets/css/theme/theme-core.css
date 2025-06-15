@@ -27,12 +27,12 @@
 
   /* === Typography (using rem for scalability) === */
   --md-sys-typescale-display-large: 3.6rem;
-  --md-sys-typescale-display-medium: 2.3rem;
-  --md-sys-typescale-display-small: 1.9rem;
-  --md-sys-typescale-headline-large: 1.6rem;
-  --md-sys-typescale-headline-medium: 1.5rem;
-  --md-sys-typescale-headline-small: 1.4rem;
-  --md-sys-typescale-title-large: 1.3rem;
+  --md-sys-typescale-display-medium: 2.7rem;
+  --md-sys-typescale-display-small: 1.8rem;
+  --md-sys-typescale-headline-large: 1.4rem;
+  --md-sys-typescale-headline-medium: 1.3rem;
+  --md-sys-typescale-headline-small: 1.2rem;
+  --md-sys-typescale-title-large: 1.2rem;
   --md-sys-typescale-title-medium: 1rem;
   --md-sys-typescale-title-small: 0.8rem;
   --md-sys-typescale-body-large: 1.2rem;

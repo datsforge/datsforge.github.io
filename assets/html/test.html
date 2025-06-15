@@ -1,54 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Flex vs Inline-Flex</title>
+  <title>M3 Card Carousel</title>
   <style>
+    :root {
+      --m3-surface: #f3edf7;
+      --m3-on-surface: #1c1b1f;
+      --m3-primary: #6750a4;
+      --m3-secondary: #625b71;
+      --m3-card-bg: #fff;
+      --m3-card-radius: 1.5rem;
+      --m3-card-elevation: 0 4px 16px rgba(103, 80, 164, 0.10);
+      --m3-card-active-elevation: 0 8px 32px rgba(103, 80, 164, 0.18);
+    }
+
     body {
-      font-family: sans-serif;
-      padding: 2rem;
-    }
-
-    .wrapper {
-      border: 2px dashed #999;
-      padding: 1rem;
-    }
-
-    .box {
-      padding: 1rem 2rem;
-      background-color: #2196F3;
-      color: white;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-
-    .flex-box {
+      background: var(--m3-surface);
+      color: var(--m3-on-surface);
+      font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
-    .inline-flex-box {
-      display: inline-flex;
+    .carousel-wrapper {
+      width: 100vw;
+      background: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30rem;
+      overflow: visible;
     }
 
-    span {
-      background: #ddd;
-      padding: 0.5rem;
+    .carousel-container {
+      /* background-color: aqua; */
+      overflow: visible;
+      width: 80%;
+      max-width: 90vw;
+      position: relative;
+      padding: 2rem 0;
+      z-index: 0;
+    }
+
+    .carousel-frame {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+
+
+    .carousel {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s cubic-bezier(.4, 0, .2, 1);
+      will-change: transform;
+
+    }
+
+    .card {
+      min-width: 250px;
+      max-width: 250px;
+      height: 20rem;
+      flex: 0 0 250px;
+      justify-content: center;
+      background: var(--m3-card-bg);
+      color: var(--m3-on-surface);
+      border-radius: var(--m3-card-radius);
+      box-shadow: var(--m3-card-elevation);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+      transition:
+        transform 0.5s cubic-bezier(.4, 0, .2, 1),
+        box-shadow 0.4s cubic-bezier(.4, 0, .2, 1),
+        background 0.3s;
+      z-index: 1;
+      opacity: 0.7;
+      transform: translateY(0);
+    }
+
+
+    .card.active {
+      background: var(--m3-primary);
+      color: #fff;
+      box-shadow: var(--m3-card-active-elevation);
+      z-index: 2;
+      opacity: 1;
+      transform: translateY(-8px);
+      /* subtle lift effect */
+    }
+
+
+    .nav-btn {
+      background: var(--m3-secondary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(103, 80, 164, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      border: 2px solid transparent;
+      z-index: 10;
+      /* ensure button is on top */
+      position: relative;
+    }
+
+    .nav-btn:focus-visible {
+      border-color: var(--m3-primary);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-container {
+        width: 90vw;
+        min-width: 0;
+      }
+
+      .card {
+        min-width: 70vw;
+        max-width: 70vw;
+        flex-basis: 70vw;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="wrapper">
-    <div class="box flex-box">I am a flex box</div>
-    <span>This text follows after the flex box.</span>
+  <div class="carousel-wrapper">
+    <div class="carousel-frame">
+      <button class="nav-btn left" id="carousel-prev" aria-label="Previous card">‹</button>
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+          <div class="card">Card 4</div>
+          <div class="card">Card 5</div>
+        </div>
+      </div>
+      <button class="nav-btn right" id="carousel-next" aria-label="Next card">›</button>
+    </div>
   </div>
 
-  <br>
 
-  <div class="wrapper">
-    <div class="box inline-flex-box">I am an inline-flex box</div>
-    <span>This text follows after the inline-flex box.</span>
-  </div>
+  <script>
+  const carousel = document.getElementById('carousel');
+  const originalCards = Array.from(carousel.children);
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  // Clone first and last cards
+  const firstClone = originalCards[0].cloneNode(true);
+  const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
+
+  // Add clone classes for debugging (optional)
+  firstClone.classList.add('clone');
+  lastClone.classList.add('clone');
+
+  // Append and prepend clones
+  carousel.insertBefore(lastClone, originalCards[0]);
+  carousel.appendChild(firstClone);
+
+  // Rebuild the card list
+  const cards = Array.from(carousel.children);
+  let current = 1;
+
+  function updateCarousel(animate = true) {
+    const cardWidth = cards[0].offsetWidth + parseFloat(getComputedStyle(carousel).gap || 24);
+    const containerWidth = carousel.parentElement.offsetWidth;
+    const offset = (cardWidth * current) - (containerWidth - cardWidth) / 2;
+    carousel.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,0,.2,1)' : 'none';
+    carousel.style.transform = `translateX(${-offset}px)`;
+
+    // Highlight active card (skip clones)
+    cards.forEach((card, i) => {
+      card.classList.toggle('active', i === current);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (current >= cards.length - 1) return;
+    current++;
+    updateCarousel();
+
+    // Loop back to original first card after transition
+    if (current === cards.length - 1) {
+      setTimeout(() => {
+        current = 1;
+        updateCarousel(false);
+      }, 510);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (current <= 0) return;
+    current--;
+    updateCarousel();
+
+    // Loop to original last card
+    if (current === 0) {
+      setTimeout(() => {
+        current = cards.length - 2;
+        updateCarousel(false);
+      }, 510);
+    }
+  });
+
+  window.addEventListener('resize', () => updateCarousel(false));
+
+  // Init
+  updateCarousel(false);
+</script>
 
 </body>
+
 </html>
