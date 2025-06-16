@@ -16,6 +16,8 @@
   --color-yellow: #FFD54F;
   /* Welcome font color */
   --color-on-background: rgb(241 223 220);
+  /* Sal red color */
+  --color-red-logo:#90273a;
 
   /* === Navbar === */
   --navbar-height: 5rem;
