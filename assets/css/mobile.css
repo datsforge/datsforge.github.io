@@ -274,4 +274,17 @@
     color: var(--md-sys-color-secondary);
   }
 
+  /* FAB */
+  .fab {
+    width: 48px;
+    height: 48px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .fab svg {
+    width: 22px;
+    height: 22px;
+  }
+
 }

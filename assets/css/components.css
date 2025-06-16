@@ -93,7 +93,7 @@
   justify-content: space-evenly;
 }
 
-/* === FLEXIBLE M3 TABLE === */
+/* === FLEXIBLE TABLE === */
 .flex-table {
   display: flex;
   flex-wrap: wrap;
@@ -290,6 +290,142 @@
 .toggle-button:checked~.toggle-button-label .icon-small,
 .toggle-button:checked~.toggle-button-label .icon-medium {
   color: var(--md-sys-color-on-secondary-container);
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.15);
+
+  transform: translateY(0) scale(1);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover state: slight elevation & tone shift */
+.fab:hover {
+  background-color: var(--md-sys-color-secondary);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.25),
+    0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Pressed/Active state */
+.fab:active {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  transform: scale(0.95);
+}
+
+/* Focus-visible (keyboard nav) */
+.fab:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--md-sys-color-secondary),
+    0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon inside FAB */
+.fab svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  pointer-events: none;
+  transition: fill 0.2s ease;
+}
+
+/* Optional fab hide animation */
+.fab-hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85) translateY(20px);
+}
+
+/* Optional Bounce Hover Effect */
+.fab-bounce-hover:hover {
+  animation: fabBounce 0.4s ease-out;
+  transform-origin: center;
+}
+
+/* Bounce keyframes */
+@keyframes fabBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.2);
+  }
+
+  60% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Optional Icon shoot up effect */
+.fab-icon-shoot-up {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.fab:hover .fab-icon-shoot-up {
+  animation: shootUp 0.4s ease;
+}
+
+@keyframes shootUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  35% {
+    transform: translateY(-14px);
+    opacity: 0.7;
+  }
+
+  60% {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+
+  65% {
+    transform: translateY(28px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* === Inputs and Textareas === */

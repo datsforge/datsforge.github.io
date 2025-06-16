@@ -54,6 +54,19 @@ export function setupMobileNavToggles() {
                     if (icon) icon.setAttribute('href', '#menu_icon');
                 }
             }
+
+            // Also close menu when a nav link is clicked
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        toggle.checked = false;
+                        if (toggleLabel) toggleLabel.classList.remove('toggled');
+                        const icon = toggleLabel?.querySelector('svg use');
+                        if (icon) icon.setAttribute('href', '#menu_icon');
+                    });
+                });
+            }
         });
     });
+
 }
