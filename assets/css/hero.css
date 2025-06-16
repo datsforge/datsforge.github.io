@@ -51,7 +51,7 @@
     box-sizing: border-box;
 }
 
-/* Slogan */
+/* ==== Slogan ==== */
 .hero .slogan {
     display: flex;
     flex-direction: column;
@@ -99,7 +99,7 @@
     /* Behind your content */
 }
 
-/* Firefly animation */
+/* ==== Firefly animation ==== */
 .firefly {
     position: absolute;
     width: 6px;
@@ -133,3 +133,59 @@
     width: fit-content;
     overflow: hidden;
 }
+
+/* ==== Decoration bar ====*/
+.hero-deco-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 41vw;
+  height: 85px;
+
+  background: linear-gradient(135deg, var(--color-red), var(--color-orange), var(--color-yellow));
+  background-size: 200% 200%;
+  animation: fireGlow 4s ease-in-out infinite alternate;
+
+  border-radius: 0 var(--md-sys-shape-full) 0 0;
+  transform: translateY(50px);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes fireGlow {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1) saturate(1);
+  }
+
+  25% {
+    background-position: 50% 100%;
+    filter: brightness(1.15) saturate(1.2);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.05) saturate(1.1);
+  }
+
+  75% {
+    background-position: 75% 0%;
+    filter: brightness(1.2) saturate(1.4);
+  }
+
+  100% {
+    background-position: 50% 50%;
+    filter: brightness(1) saturate(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+

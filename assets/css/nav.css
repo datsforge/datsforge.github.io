@@ -60,6 +60,7 @@
   box-shadow: var(--md-sys-elevation-3);
   font-family: var(--md-sys-typescale-font-family);
   box-sizing: border-box;
+  border-bottom: var(--color-red) 1px solid;
 }
 
 /* === Navigation Links === */
@@ -86,7 +87,7 @@
   left: 50%;
   width: 0;
   height: 4px;
-  background-color: var(--color-red);
+  background-color: var(--md-sys-color-secondary);
   border-radius: var(--md-sys-shape-extra-small);
   transform: translateX(-50%);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -217,6 +217,11 @@
     gap: var(--md-sys-spacing-sm);
   }
 
+  .hero-deco-bar {
+    width: 17rem;
+    height: 75px;
+  }
+
   .mobile-nav-menu,
   .mobile-nav-menu~.toggle-button-label {
     display: inline-flex;
