@@ -6,11 +6,35 @@
 
 /* === Responsive Typography: Mobile Adjustments === */
 @media (max-width: 768px) {
-  .header-banner {
+  .hero {
     flex-direction: column;
-    height: var(--header-banner-size-mobile);
-    min-height: var(--header-banner-size-mobile);
+    height: var(--hero-height-mobile);
+    min-height: var(--hero-height-mobile);
     text-align: center;
+  }
+
+  .hero .wrapper {
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+    margin-top:var(--md-sys-spacing-2xl);
+    justify-content: space-between;
+  }
+
+  .hero .slogan h1 {
+    margin: 0 0 2rem 0;
+    text-align: center;
+    font-size: var(--md-sys-typescale-display-medium);
+    line-height: 1;
+  }
+
+  .hero .slogan p {
+    margin: 0;
+    font-size: var(--md-sys-typescale-headline-small);
+  }
+
+  .hero .contact-info {
+    position: unset;
+    align-self: flex-start;
+    gap: var(--md-sys-spacing-sm);
   }
 
   body {
@@ -59,18 +83,6 @@
 
   li {
     font-size: var(--md-sys-typescale-body-small);
-  }
-
-  .slogan h1 {
-    margin: 0 0 2rem 0;
-    text-align: center;
-    font-size: var(--md-sys-typescale-display-medium);
-    line-height: 1;
-  }
-
-  .slogan p {
-    margin: 0;
-    font-size: var(--md-sys-typescale-headline-small);
   }
 
   .container {
