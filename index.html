@@ -16,28 +16,49 @@
     <link id="light-theme" rel="stylesheet" href="assets/css/theme/light.css" disabled>
     <link rel="stylesheet" href="assets/css/theme/theme-core.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/mobile.css" />
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
-
-    <!-- Header -->
-    <header class="header-banner" role="banner">
-        <div class="header-content">
-            <div class="slogan" aria-label="Slogan">
-                <h1>Welcome to datsforge!</h1>
-                <p>" YOUR ideas</p>
-                <p>-<strong>Not just built , FORGED!</strong> "</p>
-            </div>
-        </div>
+    <header>
+        <!-- Navigation -->
+        <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
     </header>
 
-    <!-- Main Content -->
     <main role="main" id="main-content">
+        <!-- Hero -->
+        <section class="hero" aria-labe="Hero section">
+            <div class="wrapper">
+                <div class="slogan" aria-label="Slogan">
+                    <h1>Welcome to datsforge!</h1>
+                    <p>" YOUR ideas</p>
+                    <p>-<strong>Not just built , FORGED!</strong> "</p>
+                </div>
+                <div class="contact-info" aria-label="Contact Information">
+                    <a href="mailto:contact@datsforge.com" class="icon-toggle-btn"
+                        aria-label="Email contact@datsforge.com">
+                        <svg class="icon">
+                            <use href="#mail_icon"></use>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/datsforge/datsforge" class="icon-toggle-btn"
+                        aria-label="Visit datsforge on GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon">
+                            <use href="#github_icon"></use>
+                        </svg>
+                    </a>
+                    <button id="theme-toggle" class="icon-toggle-btn" aria-label="Toggle theme" type="button">
+                        <svg class="icon theme-icon" width="24" height="24">
+                            <use href="#dark_mode_icon"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- About -->
         <div class="container">
             <h2 id="about-section">Hey there!</h2>
@@ -290,7 +311,7 @@
                 <div class="mockup_descriptions">
                     <p>Drop me an email anytime:</p>
                     <a href="mailto:contact@datsforge.com" class="button-text-icon"
-                        aria-label="Email sal@datsforge.com">
+                        aria-label="Email contact@datsforge.com">
                         contact@datsforge.com
                         <svg class="icon">
                             <use href="#mail_icon"></use>

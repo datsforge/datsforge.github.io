@@ -15,8 +15,13 @@
   --color-orange: #FF6F00;
   --color-yellow: #FFD54F;
 
-  --header-banner-size: 27rem;
-  --header-banner-size-mobile: 17rem;
+
+  /* === Navbar === */
+
+  /* === Hero === */
+  --hero-height: 80vh;
+  --hero-height-mobile: 17rem;
+
 
   /* === Font Families === */
   --md-sys-font-family-primary: 'Ubuntu', sans-serif, monospace;
@@ -92,6 +97,8 @@
   /* === Z-Index Layering (Semantic Stack Order) === */
   --md-sys-z-index-content: 1;
   /* Default content */
+  --md-sys-z-index-hero: 7;
+  /* Hero*/
   --md-sys-z-index-header: 10;
   /* Top app bars*/
   --md-sys-z-index-navbar: 20;
