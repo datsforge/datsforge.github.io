@@ -3,50 +3,17 @@
   Proprietary – See LICENSE for details. 
 */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const typingAnim = document.querySelectorAll('.typing-anim');
-
-  typingAnim.forEach((typingAnim) => {
-    let lines = [];
-
-    try {
-      lines = JSON.parse(typingAnim.getAttribute('data-lines'));
-    } catch (e) {
-      console.warn("Invalid data-lines JSON:", typingAnim);
-      return;
-    }
-
-    let currentLine = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    const typingSpeed = 70;
-    const deletingSpeed = 35;
-
-    function type() {
-      const line = lines[currentLine];
-      if (!isDeleting) {
-        typingAnim.textContent = line.substring(0, currentChar + 1);
-        currentChar++;
-        if (currentChar === line.length) {
-          isDeleting = true;
-          setTimeout(type, 1000);
-        } else {
-          setTimeout(type, typingSpeed);
-        }
-      } else {
-        typingAnim.textContent = line.substring(0, currentChar - 1);
-        currentChar--;
-        if (currentChar === 0) {
-          isDeleting = false;
-          currentLine = (currentLine + 1) % lines.length;
-          setTimeout(type, 500);
-        } else {
-          setTimeout(type, deletingSpeed);
-        }
-      }
-    }
-
-    type();
-  });
+const fab = document.getElementById('fab-scroll-top');
+function updateFabVisibility() {
+  if (window.scrollY > 120) {
+    fab.classList.remove('fab-hide');
+  } else {
+    fab.classList.add('fab-hide');
+  }
+}
+window.addEventListener('scroll', updateFabVisibility, { passive: true });
+window.addEventListener('DOMContentLoaded', updateFabVisibility);
+fab.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
