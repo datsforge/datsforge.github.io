@@ -6,37 +6,6 @@
 
 /* === Responsive Typography: Mobile Adjustments === */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    height: var(--hero-height-mobile);
-    min-height: var(--hero-height-mobile);
-    text-align: center;
-  }
-
-  .hero .wrapper {
-    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
-    margin-top:var(--md-sys-spacing-2xl);
-    justify-content: space-between;
-  }
-
-  .hero .slogan h1 {
-    margin: 0 0 2rem 0;
-    text-align: center;
-    font-size: var(--md-sys-typescale-display-medium);
-    line-height: 1;
-  }
-
-  .hero .slogan p {
-    margin: 0;
-    font-size: var(--md-sys-typescale-headline-small);
-  }
-
-  .hero .contact-info {
-    position: unset;
-    align-self: flex-start;
-    gap: var(--md-sys-spacing-sm);
-  }
-
   body {
     font-size: var(--md-sys-typescale-body-medium);
     line-height: 1.6;
@@ -160,7 +129,6 @@
   .navbar-tp {
     flex-direction: row;
     padding: 0 0.2rem;
-    min-height: 56px;
   }
 
   .logo,
@@ -173,13 +141,6 @@
   .logo span,
   .app-logo span {
     font-size: var(--font-size-base);
-  }
-
-  /* Remove button bg focus on hover as mobile touch don't handle focus state well */
-  .icon-toggle-btn:not(:checked):hover,
-  .icon-toggle-btn:not(:checked):focus-visible {
-    background: var(--md-sys-color-surface-container-high, );
-    color: inherit;
   }
 
   .nav-links {
@@ -224,9 +185,48 @@
     color: var(--md-sys-color-on-surface-variant);
   }
 
+  /*======= Hero =======*/
+  .hero {
+    flex-direction: column;
+    height: var(--hero-height-mobile);
+    min-height: var(--hero-height-mobile);
+    text-align: center;
+  }
+
+  .hero .wrapper {
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+    margin-top: var(--md-sys-spacing-2xl);
+    justify-content: space-between;
+  }
+
+  .hero .slogan h1 {
+    margin: 0 0 2rem 0;
+    text-align: center;
+    font-size: var(--md-sys-typescale-display-medium);
+    line-height: 1;
+  }
+
+  .hero .slogan p {
+    margin: 0;
+    font-size: var(--md-sys-typescale-headline-small);
+  }
+
+  .hero .contact-info {
+    position: unset;
+    align-self: flex-start;
+    gap: var(--md-sys-spacing-sm);
+  }
+
   .mobile-nav-menu,
   .mobile-nav-menu~.toggle-button-label {
     display: inline-flex;
+  }
+
+  /* Remove button bg focus on hover as mobile touch don't handle focus state well */
+  .icon-toggle-btn:not(:checked):hover,
+  .icon-toggle-btn:not(:checked):focus-visible {
+    background: var(--md-sys-color-surface-container-high, );
+    color: inherit;
   }
 
   /* Important as touch on mobile behaves different than mouse clicks:

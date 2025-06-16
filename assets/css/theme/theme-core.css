@@ -14,14 +14,14 @@
   --color-red: #8B0000;
   --color-orange: #FF6F00;
   --color-yellow: #FFD54F;
-
+  /* Welcome font color */
+  --color-on-background: rgb(241 223 220);
 
   /* === Navbar === */
-
+  --navbar-height: 5rem;
   /* === Hero === */
-  --hero-height: 80vh;
+  --hero-height: 27rem;
   --hero-height-mobile: 17rem;
-
 
   /* === Font Families === */
   --md-sys-font-family-primary: 'Ubuntu', sans-serif, monospace;

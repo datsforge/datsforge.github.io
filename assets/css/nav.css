@@ -32,7 +32,7 @@
 
 /* === Sticky Navbar === */
 #navbar {
-  height: var(--md-sys-spacing-5xl);
+  height: var(--navbar-height);
   position: sticky;
   top: 0;
   z-index: var(--md-sys-z-index-navbar);
@@ -56,7 +56,7 @@
   background-color: var(--md-sys-color-surface-container);
   color: var(--md-sys-color-on-surface-container);
 
-  border-bottom: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant);
+  /* border-bottom: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant); */
   box-shadow: var(--md-sys-elevation-3);
   font-family: var(--md-sys-typescale-font-family);
   box-sizing: border-box;

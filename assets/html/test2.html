@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terminal Typing Effect</title>
+<style>
+  body {
+    background: #121212;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    padding: 20px;
+  }
+  #terminal {
+    white-space: nowrap;
+    border-right: 2px solid #00ff00;
+    width: fit-content;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<div id="terminal"></div>
+
+<script>
+  const terminal = document.getElementById('terminal');
+
+  // Some random terminal-style lines, feel free to replace these with your own
+  const lines = [
+    "Initializing system modules...",
+    "Loading kernel extensions...",
+    "Establishing network connections...",
+    "Decrypting user data...",
+    "Starting secure shell...",
+    "Checking memory allocation...",
+    "Compiling codebase...",
+    "Running diagnostics...",
+    "Error: unknown exception occurred.",
+    "Rebooting subsystem...",
+  ];
+
+  let currentLine = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  let typingSpeed = 50;   // milliseconds per char
+  let deletingSpeed = 30; // faster deleting
+
+  function type() {
+    const line = lines[currentLine];
+    if (!isDeleting) {
+      terminal.textContent = line.substring(0, currentChar + 1);
+      currentChar++;
+      if (currentChar === line.length) {
+        isDeleting = true;
+        setTimeout(type, 1000); // wait before deleting
+      } else {
+        setTimeout(type, typingSpeed);
+      }
+    } else {
+      terminal.textContent = line.substring(0, currentChar - 1);
+      currentChar--;
+      if (currentChar === 0) {
+        isDeleting = false;
+        currentLine = (currentLine + 1) % lines.length;
+        setTimeout(type, 500); // wait before typing next line
+      } else {
+        setTimeout(type, deletingSpeed);
+      }
+    }
+  }
+
+  // Start the typing effect
+  type();
+</script>
+
+</body>
+</html>
