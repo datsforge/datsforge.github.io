@@ -292,4 +292,14 @@
     height: 22px;
   }
 
+  /* .fab:hover:not(:checked),
+  .fab:active:not(:checked) {
+    background-color: var(--color-red);
+  } */
+
+  .fab:not(:checked):hover{
+    background: var(--color-red );
+    color: var(--color-on-background);
+  }
+
 }
