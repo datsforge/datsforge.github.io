@@ -22,9 +22,13 @@
 </head>
 
 <body>
-    <nav id="navbar"></nav>
+    <header>
+        <!-- Navigation -->
+        <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
+    </header>
 
-    <main>
+    <!-- Main Content -->
+    <main id="main-content">
         <div class="container">
             <h1 class="align-center"> Legal Pages</h1>
             <section class="layout-column section-divider">
@@ -107,6 +111,8 @@
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+        import { setupNavScroll } from '/assets/js/nav-scroll.js';
+
         try {
             await loadComponent({
                 url: '/assets/html/footer/footer-legal.html',
@@ -118,6 +124,7 @@
                 targetSelector: '#navbar-legal',
                 mountPoint: '#navbar'
             });
+            setupNavScroll();
             setupMobileNavToggles();
             setupThemeToggle();
         } catch (err) {
@@ -125,9 +132,6 @@
             // ex. showErrorToUser('Failed to load component');
         }
     </script>
-
-    <!-- Navigation Scroll Script -->
-    <script src="/assets/js/nav-scroll.js"></script>
 </body>
 
 </html>

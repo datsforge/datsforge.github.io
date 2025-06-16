@@ -2,9 +2,20 @@
   © 2025 datsforge 
   Proprietary – See LICENSE for details. 
 */
-html{
+html {
   scroll-behavior: smooth;
 }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: var(--md-sys-z-index-header);
+}
+
+main {
+  padding-top: var(--navbar-height);
+}
+
 /* Base body styles */
 body {
   font-family: var(--md-sys-font-family-primary);
@@ -90,7 +101,7 @@ li {
 
 /* === Footer ===*/
 footer {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: var(--md-sys-color-surface-container-low);
@@ -128,6 +139,6 @@ footer a:active {
   color: var(--md-sys-color-primary-dark);
 }
 
-footer .container{
+footer .container {
   background-color: transparent;
 }

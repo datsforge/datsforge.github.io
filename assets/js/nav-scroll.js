@@ -5,26 +5,26 @@
 
 let lastScroll = 0;
 
-function setupNavScroll() {
-  const nav = document.getElementById('navbar');
+export function setupNavScroll() {
+  const header = document.querySelector('header');
+  const nav = header?.querySelector('#navbar') || document.getElementById('navbar');
   const mobileNavMenu = document.querySelector('.mobile-nav-menu');
-  // Find the toggle label and icon use element
   const toggleLabel = mobileNavMenu?.parentNode.querySelector('.toggle-button-label, .icon-toggle');
   const icon = toggleLabel?.querySelector('svg use');
 
-  if (!nav) return;
+  if (!nav) return false;
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll > lastScroll && currentScroll > 80) {
       nav.classList.add('hide-on-scroll');
       // Hide mobile menu if open
-      if (currentScroll > 200 && mobileNavMenu && mobileNavMenu.checked) {
+      if (currentScroll > 200 && mobileNavMenu?.checked) {
         mobileNavMenu.checked = false;
-        // Also reset icon to menu_icon
+         // Also reset icon to menu_icon
         if (icon) {
           icon.setAttribute('href', '#menu_icon');
-          toggleLabel.classList.remove('toggled');
+          toggleLabel?.classList.remove('toggled');
         }
       }
     } else {
@@ -32,10 +32,7 @@ function setupNavScroll() {
     }
     lastScroll = currentScroll;
   });
+
+  return true;
 }
 
-// If nav is loaded dynamically, wait for it
-document.addEventListener('DOMContentLoaded', () => {
-  // Wait a bit for fetch to finish
-  setTimeout(setupNavScroll, 300);
-});

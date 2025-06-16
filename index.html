@@ -28,13 +28,13 @@
         <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
     </header>
 
-    <main role="main" id="main-content">
+    <main id="main-content">
         <!-- Hero -->
         <section class="hero" aria-label="Hero section">
             <div class="wrapper">
                 <div class="slogan" aria-label="Slogan">
                     <h1>Welcome to datsforge!</h1>
-                    <!-- Example how to create a terminal typing animation-->
+                    <!-- Example how to create a terminal typing-->
                     <!-- <h1 class="typing-anim" data-lines='[
   "Welcome to datsforge...",
   "Generating synthetic thoughts...",
@@ -350,6 +350,7 @@
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+        import { setupNavScroll } from '/assets/js/nav-scroll.js';
 
         try {
             await loadComponent({
@@ -362,6 +363,7 @@
                 targetSelector: '#navbar-main',
                 mountPoint: '#navbar'
             });
+            setupNavScroll();
             setupMobileNavToggles();
             setupThemeToggle();
         } catch (err) {
@@ -371,7 +373,7 @@
     </script>
 
     <!-- Navigation Scroll Script -->
-    <script src="assets/js/nav-scroll.js"></script>
+    <!-- <script src="assets/js/nav-scroll.js"></script> -->
 </body>
 
 </html>
