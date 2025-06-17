@@ -228,8 +228,8 @@
   }
 
   /* Remove button bg focus on hover as mobile touch don't handle focus state well */
-  .icon-toggle-btn:not(:checked):hover,
-  .icon-toggle-btn:not(:checked):focus-visible {
+  .icon-button:not(:checked):hover,
+  .icon-button:not(:checked):focus-visible {
     background: var(--md-sys-color-surface-container-high, );
     color: inherit;
   }
@@ -297,8 +297,8 @@
     background-color: var(--color-red);
   } */
 
-  .fab:not(:checked):hover{
-    background: var(--color-red );
+  .fab:not(:checked):hover {
+    background: var(--color-red);
     color: var(--color-on-background);
   }
 

@@ -32,7 +32,7 @@
     position: absolute;
     inset: 0;
     background-color: var(--md-sys-color-shadow);
-    opacity: 0.2;
+    opacity: 0.17;
     pointer-events: none;
     z-index: 1;
 }

@@ -47,18 +47,19 @@
                     <!-- Firefly elements will be created here by JS -->
                 </div>
                 <div class="contact-info" aria-label="Contact Information">
-                    <button id="theme-toggle" class="icon-toggle-btn" aria-label="Toggle theme" type="button">
+                    <button id="theme-toggle" class="icon-button animate-button" aria-label="Toggle theme"
+                        type="button">
                         <svg class="icon theme-icon" width="24" height="24">
                             <use href="#dark_mode_icon"></use>
                         </svg>
                     </button>
-                    <a href="https://github.com/datsforge/datsforge" class="icon-toggle-btn"
+                    <a href="https://github.com/datsforge/datsforge" class="icon-button animate-button"
                         aria-label="Visit datsforge on GitHub" target="_blank" rel="noopener noreferrer">
                         <svg class="icon">
                             <use href="#github_icon"></use>
                         </svg>
                     </a>
-                    <a href="mailto:contact@datsforge.com" class="icon-toggle-btn"
+                    <a href="mailto:contact@datsforge.com" class="icon-button animate-button"
                         aria-label="Email contact@datsforge.com">
                         <svg class="icon">
                             <use href="#mail_icon"></use>
@@ -70,7 +71,7 @@
         </section>
 
         <!-- Brief intro -->
-        <div class="container">
+        <section class="container">
             <h2 id="intro-section">Hey there!</h2>
             <article class="layout-column align-center section-divider" aria-labelledby="section-intro">
                 <h3>Turn your ideas into unforgettable digital experiences!</h3>
@@ -81,14 +82,56 @@
                     click, captivate, and connect. You bring the vision. I'll forge the rest.
                 </p>
 
+                <div class="layout-row">
+                    <div class="icon-button unclickable animate-button">Java
+                        <svg class="icon animate-icon">
+                            <use href="#java_icon"></use>
+                        </svg>
+                    </div>
+
+                    <div class="icon-button unclickable animate-button">HTML
+                        <svg class="icon animate-icon">
+                            <use href="#html_icon"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-button unclickable animate-button">CSS
+                        <svg class="icon animate-icon">
+                            <use href="#css_icon"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-button unclickable animate-button">JavaScript
+                        <svg class="icon animate-icon">
+                            <use href="#js_icon"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-button unclickable animate-button">Android
+                        <svg class="icon animate-icon">
+                            <use href="#android_icon"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-button unclickable animate-button">Kotlin
+                        <svg class="icon animate-icon">
+                            <use href="#kotlin_icon"></use>
+                        </svg>
+                    </div>
+                </div>
+                </div>
             </article>
-        </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="container" aria-label="Projects section">
+            <h2 id="projects-section">Projects</h2>
+            <div class="label">What I do</div>
+            <div id="projects-container"></div>
+        </section>
 
         <!-- Skills -->
-        <div class="container" aria-label="Skills section">
+        <section class="container" aria-label="Skills section">
             <h2 id="skills-section">Skills</h2>
-            <section class="layout-column section-divider" aria-label="Skills section">
-                <section>
+            <div class="label">What I offer</div>
+            <div class="layout-column section-divider">
+                <div>
                     <h3>Core Development Skills</h3>
                     <div class="flex-table">
                         <div class="flex-table-cell transparent">
@@ -121,9 +164,9 @@
                             </ul>
                         </div> -->
                     </div>
-                </section>
+                </div>
 
-                <section>
+                <div>
                     <!-- <h3>Design & Pixel Art</h3>
                     <div class="flex-table">
                         <div class="flex-table-cell transparent">
@@ -144,165 +187,31 @@
                             </ul>
                         </div>
                     </div> -->
-                </section>
-            </section>
-        </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Tools -->
-        <div class="container" aria-label="Development tools used section">
+        <section class="container" aria-label="Skills section">
             <h2 id="tools-section">Tools & Platforms</h2>
-            <section class="layout-column section-divider" aria-label="Skills section">
-                <div class="flex-table">
-                    <div class="flex-table-cell transparent">
+            <div class="label">What I use</div>
+            <div class="layout-column section-divider">
+                <div class="card">
+                    <div class="card-content">
                         <h4>Development</h4>
-                        <ul>
-                            <li>Android Studio & IntelliJ IDEA</li>
-                            <li>VS Code</li>
-                            <li>Git + GitHub (Open-source contributions)</li>
-                            <li>Debian (XFCE) Environment</li>
-                            <li>Bash/Shell scripting</li>
-                        </ul>
-                    </div>
-                    <div class="flex-table-cell transparent">
+                        <div id="dev-tools-container" class="layout-row"></div>
                         <h4>Graphics and designs</h4>
-                        <ul>
-                            <li>Aseprite</li>
-                            <li>krita, gimp, photoshop</li>
-                            <li>Inkscape</li>
-                            <li>Libgdx tools (tiled, skin comp., etc)</li>
-                        </ul>
-                    </div>
-            </section>
-            </section>
-        </div>
-
-        <!-- Projects -->
-        <div class="container" aria-label="Projects section">
-            <h2 id="projects-section">Projects</h2>
-            <section class="layout-column section-divider " aria-labelledby="section-apps">
-                <h3 id="section-apps">Apps that solve real problems</h3>
-                <div class="card align-right">
-                    <img class="card-media" src="assets/images/mockups/rentfinder_m3.png" alt="Rent Finder App Mockup"
-                        loading="lazy" />
-                    <div class="card-content">
-                        <p>Rent Finder is a mobile app designed to solve the real-world challenge of finding rental
-                            spaces.
-                        </p>
-                        <p>
-                            With a user-centered design and direct landlord-renter communication, it
-                            showcases how purposeful design and development can turn everyday problems into
-                            practical
-                            digital solutions.
-                        </p>
-                        <a href="https://sites.google.com/view/rentfinder/home" class="button-text-icon" target="_blank"
-                            rel="noopener noreferrer" aria-label="Visit Rent Finder site">
-                            Visit Site
-                            <svg class="icon">
-                                <use href="#open_in_new_icon"></use>
-                            </svg>
-                        </a>
+                        <div id="graphics-tools-container" class="layout-row"></div>
                     </div>
                 </div>
-            </section>
-        </div>
-
-        <div class="container">
-            <section class="layout-column" aria-labelledby="section-games">
-                <h3 id="section-games">Chill with casual games</h3>
-                <div class="card align-left">
-                    <div class="card-content">
-                        <p>Spidee Tap and Shooting Marbles are casual mobile games developed for android, designed for
-                            quick, addictive play.<br>Both are crafted with clean
-                            visuals, responsive controls, and a focus on instant fun.</p>
-
-                        <div class="layout-column">
-                            <a href="https://play.google.com/store/apps/details?id=com.datsgud.speederTap"
-                                class="button-text-icon" target="_blank" rel="noopener noreferrer"
-                                aria-label="Open link to Spidee Tap on Google Play">
-                                Spidee Tap on Google Play
-                                <svg class="icon">
-                                    <use href="#play_icon"></use>
-                                </svg>
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.datsgud.shootingMarbles"
-                                class="button-text-icon" target="_blank" rel="noopener noreferrer"
-                                aria-label="Open link to Shooting Marbles on Google Play">
-                                Shooting Marbles on Google Play
-                                <svg class="icon">
-                                    <use href="#play_icon"></use>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <img class="card-media" src="assets/images/mockups/st-sm_m1.png"
-                        alt="Shooting Marbles and Spidee Tap Mockup" loading="lazy" />
-                </div>
-            </section>
-        </div>
-
-        <div class="container">
-            <section class="layout-column" aria-labelledby="section-rpg">
-                <h3 id="section-rpg">RPG adventures!</h3>
-                <div class="card align-right">
-                    <img class="card-media" src="assets/images/mockups/sal_m1.png" alt="Swords and Legends Mockup"
-                        loading="lazy" />
-                    <div class="card-content">
-                        <div>
-                            <p>Swords and Legends is a pixel RPG adventure game in active development, designed to
-                                immerse
-                                players in a vibrant, handcrafted world brimming with eccentric characters, meaningful
-                                choices,
-                                and memorable quests.</p>
-                            <p>
-                                This project is not just a game—it's a living proof of what passion-driven, solo indie
-                                development can achieve.</p>
-                        </div>
-                        <a href="mailto:sal@datsforge.com" class="button-text-icon"
-                            aria-label="Email sal@datsforge.com">
-                            Be part of the development!
-                            <svg class="icon">
-                                <use href="#mail_icon"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="container">
-            <section class="layout-column" aria-labelledby="section-tools">
-                <h3 id="section-tools">Useful tools</h3>
-                <div class="card align-left">
-                    <div class="card-content">
-                        <div>
-                            <p>datsync is a streamlined Bash tool designed to simplify file synchronization between
-                                Linux
-                                systems and external devices such as Android phones and USB drives.</p>
-                            <p>The script
-                                supports
-                                pushing
-                                and pulling files, precise mirroring, and flexible storage options, enabling efficient
-                                backup
-                                and transfer workflows.</p>
-                        </div>
-                        <a href="https://github.com/datsforge/datsync" class="button-text-icon" target="_blank"
-                            rel="noopener noreferrer" aria-label="Visit datsync project on Github">
-                            Check it out on Github
-                            <svg class="icon">
-                                <use href="#github_icon"></use>
-                            </svg>
-                        </a>
-                    </div>
-                    <img class="card-media" src="assets/images/mockups/datsync_m1.png" alt="datsync Mockup"
-                        loading="lazy" />
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <!-- About -->
-        <div class="container" aria-label="About section">
-            <h2 id="about-section">About me</h2>
-            <section class="layout-column section-divider" aria-label="About section">
+        <section class="container" aria-label="About section">
+            <h2 id="about-section">About</h2>
+            <div class="label">Who am I</div>
+            <div class="layout-column section-divider">
                 <p>
                     I’m a seasoned Java game developer with a passion for building highly customized RPGs and pixel art
                     experiences. And yes—I handcraft every pixel of my games too. Every sprite, every scene, all forged
@@ -317,13 +226,14 @@
                     bring it to life with attention to detail, functionality, and soul. Every project you’ll find here
                     is a solo venture: coding, graphics, design—even this very website.
                 </p>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <!-- Contact -->
-        <div class="container" aria-label="Contact section">
+        <section class="container" aria-label="Contact section">
             <h2 id="contact-section">Contact me</h2>
-            <section class="layout-column section-divider" aria-labelledby="contact-section">
+            <div class="label">Hire me!</div>
+            <div class="layout-column section-divider">
                 <h3>Let’s build something!</h3>
                 <div class="mockup_descriptions">
                     <p>Drop me an email anytime:</p>
@@ -334,8 +244,8 @@
                             <use href="#mail_icon"></use>
                         </svg>
                     </a>
-            </section>
-        </div>
+                </div>
+        </section>
     </main>
 
     <footer></footer>
@@ -351,11 +261,19 @@
 
     <!-- Load Icons -->
     <div id="svg-sprite-container"></div>
+    <div id="linux-svg-sprite-container"></div>
     <script>
         fetch('/assets/html/icons.html')
             .then(res => res.text())
             .then(svg => {
                 document.getElementById('svg-sprite-container').innerHTML = svg;
+            });
+    </script>
+    <script>
+        fetch('/assets/html/linux_full_icon.html')
+            .then(res => res.text())
+            .then(svg => {
+                document.getElementById('linux-svg-sprite-container').innerHTML = svg;
             });
     </script>
 
@@ -364,6 +282,7 @@
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
         import { setupNavScroll } from '/assets/js/nav-scroll.js';
+        import { loadSectionComponents } from '/assets/js/home-section-comp.js';
 
         try {
             await loadComponent({
@@ -379,14 +298,12 @@
             setupNavScroll();
             setupMobileNavToggles();
             setupThemeToggle();
+            loadSectionComponents();
         } catch (err) {
             // TODO Handle error
             // ex. showErrorToUser('Failed to load component');
         }
     </script>
-
-    <!-- Navigation Scroll Script -->
-    <!-- <script src="assets/js/nav-scroll.js"></script> -->
 </body>
 
 </html>
