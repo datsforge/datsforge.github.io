@@ -1,6 +1,6 @@
 # datsforge
 
-> "Not just built, forged!"
+> "Your Ideas-Not just built, forged!"
 
 Welcome to **datsforge**! — a project crafted with creativity, precision, and passion.
 
