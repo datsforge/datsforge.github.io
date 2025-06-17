@@ -8,7 +8,7 @@
 @media (max-width: 768px) {
   body {
     font-size: var(--md-sys-typescale-body-medium);
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
   h1 {
@@ -82,7 +82,7 @@
   }
 
   .card-media {
-    max-width: 70vw;
+    max-width: 90vw;
     max-height: 140vh;
     height: auto;
     object-fit: contain;
