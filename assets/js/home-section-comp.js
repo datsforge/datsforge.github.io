@@ -91,7 +91,7 @@ function loadProjectsSection() {
 
     projects.forEach(project => {
         container.innerHTML += `
-      <section class="layout-column section-divider" aria-labelledby="section-${project.id}">
+      <section class="layout-column" aria-labelledby="section-${project.id}">
         <h3 id="section-${project.id}">${project.title}</h3>
         <div class="card ${project.layout}">
           ${project.layout === "align-left" ? `
@@ -137,6 +137,7 @@ function loadToolsSection() {
         { section: "dev", title: "Gradle", icon_id: "gradle_icon" },
         { section: "dev", title: "Jetpack", icon_id: "jetpack_icon" },
         { section: "dev", title: "Google Cloud", icon_id: "gcp_icon" },
+        { section: "dev", title: "Firebase", icon_id: "firebase_icon" },
         { section: "dev", title: "Android Studio", icon_id: "android_studio_icon" },
         { section: "dev", title: "Intellij", icon_id: "intellij_icon" },
         { section: "dev", title: "VS Code", icon_id: "vs_code_icon" },

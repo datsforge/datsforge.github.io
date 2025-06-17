@@ -21,6 +21,11 @@
   border-top: var(--md-sys-border-thin) solid var(--md-sys-color-outline-variant);
 }
 
+.section-divider-thin {
+  padding-top: var(--md-sys-spacing-lg);
+  border-top: 0.4px solid var(--md-sys-color-outline-variant);
+}
+
 .section-centered {
   text-align: center;
 }
@@ -191,12 +196,13 @@
   justify-content: center;
   align-items: center;
   align-self: baseline;
-  color: var(--color-yellow);
+  color: var(--md-sys-color-on-primary-container);
   padding: var(--md-sys-spacing-sm);
   font-family: var(--md-sys-font-family-priamry);
   font-size: var(--md-sys-typescale-label-small);
   outline: 1px var(--color-red) solid;
   border-radius: var(--md-sys-shape-medium, 1.5rem) 0 var(--md-sys-shape-medium, 1.5rem) 0;
+  text-shadow: 0px 0px 3px var(--color-yellow);
 }
 
 /* === SVG icon inside the button === */
@@ -570,7 +576,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   padding: var(--md-sys-spacing-2xl);
-  border-radius: var(--md-sys-shape-small);
+  border-radius: var(--md-sys-shape-extra-large);
   background-color: var(--md-sys-color-surface-container);
   box-shadow: var(--md-sys-elevation-1);
   /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
@@ -595,9 +601,10 @@ img {
 .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: var(--md-sys-spacing-md);
   text-decoration: none;
+  width: 100%;
 }
 
 /* Align Content Within Card */
