@@ -302,4 +302,16 @@
     color: var(--color-on-background);
   }
 
+  .slider-pane {
+    width: 100%;
+  }
+
+  .slide {
+    padding: var(--md-sys-spacing-sm) 0;
+  }
+
+  .slider-pane .icon {
+    width: 21px;
+    height: 21px;
+  }
 }

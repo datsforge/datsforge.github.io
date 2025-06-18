@@ -99,6 +99,8 @@
   /* === Z-Index Layering (Semantic Stack Order) === */
   --md-sys-z-index-content: 1;
   /* Default content */
+  --md-sys-z-index-overlay: 5;
+  /* Overlays */
   --md-sys-z-index-hero: 7;
   /* Hero*/
   --md-sys-z-index-header: 10;

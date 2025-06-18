@@ -293,28 +293,6 @@
   }
 }
 
-@keyframes iconBounce {
-  0% {
-    transform: scale(0.8) rotate(0deg);
-  }
-
-  30% {
-    transform: scale(1.28) rotate(18deg);
-  }
-
-  60% {
-    transform: scale(0.92) rotate(-12deg);
-  }
-
-  85% {
-    transform: scale(1.06) rotate(4deg);
-  }
-
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
 /* === Toggle Button with icon(Invisible Checkbox) use on checkbox with label  === */
 .toggle-button {
   position: absolute;
@@ -335,22 +313,6 @@
   background-color: transparent;
   cursor: pointer;
   transition: background-color var(--md-sys-motion-medium), color var(--md-sys-motion-medium);
-}
-
-/*  Icon Sizes  */
-.toggle-button-label .icon-small {
-  width: 12px;
-  height: 12px;
-}
-
-.toggle-button-label .icon {
-  width: 24px;
-  height: 24px;
-}
-
-.toggle-button-label .icon-medium {
-  width: 42px;
-  height: 42px;
 }
 
 /* Shared Icon Styles */
@@ -578,7 +540,7 @@ img {
   padding: var(--md-sys-spacing-2xl);
   border-radius: var(--md-sys-shape-extra-large);
   background-color: var(--md-sys-color-surface-container);
-  box-shadow: var(--md-sys-elevation-1);
+  box-shadow: var(--md-sys-elevation-2);
   /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
   text-align: start;
 }
@@ -631,6 +593,23 @@ img {
   align-items: flex-end;
 }
 
+/* === Icon Sizes === */
+.icon-small {
+  width: 12px;
+  height: 12px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-medium,
+.slider-pane .icon {
+  width: 32px;
+  height: 32px;
+}
+
 /* === Text Button With Icon (Link Style) === */
 .button-text-icon {
   display: inline-flex;
@@ -668,7 +647,7 @@ img {
 .button-text-icon:focus::after,
 .button-text-icon:active::after {
   width: 100%;
-  opacity:1;
+  opacity: 1;
   left: 50%;
 }
 
@@ -681,4 +660,195 @@ img {
 /* === Optional Modifier: Icon Before or After === */
 .button-text-icon.icon-start {
   flex-direction: row-reverse;
+}
+
+/* === Slider Pane Component === */
+:root {
+  --slideMargin: 4px;
+  --slideWidth: 150px;
+  /* Default, may be overridden by JS */
+  --slideCount: 3;
+  /* Default, may be overridden by JS */
+  --sliderSpeed: 12s;
+  /* Default, may be overridden by JS */
+}
+
+.slider-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  border-radius: var(--md-sys-shape-medium);
+  background-color: var(--md-sys-color-surface-container-low);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.slide-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: var(--md-sys-spacing-sm) 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-track {
+  display: flex;
+  height: 100%;
+  animation: slideScroll var(--sliderSpeed) linear infinite;
+  width: calc((var(--slideWidth) + cal((var(--slideMargin))*2) * var(--slideMargin)) * var(--slideCount) * 2);
+}
+
+.slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-sys-spacing-sm);
+  width: var(--slideWidth);
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: var(--md-sys-shape-medium);
+  margin: 0 var(--slideMargin);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--md-sys-motion-short);
+  padding: var(--md-sys-spacing-md) 0;
+  background: var(--md-sys-color-surface-container-high);
+  border: none;
+  font-family: var(--md-sys-font-family-secondary);
+  font-size: var(--md-sys-typescale-label-medium);
+}
+
+.slide:hover {
+  transform: scale(1.20);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  z-index: var(--md-sys-z-index-overlay);
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--md-sys-shape-medium);
+  border: 1px solid var(--color-red);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.slide:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide:hover .animate-icon,
+.slide:active .animate-icon,
+.slide:focus-visible .animate-icon {
+  animation: iconBounce 380ms cubic-bezier(0.36, 1.65, 0.3, 1) both;
+  transform-origin: center;
+}
+
+@keyframes slideScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * (var(--slideWidth) + 2 * var(--slideMargin)) * var(--slideCount)));
+  }
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  30% {
+    transform: scale(1.28) rotate(18deg);
+  }
+
+  60% {
+    transform: scale(0.92) rotate(-12deg);
+  }
+
+  85% {
+    transform: scale(1.06) rotate(4deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes iconBounce2 {
+  0% {
+    transform: scale(0.7) rotate(0deg);
+  }
+
+  30% {
+    transform: scale(1.6) rotate(25deg);
+  }
+
+  60% {
+    transform: scale(0.85) rotate(-18deg);
+  }
+
+  85% {
+    transform: scale(1.2) rotate(8deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ==== Fireflies === */
+.firefly {
+  animation: firefly-move var(--duration, 8s) linear infinite,
+    firefly-flicker 2s infinite alternate;
+}
+
+@keyframes firefly-flicker {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes firefly-move {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(var(--move-x), 0);
+  }
+
+  50% {
+    transform: translate(var(--move-x), var(--move-y));
+  }
+
+  75% {
+    transform: translate(0, var(--move-y));
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }

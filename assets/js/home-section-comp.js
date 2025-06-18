@@ -2,9 +2,58 @@
   © 2025 datsforge 
   Proprietary – See LICENSE for details. 
 */
+
 export async function loadSectionComponents() {
+  /* Variables fot the slide elemetns */
+  let slideCount
+  let slideWidth
+  let sliderSpeed
+  document.querySelectorAll('.slider-pane').forEach(slider => {
+    slideCount = slider.getAttribute('data-slide-count') || 3;
+    slider.style.setProperty('--slideCount', slideCount);
+    slideWidth = slider.getAttribute('data-slide-width') || "150px";
+    slider.style.setProperty('--slideWidth', slideWidth);
+    sliderSpeed = slider.getAttribute('data-slider-speed') || "12s";
+    slider.style.setProperty('--sliderSpeed', sliderSpeed);
+  });
+
+  loadSkillSlideShows(slideCount)
   loadProjectsSection()
   loadToolsSection()
+}
+
+function loadSkillSlideShows(slideCount) {
+  const data = [
+    { title: "Java", icon: "java_icon" },
+    { title: "Android", icon: "android_icon" },
+    { title: "Kotlin", icon: "kotlin_icon" },
+    { title: "HTML", icon: "html_icon" },
+    { title: "CSS", icon: "css_icon" },
+    { title: "Javascript", icon: "js_icon" },
+    { title: "Libgdx", icon: "libgdx_icon" },
+    { title: "Firebase", icon: "firebase_icon" },
+    { title: "Github", icon: "github_icon" },
+  ]
+  const container = document.getElementById("skills-slideshow-container")
+  if (slideCount != data.length) {
+    console.warn(`Slide count (${slideCount}) doesn't match data count (${data.length})`);
+    slideCount = data.length;
+  }
+
+  // Should I include title here?
+  let slides = [];
+  for (let i = 0; i < 3; i++) {
+    data.forEach(item => {
+      slides.push(`
+      <div class="slide">
+        <svg class="icon animate-icon">
+          <use href="#${item.icon}"></use>
+        </svg>
+      </div>`);
+    });
+  }
+  container.innerHTML = slides.join('');
+
 }
 
 function loadProjectsSection() {
