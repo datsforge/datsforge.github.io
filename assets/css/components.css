@@ -47,6 +47,15 @@
   gap: var(--md-sys-spacing-sm);
 }
 
+.test-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: space-around;
+  gap: var(--md-sys-spacing-sm);
+}
+
 .layout-legal-page h2,
 .layout-legal-page h3 {
   line-height: 2.7;
@@ -102,10 +111,11 @@
 .flex-table {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  border-radius: var(--md-sys-shape-medium);
-  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-extra-large);
+  background-color: var(--md-sys-color-surface-container-lowest);
   box-shadow: var(--md-sys-elevation-1);
 }
 
@@ -127,19 +137,21 @@
   display: flex;
   align-items: baseline;
   justify-content: baseline;
-  background-color: var(--md-sys-color-surface-container-highest);
+  background-color: var(--md-sys-color-surface-container);
   color: var(--md-sys-color-on-surface);
-  font-family: var(--md-sys-font-family-primary, 'Roboto', sans-serif);
-  border-radius: var(--md-sys-shape-small, 8px);
+  font-family: var(--md-sys-font-family-primary);
+  border-radius: var(--md-sys-shape-large);
   box-shadow: var(--md-sys-elevation-0);
   transition: background-color 0.2s ease;
-  flex: 0 0 auto;
   overflow: hidden;
   position: relative;
   text-align: left;
   padding: var(--md-sys-spacing-lg);
   flex-direction: column;
-  font-size: var(--md-sys-typescale-body-medium);
+  transition:
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* empty cell */
@@ -166,13 +178,13 @@
 .flex-table-cell.large {
   width: 240px;
   height: 180px;
-  font-size: var(--md-sys-typescale-body-large);
+  font-size: var(--md-sys-typescale-body-small);
 }
 
 .flex-table-cell.xl {
   width: 300px;
-  height: 220px;
-  font-size: var(--md-sys-typescale-headline-small);
+  /* height: 220px; */
+  font-size: var(--md-sys-typescale-body-medium);
 }
 
 /* Optional header */
@@ -186,6 +198,16 @@
 
 .flex-table-cell.transparent {
   background-color: transparent;
+}
+
+.flex-table-cell:hover,
+.flex-table-cell:focus-visible {
+  background-color: var(--md-sys-color-surface-container-high);
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 6px 2px rgba(0, 0, 0, 0.10),
+    0 6px 18px 5px rgba(0, 0, 0, 0.06);
+  transform: scale(1.08);
 }
 
 /* === Labels === */
@@ -543,6 +565,19 @@ img {
   box-shadow: var(--md-sys-elevation-2);
   /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
   text-align: start;
+  transition:
+    background-color 0.2s cubic-bezier(.4, 0, .2, 1),
+    box-shadow 0.2s cubic-bezier(.4, 0, .2, 1),
+}
+
+.card:hover,
+.card:focus-visible {
+  background-color: var(--md-sys-color-surface-container-high);
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 6px 2px rgba(0, 0, 0, 0.10),
+    0 6px 18px 5px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
 /* Alignment Variant: Right Aligned */
@@ -591,6 +626,23 @@ img {
 
 .card.align-right .link-with-icon-group {
   align-items: flex-end;
+}
+
+.card:hover .card-content .icon-button,
+.card:focus-visible .card-content .icon-button {
+  background-color: var(--md-sys-color-surface-container-highest);
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 6px 2px rgba(0, 0, 0, 0.10),
+    0 6px 18px 5px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.card:hover .card-content .icon-button:hover,
+.card:focus-visible .card-content .icon-button:focus-visible {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  box-shadow: 0 2px 8px rgba(103, 80, 164, 0.10);
 }
 
 /* === Icon Sizes === */
@@ -866,7 +918,7 @@ img {
   will-change: transform, opacity;
   pointer-events: none;
   opacity: 0.7;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.10));
 }
 
 @keyframes leaf-fall {
@@ -874,9 +926,11 @@ img {
     transform: translateY(0) rotate(var(--leaf-rotate, 0deg));
     opacity: 0.9;
   }
+
   90% {
     opacity: 0.8;
   }
+
   100% {
     transform: translateY(110vh) rotate(var(--leaf-rotate-end, 80deg));
     opacity: 0;
@@ -884,6 +938,11 @@ img {
 }
 
 @keyframes leaf-sway {
-  0% { margin-left: 0; }
-  100% { margin-left: var(--sway, 180px); }
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: var(--sway, 180px);
+  }
 }
