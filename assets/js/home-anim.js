@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => {
             console.error('Failed to load fireflies.js', err);
         });
+    import('./fallingLeaves.js')
+        .then(module => {// use exports here if needed
+        })
+        .catch(err => {
+            console.error('Failed to load fallingLeaves.js', err);
+        });
     import('./fab-scroll-top.js')
         .then(module => {// use exports here if needed
         })

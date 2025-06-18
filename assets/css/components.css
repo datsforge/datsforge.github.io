@@ -852,3 +852,38 @@ img {
     transform: translate(0, 0);
   }
 }
+
+/* ==== Falling leaves ==== */
+.falling-leaves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  will-change: transform, opacity;
+  pointer-events: none;
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(0) rotate(var(--leaf-rotate, 0deg));
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(var(--leaf-rotate-end, 80deg));
+    opacity: 0;
+  }
+}
+
+@keyframes leaf-sway {
+  0% { margin-left: 0; }
+  100% { margin-left: var(--sway, 180px); }
+}

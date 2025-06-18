@@ -17,6 +17,9 @@ export function setupThemeToggle() {
         icon.setAttribute('href', '#light_mode_icon');
         btn.classList.add('toggled');
       }
+      // Show fireflies, hide leaves
+      document.querySelector('.fireflies')?.classList.remove('hidden');
+      document.querySelector('.falling-leaves')?.classList.add('hidden');
     } else {
       dark.disabled = true;
       light.disabled = false;
@@ -24,6 +27,9 @@ export function setupThemeToggle() {
         icon.setAttribute('href', '#dark_mode_icon');
         btn.classList.remove('toggled');
       }
+      // Show leaves, hide fireflies
+      document.querySelector('.fireflies')?.classList.add('hidden');
+      document.querySelector('.falling-leaves')?.classList.remove('hidden');
     }
     localStorage.setItem('theme', theme);
   }

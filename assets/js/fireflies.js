@@ -14,7 +14,7 @@ for (let i = 0; i < fireflyCount; i++) {
   firefly.style.left = Math.random() * 100 + '%';
 
   // Size & opacity
-  const size = 2 + Math.random() * 2;
+  const size = 1 + Math.random() * 2;
   firefly.style.width = firefly.style.height = size + 'px';
   firefly.style.opacity = 0.5 + Math.random() * 0.5;
 
