@@ -668,7 +668,7 @@ img {
 .button-text-icon:focus::after,
 .button-text-icon:active::after {
   width: 100%;
-  opacity: 1;
+  opacity:1;
   left: 50%;
 }
 
