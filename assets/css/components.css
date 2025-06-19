@@ -1114,7 +1114,7 @@ button.textbutton.filled {
   border: none;
   padding: 11px 17px;
   border-radius: var(--md-sys-shape-extra-large);
-  font: var(--md-sys-typescale-label-small);
+  font-size: var(--md-sys-typescale-label-medium);
   font-weight: 500;
   cursor: pointer;
   display: flex;

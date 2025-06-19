@@ -48,6 +48,7 @@
   --md-sys-typescale-label-large: 0.975rem;
   --md-sys-typescale-label-medium: 0.85rem;
   --md-sys-typescale-label-small: 0.788rem;
+  --md-sys-typescale-label-xs: 0.6rem;
 
   /* === Shape (Border Radius - px for precision) === */
   --md-sys-shape-extra-small: 4px;

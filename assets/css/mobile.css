@@ -63,11 +63,13 @@
     line-height: 1.4;
   }
 
-  .container .card {
-    /* Cancels out the margin set by the container, 
-    the puspose is to make the card extends out of the container to fill screen width for mobile*/
-    margin-left: calc(-1 * var(--md-sys-spacing-md));
-    margin-right: calc(-1 * var(--md-sys-spacing-md));
+  /* Cancels out the margin set by the container, 
+    the puspose is to make the card or other components here 
+    to extend out of the container to fill screen width for mobile*/
+  .container .card,
+  .container .contact-form-section {
+    margin-left: calc(-0.5 * var(--md-sys-spacing-md));
+    margin-right: calc(-0.5 * var(--md-sys-spacing-md));
   }
 
   .card.card.align-right,
@@ -315,11 +317,36 @@
     height: 21px;
   }
 
+  /* ======== Text Button ======== */
+
+  button.textbutton.filled {
+    padding: 8px 11px;
+  }
+
 
   /* ==== Contact form ==== */
-.card.contact-details-section {
-  max-width: unset;
-  flex:unset;
-}
+  .card.contact-details-section {
+    max-width: unset;
+    flex: unset;
+  }
+
+  .contact-form-section {
+    border-radius: var(--md-sys-shape-extra-large);
+    outline: var(--md-sys-color-outline-variant) var(--md-sys-border-thin) solid;
+  }
+
+  .contact-form-section form {
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .form-actions {
+    margin-top: var(--md-sys-spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 12px;
+    gap: 1rem;
+  }
 
 }
