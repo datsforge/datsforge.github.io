@@ -26,12 +26,15 @@ function loadSkillSlideShows(slideCount) {
   const data = [
     { title: "Java", icon: "java_icon" },
     { title: "Android", icon: "android_icon" },
-    { title: "Kotlin", icon: "kotlin_icon" },
+    // Somehow this kotlin_icon won't render in chrome browser on android, I don't know why.
+    // { title: "Kotlin", icon: "kotlin_icon" },
+    { title: "Kotlin", icon: "kotlin_icon2" },
     { title: "HTML", icon: "html_icon" },
     { title: "CSS", icon: "css_icon" },
     { title: "Javascript", icon: "js_icon" },
     { title: "Libgdx", icon: "libgdx_icon" },
     { title: "Firebase", icon: "firebase_icon" },
+    { title: "Admob", icon: "admob_icon" },
     { title: "Github", icon: "github_icon" },
   ]
   const container = document.getElementById("skills-slideshow-container")
@@ -179,7 +182,9 @@ function loadProjectsSection() {
 function loadToolsSection() {
   const data = [
     { section: "devLang", title: "Java", icon_id: "java_icon" },
-    { section: "devLang", title: "Kotlin", icon_id: "kotlin_icon" },
+    // Somehow this kotlin_icon won't render in chrome browser on android, I don't know why.
+    // { section: "devLang", title: "Kotlin", icon_id: "kotlin_icon" },
+    { section: "devLang", title: "Kotlin", icon_id: "kotlin_icon2" },
     { section: "devLang", title: "JavaScript", icon_id: "js_icon" },
     { section: "devLang", title: "HTML", icon_id: "html_icon" },
     { section: "devLang", title: "CSS", icon_id: "css_icon" },
@@ -191,8 +196,9 @@ function loadToolsSection() {
     { section: "devTools", title: "Gradle", icon_id: "gradle_icon" },
     { section: "devTools", title: "Android", icon_id: "android_icon" },
     { section: "devTools", title: "Jetpack", icon_id: "jetpack_icon" },
-    { section: "devTools", title: "Google Cloud", icon_id: "gcp_icon" },
+    // { section: "devTools", title: "Google Cloud", icon_id: "gcp_icon" },
     { section: "devTools", title: "Firebase", icon_id: "firebase_icon" },
+    { section: "devTools", title: "Admob", icon_id: "admob_icon" },
     { section: "devTools", title: "Android Studio", icon_id: "android_studio_icon" },
     { section: "devTools", title: "Intellij", icon_id: "intellij_icon" },
     { section: "devTools", title: "VS Code", icon_id: "vs_code_icon" },

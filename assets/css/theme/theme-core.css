@@ -97,7 +97,9 @@
 
   /* === Layering === */
   /* === Z-Index Layering (Semantic Stack Order) === */
-  --md-sys-z-index-content: 1;
+  --md-sys-z-index-bg: -1;
+  --md-sys-z-index-container: 2;
+  --md-sys-z-index-content: 3;
   /* Default content */
   --md-sys-z-index-overlay: 5;
   /* Overlays */
