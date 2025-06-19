@@ -3,6 +3,12 @@
   Proprietary – See LICENSE for details. 
 */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* === CONTAINER === */
 /* Surface background for content wrapping */
 .container {
@@ -266,7 +272,7 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: var(--md-sys-color-surface-container-high, );
+  background: var(--md-sys-color-surface-container-high);
   color: var(--md-sys-color-on-surface);
   border-radius: var(--md-sys-shape-medium, 1.5rem);
   box-shadow: var(--md-sys-elevation-1, 0 1px 2px rgba(0, 0, 0, 0.08));
@@ -277,6 +283,10 @@
   gap: var(--md-sys-spacing-sm);
   font-family: var(--md-sys-font-family-secondary);
   font-size: var(--md-sys-typescale-label-large);
+}
+
+.card-content .icon-button {
+  background-color: var(--md-sys-color-surface-container);
 }
 
 .icon-button.unclickable {
@@ -534,25 +544,6 @@
   }
 }
 
-/* === Inputs and Textareas === */
-input,
-textarea,
-select {
-  font-family: var(--md-sys-font-family-primary);
-  font-size: var(--md-sys-typescale-body-large);
-  padding: var(--md-sys-spacing-xs);
-  border: 1px solid var(--md-sys-color-outline);
-  border-radius: var(--md-sys-shape-small);
-  transition: border-color var(--md-sys-motion-short);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--md-sys-color-primary);
-  outline: none;
-}
-
 /* Tables */
 table {
   border-collapse: collapse;
@@ -597,18 +588,18 @@ img {
   justify-content: space-between;
   padding: var(--md-sys-spacing-2xl);
   border-radius: var(--md-sys-shape-extra-large);
-  background-color: var(--md-sys-color-surface-container);
+  background-color: var(--md-sys-color-surface-container-high);
   box-shadow: var(--md-sys-elevation-2);
   /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
   text-align: start;
   transition:
     background-color 0.2s cubic-bezier(.4, 0, .2, 1),
-    box-shadow 0.2s cubic-bezier(.4, 0, .2, 1),
+    box-shadow 0.2s cubic-bezier(.4, 0, .2, 1), ;
 }
 
 .card:hover,
 .card:focus-visible {
-  background-color: var(--md-sys-color-surface-container-high);
+  background-color: var(--md-sys-color-surface-container);
   box-shadow:
     0 1px 2px 0 rgba(0, 0, 0, 0.14),
     0 3px 6px 2px rgba(0, 0, 0, 0.10),
@@ -639,6 +630,7 @@ img {
   text-decoration: none;
   width: 100%;
 }
+
 
 /* Align Content Within Card */
 .card.align-right .card-content {
@@ -985,5 +977,183 @@ img {
 
   100% {
     margin-left: var(--sway, 180px);
+  }
+}
+
+
+/* ==== Contact form ==== */
+.card.contact-details-section {
+  flex: 1 1 0;
+  min-width: 40vw;
+}
+
+.contact-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--md-sys-spacing-sm);
+  flex: 1 1 auto;
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: var(--md-sys-spacing-md);
+  width: 100%;
+}
+
+.form-group {
+  margin: var(--md-sys-spacing-md);
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  color: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font: var(--md-sys-typescale-body-small);
+}
+
+.form-group.focused label,
+.form-group input:not(:placeholder-shown)+label,
+.form-group textarea:not(:placeholder-shown)+label {
+  top: -10px;
+  left: 12px;
+  font-size: var(--md-sys-typescale-label-medium);
+  background: var(--md-sys-color-surface);
+  padding: 0 8px;
+  color: var(--md-sys-color-primary);
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+  width: 100%;
+  padding: 12px 10px 6px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-medium);
+  font: var(--md-sys-typescale-body-small);
+  transition: all 0.2s ease;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+  outline: none;
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 1px var(--md-sys-color-primary);
+}
+
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+  color: transparent;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  padding: 11px;
+  border-radius: var(--md-sys-shape-medium);
+  font-size: var(--md-sys-typescale-body-medium);
+  transition: all 0.3s ease;
+}
+
+.form-status.success {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border: 1px solid var(--md-sys-color-primary);
+}
+
+.form-status.error {
+  background: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+  border: 1px solid var(--md-sys-color-error);
+}
+
+.form-actions {
+  margin-top: var(--md-sys-spacing-sm);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12px;
+  gap: 2rem;
+}
+
+/*doesn't work see also the contact-form js*/
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* ======== Text Button ======== */
+
+button.textbutton.filled {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border: none;
+  padding: 11px 17px;
+  border-radius: var(--md-sys-shape-extra-large);
+  font: var(--md-sys-typescale-label-small);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--md-elevation-1);
+}
+
+.form-actions button.textbutton.filled {
+  align-self: flex-end;
+}
+
+button.textbutton.filled:hover {
+  box-shadow: var(--md-elevation-2);
+  color: var(--md-sys-color-on-secondary);
+}
+
+button.textbutton.filled::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--md-sys-color-surface-dim);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+button.textbutton.filled:hover::after {
+  box-shadow: var(--md-elevation-2);
+  opacity: 0.08;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }

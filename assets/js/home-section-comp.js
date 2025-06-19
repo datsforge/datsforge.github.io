@@ -221,8 +221,6 @@ function loadToolsSection() {
   };
 
   data.forEach(i => {
-    // const container = i.section === "dev" ? devToolsContainer : graphicsToolsContainer;
-    // const containter = i.section;
     if (!sectionMap[i?.section]) {
       throw new Error(`Unknown section: "${i?.section}"`);
     }

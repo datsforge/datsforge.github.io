@@ -314,4 +314,12 @@
     width: 21px;
     height: 21px;
   }
+
+
+  /* ==== Contact form ==== */
+.card.contact-details-section {
+  max-width: unset;
+  flex:unset;
+}
+
 }

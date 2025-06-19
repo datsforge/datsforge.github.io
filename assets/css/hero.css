@@ -84,6 +84,10 @@
         0 0 4px rgba(0, 0, 0, 0.6);
 }
 
+.hero .slogan strong {
+    color: var(--color-yellow);
+}
+
 .hero .contact-info {
     display: flex;
     position: absolute;

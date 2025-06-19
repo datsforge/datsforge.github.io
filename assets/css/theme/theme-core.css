@@ -79,6 +79,7 @@
   --md-sys-motion-long: 0.5s ease-in-out;
 
   /* === Spacing (Margins & Padding - rem for layout scaling) === */
+  --md-sys-spacing-xxs: 0.05rem;
   --md-sys-spacing-xs: 0.25rem;
   --md-sys-spacing-sm: 0.5rem;
   --md-sys-spacing-md: 0.75rem;

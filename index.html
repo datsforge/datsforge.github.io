@@ -177,18 +177,20 @@
             <div class="label">Who am I</div>
             <div class="layout-column section-divider">
                 <p>
-                    I’m a seasoned Java game developer with a passion for building highly customized RPGs and pixel art
-                    experiences. And yes—I handcraft every pixel of my games too. Every sprite, every scene, all forged
-                    with care and intent.
-                    <br>
-                    But I’m not just about games. I also design and build powerful Android apps using Kotlin and Jetpack
+                    I’m a seasoned Java game developer with <strong>8 years of experience</strong> specializing in
+                    creating highly customized RPGs and handcrafted pixel art experiences. And yes—<strong>I craft every
+                        pixel myself</strong>. Every sprite, every scene, forged with care and purpose.
+                    <br><br>
+                    But I’m not just about <strong>creating fully custom-built games</strong>. I also design and
+                    <strong>build powerful Android apps</strong> using Kotlin and Jetpack
                     Compose. From clean architecture and reactive UI to smooth performance and real-world utility—I
-                    bring ideas to life in app form too. Whether it's a smart productivity tool or a feature-rich
-                    utility, I aim to make apps that are elegant, useful, and a joy to use.
-                    <br>
-                    I don’t just develop things—I create them from scratch. Whether it's a world, a tool, or an idea, I
-                    bring it to life with attention to detail, functionality, and soul. Every project you’ll find here
-                    is a solo venture: coding, graphics, design—even this very website.
+                    bring ideas to life in app form. Whether it’s a smart productivity tool or a feature-rich utility, I
+                    aim to make apps that are elegant, efficient, and a joy to use.
+                    <br><br>
+                    I don’t just develop things—I create them even from scratch. Worlds, tools, ideas—brought to life
+                    from
+                    scratch with sharp attention to detail, functionality, and a bit of soul. Every project you’ll find
+                    here is a <strong>solo venture</strong>: coding, graphics, design—<em>even this very site.</em>
                 </p>
             </div>
         </section>
@@ -198,17 +200,65 @@
             <h2 id="contact-section">Contact me</h2>
             <div class="label">Hire me!</div>
             <div class="layout-column section-divider">
-                <h3>Let’s build something!</h3>
-                <div class="mockup_descriptions">
-                    <p>Drop me an email anytime:</p>
-                    <a href="mailto:contact@datsforge.com" class="button-text-icon"
-                        aria-label="Email contact@datsforge.com">
-                        contact@datsforge.com
-                        <svg class="icon">
-                            <use href="#mail_icon"></use>
-                        </svg>
-                    </a>
+                <div class="layout-row">
+                    <div class="card contact-details-section">
+                        <div class="card-content">
+                            <h3>Let’s build something!</h3>
+                            <p>I'd love to hear from you! Fill out the form and I'll make sure to get back to you as
+                                soon
+                                as possible.</p>
+                            <p>Get in touch :</p>
+                            <a href="mailto:contact@datsforge.com" class="button-text-icon"
+                                aria-label="Email contact@datsforge.com">
+                                contact@datsforge.com
+                                <svg class="icon">
+                                    <use href="#mail_icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <form id="contact-form" autocomplete="on" novalidate aria-labelledby="contact-section">
+                            <div class="form-group">
+                                <input type="text" id="contact-name" name="name" required autocomplete="name"
+                                    placeholder=" " aria-required="true" />
+                                <label for="contact-name">Your Name</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="contact-email" name="email" required autocomplete="email"
+                                    placeholder=" " aria-required="true" />
+                                <label for="contact-email">Your Email</label>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="contact-message" name="message" rows="5" required placeholder=" "
+                                    aria-required="true"></textarea>
+                                <label for="contact-message">Message</label>
+                            </div>
+
+                            <!-- Honeypot field for spam bots -->
+                            <div class="honeypot-field">
+                                <label for="contact-company">Company (leave this blank)</label>
+                                <input type="text" id="contact-company" name="company" tabindex="-1"
+                                    autocomplete="off" />
+                            </div>
+
+                            <div class="form-actions">
+
+                                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                                <button type="submit" class="textbutton filled" id="submit-btn">
+                                    <svg class="icon-medium">
+                                        <use href="#send_icon"></use>
+                                    </svg>
+                                    Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
+
         </section>
     </main>
 
@@ -222,6 +272,7 @@
 
     <!-- Scripts -->
     <script src="assets/js/home-anim.js" defer></script>
+    <script src="assets/js/contact-form-handler.js" defer></script>
 
     <!-- Load Icons -->
     <div id="svg-sprite-container"></div>

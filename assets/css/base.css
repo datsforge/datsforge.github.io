@@ -102,6 +102,18 @@ li {
   margin-bottom: var(--md-sys-spacing-xs);
 }
 
+strong {
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  letter-spacing: 0.03em;
+}
+
+em {
+  font-style: italic;
+  color: var(--md-sys-color-secondary);
+  font-weight: 400;
+}
+
 /* === Footer ===*/
 footer {
   display: flex;
