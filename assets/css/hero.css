@@ -14,7 +14,7 @@
     max-height: var(--hero-height);
     height: var(--hero-height);
 
-    background-image: url('/assets/images/datsforge/banner/datsforge_banner_v003_1920x1080.png');
+    background-image: url('/assets/images/datsforge/hero/datsforge_banner_v003_1920x1080.png');
     background-position: center calc(50% + var(--hero-parallax, 0px));
     background-repeat: no-repeat;
     background-size: cover;

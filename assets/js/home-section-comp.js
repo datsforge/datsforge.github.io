@@ -43,7 +43,7 @@ function loadSkillSlideShows(slideCount) {
     slideCount = data.length;
   }
 
-  // Should I include title here?
+  // Should I include title here?, nah
   let slides = [];
   for (let i = 0; i < 3; i++) {
     data.forEach(item => {
