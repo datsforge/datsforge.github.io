@@ -21,7 +21,7 @@ export function setupNavScroll() {
       // Hide mobile menu if open
       if (currentScroll > 200 && mobileNavMenu?.checked) {
         mobileNavMenu.checked = false;
-         // Also reset icon to menu_icon
+        // Also reset icon to menu_icon
         if (icon) {
           icon.setAttribute('href', '#menu_icon');
           toggleLabel?.classList.remove('toggled');
@@ -35,4 +35,3 @@ export function setupNavScroll() {
 
   return true;
 }
-

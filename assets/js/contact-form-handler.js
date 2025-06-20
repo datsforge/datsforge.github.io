@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.addEventListener('click', createRipple);
-    });
+    // Add ripple effect to buttons (Doesn't work as expected, see components.css .ripple)
+    // const buttons = document.querySelectorAll('button');
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', createRipple);
+    // });
 
     function createRipple(e) {
         const button = e.currentTarget;

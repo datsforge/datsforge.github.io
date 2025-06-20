@@ -145,7 +145,7 @@ function loadProjectsSection() {
     container.innerHTML += `
       <section class="layout-column" aria-labelledby="section-${project.id}">
         <h3 id="section-${project.id}">${project.title}</h3>
-        <div class="card ${project.layout}">
+        <div class="card ${project.layout} track-hover">
           ${project.layout === "align-left" ? `
             <div class="card-content">
               ${project.content.map(p => `<p>${p}</p>`).join('')}

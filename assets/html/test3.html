@@ -19,7 +19,7 @@
     }
 
     section {
-      height: 100vh;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,7 +62,7 @@
         const elementCenter = rect.top + rect.height / 2;
         const distanceFromCenter = Math.abs(centerY - elementCenter);
 
-        if (distanceFromCenter < 50) {
+        if (distanceFromCenter < 100) {
           el.classList.add('hovered');
         } else {
           el.classList.remove('hovered');

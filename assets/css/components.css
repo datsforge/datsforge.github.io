@@ -286,7 +286,7 @@
 }
 
 .card-content .icon-button {
-  background-color: var(--md-sys-color-surface-container);
+  background-color: var(--md-sys-color-surface-container-high);
 }
 
 .icon-button.unclickable {
@@ -588,7 +588,7 @@ img {
   justify-content: space-between;
   padding: var(--md-sys-spacing-2xl);
   border-radius: var(--md-sys-shape-extra-large);
-  background-color: var(--md-sys-color-surface-container-high);
+  background-color: var(--md-sys-color-surface-container);
   box-shadow: var(--md-sys-elevation-2);
   /* border-bottom: var(--border-size, 1px) solid var(--color-border); */
   text-align: start;
@@ -598,8 +598,10 @@ img {
 }
 
 .card:hover,
-.card:focus-visible {
-  background-color: var(--md-sys-color-surface-container);
+.card:focus-visible,
+.card.hover-track:hover,
+.card.hover-track:focus-visible {
+  background-color: var(--md-sys-color-surface-container-high);
   box-shadow:
     0 1px 2px 0 rgba(0, 0, 0, 0.14),
     0 3px 6px 2px rgba(0, 0, 0, 0.10),
@@ -630,7 +632,6 @@ img {
   text-decoration: none;
   width: 100%;
 }
-
 
 /* Align Content Within Card */
 .card.align-right .card-content {
@@ -740,11 +741,17 @@ img {
   width: 24px;
   height: 24px;
   margin-left: 12px;
+  margin-right: 0;
 }
 
 /* === Optional Modifier: Icon Before or After === */
 .button-text-icon.icon-start {
   flex-direction: row-reverse;
+}
+
+.button-text-icon.icon-start .icon {
+  margin-right: 12px;
+  margin-left: 0;
 }
 
 /* === Slider Pane Component === */
@@ -980,11 +987,25 @@ img {
   }
 }
 
-
 /* ==== Contact form ==== */
 .card.contact-details-section {
   flex: 1 1 0;
   min-width: 40vw;
+}
+
+.contact-description {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--md-sys-spacing-sm);
 }
 
 .contact-form-section {
@@ -1097,14 +1118,14 @@ textarea {
 }
 
 /*doesn't work see also the contact-form js*/
-.ripple {
+/* .ripple {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.7);
   transform: scale(0);
   animation: ripple 0.6s linear;
   pointer-events: none;
-}
+} */
 
 /* ======== Text Button ======== */
 
