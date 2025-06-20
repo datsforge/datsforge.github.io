@@ -7,106 +7,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
     <title>datsforge.com</title>
-    <link rel="icon" type="image/png" href="assets/images/datsforge/icon/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/images/datsforge/icon/favicon.png">
+    <!-- Theme Styles -->
     <link id="dark-theme" rel="stylesheet" href="assets/css/theme/dark.css">
     <link id="light-theme" rel="stylesheet" href="assets/css/theme/light.css" disabled>
-    <link rel="stylesheet" href="assets/css/theme/theme-core.css" />
-    <link rel="stylesheet" href="assets/css/nav.css" />
-    <link rel="stylesheet" href="assets/css/hero.css" />
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <link rel="stylesheet" href="assets/css/components.css" />
-    <link rel="stylesheet" href="assets/css/mobile.css" />
+    <link rel="stylesheet" href="assets/css/theme/theme-core.css">
+    <!-- Component & Layout Styles -->
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
 </head>
 
 <body>
+    <!-- ====== Navigation ====== -->
     <header>
-        <!-- Navigation -->
-        <nav id="navbar" role="navigation" aria-label="Main Navigation"></nav>
+        <nav id="navbar" aria-label="Main Navigation"></nav>
     </header>
 
     <main id="main-content">
-        <!-- Hero -->
+        <!-- ====== Hero Section ====== -->
         <section class="hero" aria-label="Hero section">
             <div class="wrapper">
                 <div class="slogan" aria-label="Slogan">
                     <h1>Welcome to datsforge!</h1>
-                    <!-- Example how to create a terminal typing-->
-                    <!-- <p class="typing-anim" data-lines='[
-  "Welcome to datsforge...",
-  "Generating synthetic thoughts...",
-  "Terminal ready for domination..."
-]'></p> -->
-                    <p>" YOUR ideas</p>
-                    <p>-<strong>Not just built, FORGED!</strong> "</p>
+                    <!-- Example: Terminal typing animation (uncomment to use)
+                    <p class="typing-anim" data-lines='[
+                        "Welcome to datsforge...",
+                        "Generating synthetic thoughts...",
+                        "Terminal ready for domination..."
+                    ]'></p>
+                    -->
+                    <p aria-hidden="true">" YOUR ideas</p>
+                    <p><strong>Not just built, FORGED!</strong> "</p>
                 </div>
-                <div class="fireflies"></div>
-                <div class="falling-leaves"></div>
+                <!-- Decorative animated backgrounds -->
+                <div class="fireflies" aria-hidden="true"></div>
+                <div class="falling-leaves" aria-hidden="true"></div>
+                <!-- Contact & Social Links -->
                 <div class="contact-info" aria-label="Contact Information">
                     <button id="theme-toggle" class="icon-button animate-button" aria-label="Toggle theme"
                         type="button">
-                        <svg class="icon theme-icon" width="24" height="24">
+                        <svg class="icon theme-icon" width="24" height="24" aria-hidden="true">
                             <use href="#dark_mode_icon"></use>
                         </svg>
                     </button>
                     <a href="https://github.com/datsforge/datsforge" class="icon-button animate-button"
                         aria-label="Visit datsforge on GitHub" target="_blank" rel="noopener noreferrer">
-                        <svg class="icon">
+                        <svg class="icon" aria-hidden="true">
                             <use href="#github_icon"></use>
                         </svg>
                     </a>
                     <a href="mailto:contact@datsforge.com" class="icon-button animate-button"
                         aria-label="Email contact@datsforge.com">
-                        <svg class="icon">
+                        <svg class="icon" aria-hidden="true">
                             <use href="#mail_icon"></use>
                         </svg>
                     </a>
                 </div>
             </div>
-            <div class="hero-deco-bar"></div>
+            <div class="hero-deco-bar" aria-hidden="true"></div>
         </section>
 
-        <!-- Brief intro -->
-        <section class="container animate-on-show">
-            <h2 id="intro-section" class="main-header">Hey there!</h2>
-            <article class="layout-column align-center section-divider" aria-labelledby="section-intro">
+        <!-- ====== Brief Intro Section ====== -->
+        <section class="container animate-on-show" aria-labelledby="intro-section">
+            <h2 id="intro-section" class="main-header-intro animate-on-show">Hey there!</h2>
+            <article class="layout-column align-center section-divider" aria-labelledby="intro-section">
                 <h3>Turn your ideas into unforgettable digital experiences!</h3>
-                <p>From enchanting pixel worlds to smart, seamless tools — every line of code and stroke of art here is
+                <p>
+                    From enchanting pixel worlds to smart, seamless tools — every line of code and stroke of art here is
                     crafted to spark curiosity, solve real problems, and feel damn good to use.
-                    <br>At datsforge, I don’t just build apps or games — <strong>I shape ideas into realities</strong>
-                    that
-                    click, captivate, and connect. <em>You bring the vision. I'll forge the rest.</em>
+                    <br>
+                    At datsforge, I don’t just build apps or games — <strong>I shape ideas into realities</strong>
+                    that click, captivate, and connect. <em>You bring the vision. I'll forge the rest.</em>
                 </p>
+                <!-- Skills Slideshow -->
                 <div class="slider-pane" data-slide-count="10" data-slider-speed="17s" data-slide-width="60px"
                     aria-label="Continuous slideshow of development skills">
                     <div class="slide-wrapper" role="region">
-                        <div id="skills-slideshow-container" class="slide-track" aria-live="off">
-                        </div>
+                        <div id="skills-slideshow-container" class="slide-track" aria-live="off"></div>
                     </div>
                 </div>
             </article>
         </section>
 
-        <!-- Projects -->
-        <section class="container" aria-label="Projects section">
+        <!-- ====== Projects Section ====== -->
+        <section class="container" aria-labelledby="projects-section">
             <h2 id="projects-section" class="main-header animate-on-show">Projects</h2>
             <div class="label">What I do</div>
             <div id="projects-container" class="section-divider"></div>
         </section>
 
-        <!-- Skills -->
-        <section class="container" aria-label="Skills section">
+        <!-- ====== Skills Section ====== -->
+        <section class="container" aria-labelledby="skills-section">
             <h2 id="skills-section" class="main-header animate-on-show">Skills</h2>
             <div class="label">What I offer</div>
             <div class="layout-column section-divider">
                 <div>
-                    <div class="flex-table animate-on-show">
-                        <div class="flex-table-cell xl transparent track-hover">
+                    <div class="flex-table animate-on-show" role="table" aria-label="Skill categories">
+                        <!-- Game Development -->
+                        <div class="flex-table-cell xl transparent track-hover" role="row">
                             <div class="layout-row">
-                                <svg class="icon-large animate-icon">
+                                <svg class="icon-large animate-icon" aria-hidden="true">
                                     <use href="#game_icon"></use>
                                 </svg>
                                 <h3 class="skills-header">Game Development</h3>
@@ -118,9 +125,10 @@
                                 <li>Custom logic systems: battle, AI, inventory, UI, and more</li>
                             </ul>
                         </div>
-                        <div class="flex-table-cell xl transparent track-hover">
+                        <!-- App Development -->
+                        <div class="flex-table-cell xl transparent track-hover" role="row">
                             <div class="layout-row">
-                                <svg class="icon-large animate-icon">
+                                <svg class="icon-large animate-icon" aria-hidden="true">
                                     <use href="#app_icon"></use>
                                 </svg>
                                 <h3 class="skills-header">App Development</h3>
@@ -134,9 +142,10 @@
                                 <li>Modern libraries: Retrofit, Room, Coil, etc.</li>
                             </ul>
                         </div>
-                        <div class="flex-table-cell xl transparent track-hover">
+                        <!-- Visual & UI Design -->
+                        <div class="flex-table-cell xl transparent track-hover" role="row">
                             <div class="layout-row">
-                                <svg class="icon-large animate-icon">
+                                <svg class="icon-large animate-icon" aria-hidden="true">
                                     <use href="#art_icon"></use>
                                 </svg>
                                 <h3 class="skills-header">Visual & UI Design</h3>
@@ -153,8 +162,8 @@
             </div>
         </section>
 
-        <!-- Tools -->
-        <section class="container" aria-label="Skills section">
+        <!-- ====== Tools & Platforms Section ====== -->
+        <section class="container" aria-labelledby="tools-section">
             <h2 id="tools-section" class="main-header animate-on-show">Tools & Platforms</h2>
             <div class="label">What I use</div>
             <div class="layout-column section-divider">
@@ -171,8 +180,8 @@
             </div>
         </section>
 
-        <!-- About -->
-        <section class="container" aria-label="About section">
+        <!-- ====== About Section ====== -->
+        <section class="container" aria-labelledby="about-section">
             <h2 id="about-section" class="main-header animate-on-show">About</h2>
             <div class="label">Who am I</div>
             <div class="section-divider animate-on-show">
@@ -180,118 +189,115 @@
                     <p>
                         I’m a seasoned Java game developer with <strong>8 years of experience</strong> specializing in
                         creating highly customized RPGs and handcrafted pixel art experiences. And yes—<strong>I craft
-                            every
-                            pixel myself</strong>. Every sprite, every scene, forged with care and purpose.
+                            every pixel myself</strong>. Every sprite, every scene, forged with care and purpose.
                         <br><br>
                         But I’m not just about creating <strong>fully custom-built games</strong>. I also design and
-                        build <strong>powerful Android apps</strong> using Kotlin and Jetpack
-                        Compose. From clean architecture and reactive UI to smooth performance and real-world utility—I
-                        bring ideas to life in app form. Whether it’s a smart productivity tool or a feature-rich
-                        utility, I
-                        aim to make apps that are elegant, efficient, and a joy to use.
+                        build <strong>powerful Android apps</strong> using Kotlin and Jetpack Compose. From clean
+                        architecture and reactive UI to smooth performance and real-world utility—I bring ideas to life
+                        in app form. Whether it’s a smart productivity tool or a feature-rich utility, I aim to make
+                        apps that are elegant, efficient, and a joy to use.
                         <br><br>
                         I don’t just develop things—I create them even from scratch. Worlds, tools, ideas—brought to
-                        life
-                        from
-                        scratch with sharp attention to detail, functionality, and a bit of soul. Every project you’ll
-                        find
-                        here is a <strong>solo venture</strong>: coding, graphics, design—<em>even this very site.</em>
+                        life from scratch with sharp attention to detail, functionality, and a bit of soul. Every
+                        project you’ll find here is a <strong>solo venture</strong>: coding, graphics, design—<em>even
+                            this very site.</em>
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section class="container" aria-label="Contact section">
-            <h2 id="contact-section"  class="main-header animate-on-show">Contact me</h2>
+        <!-- ====== Contact Section ====== -->
+        <section class="container" aria-labelledby="contact-section">
+            <h2 id="contact-section" class="main-header animate-on-show">Contact me</h2>
             <div class="label">Hire me!</div>
             <div class="layout-column section-divider">
                 <div class="layout-row">
+                    <!-- Contact Details Card -->
                     <div class="card contact-details-section track-hover animate-on-show">
                         <div class="card-content">
                             <div class="contact-description">
                                 <h3>Let’s build something!</h3>
-                                <p>I would love to hear from you! Fill out the form and I'll make sure to get back to
-                                    you as
-                                    soon
-                                    as possible.</p>
+                                <p>
+                                    I would love to hear from you! Fill out the form and I'll make sure to get back to
+                                    you as soon as possible.
+                                </p>
                             </div>
                             <div class="contact-links">
                                 <h3>Get in touch :</h3>
                                 <a href="mailto:contact@datsforge.com" class="button-text-icon icon-start"
                                     aria-label="Email contact@datsforge.com">
                                     contact@datsforge.com
-                                    <svg class="icon">
+                                    <svg class="icon" aria-hidden="true">
                                         <use href="#mail_icon"></use>
                                     </svg>
                                 </a>
-                                <a href="https:github.com/datsforge/datsforge" class="button-text-icon icon-start"
-                                    target="_blank" rel="noopener noreferrer" aria-label="$Visit datsforge on github">
+                                <a href="https://github.com/datsforge/datsforge" class="button-text-icon icon-start"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Visit datsforge on github">
                                     Visit me on Github
-                                    <svg class="icon">
+                                    <svg class="icon" aria-hidden="true">
                                         <use href="#github_icon"></use>
                                     </svg>
                                 </a>
                             </div>
                         </div>
                     </div>
-
+                    <!-- Contact Form Card -->
                     <div class="contact-form-section track-hover">
                         <form id="contact-form" autocomplete="on" novalidate aria-labelledby="contact-section">
                             <div class="form-group">
                                 <input type="text" id="contact-name" name="name" required autocomplete="name"
-                                    placeholder=" " aria-required="true" />
+                                    placeholder=" " aria-required="true">
                                 <label for="contact-name">Your Name</label>
                             </div>
-
                             <div class="form-group">
                                 <input type="email" id="contact-email" name="email" required autocomplete="email"
-                                    placeholder=" " aria-required="true" />
+                                    placeholder=" " aria-required="true">
                                 <label for="contact-email">Your Email</label>
                             </div>
-
                             <div class="form-group">
                                 <textarea id="contact-message" name="message" rows="5" required placeholder=" "
                                     aria-required="true"></textarea>
                                 <label for="contact-message">Message</label>
                             </div>
-
                             <!-- Honeypot field for spam bots -->
-                            <div class="honeypot-field">
+                            <div class="honeypot-field" aria-hidden="true">
                                 <label for="contact-company">Company (leave this blank)</label>
                                 <input type="text" id="contact-company" name="company" tabindex="-1"
-                                    autocomplete="off" />
+                                    autocomplete="off">
                             </div>
-
                             <div class="form-actions">
                                 <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                                 <button type="submit" class="textbutton filled" id="submit-btn">
-                                    <svg class="icon-medium">
+                                    <svg class="icon-medium" aria-hidden="true">
                                         <use href="#send_icon"></use>
                                     </svg>
-                                    Send Message</button>
+                                    Send Message
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
 
-    <footer></footer>
+    <!-- ====== Footer ====== -->
+    <footer id="footer-main"></footer>
 
+    <!-- ====== Scroll to Top Floating Button ====== -->
     <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
-        <svg class="fab-icon">
+        <svg class="fab-icon" aria-hidden="true">
             <use href="#double_up_icon"></use>
         </svg>
     </button>
 
-    <!-- Scripts -->
+    <!-- ====== Scripts ====== -->
     <script src="assets/js/home-anim.js" defer></script>
     <script src="assets/js/contact-form-handler.js" defer></script>
 
-    <!-- Load Icons -->
-    <div id="svg-sprite-container"></div>
-    <div id="linux-svg-sprite-container"></div>
+    <!-- ====== Load SVG Icons ====== -->
+    <div id="svg-sprite-container" aria-hidden="true"></div>
+    <div id="linux-svg-sprite-container" aria-hidden="true"></div>
     <script>
         fetch('/assets/html/icons.html')
             .then(res => res.text())
@@ -307,6 +313,7 @@
             });
     </script>
 
+    <!-- ====== Main App Logic ====== -->
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
@@ -336,12 +343,24 @@
                 threshold: 120
             });
         } catch (err) {
-            // TODO Handle error
-            // ex. showErrorToUser('Failed to load component');
+            // Show error banner to user
+            const errorBanner = document.getElementById('error-banner');
+            const errorMsg = document.getElementById('error-message');
+            console.error('Component load error:', err);
+            if (errorBanner && errorMsg) {
+                errorMsg.textContent = 'Failed to load a critical component. Some features may not work.';
+                errorBanner.hidden = false;
+                document.getElementById('error-dismiss').onclick = () => {
+                    errorBanner.hidden = true;
+                };
+            }
         }
     </script>
-
-
+    <!-- Error Banner (hidden by default) -->
+    <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
+        <span id="error-message"></span>
+        <button id="error-dismiss" aria-label="Dismiss error" type="button">&times;</button>
+    </div>
 </body>
 
 </html>

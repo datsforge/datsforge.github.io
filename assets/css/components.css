@@ -1236,3 +1236,34 @@ button.textbutton.filled:hover::after {
   opacity: 1;
   transform: none;
 }
+
+/* Error Banner */
+.error-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+  background: var(--md-sys-color-error, #b00020);
+  color: var(--md-sys-color-on-error, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: opacity 0.3s;
+}
+
+.error-banner[hidden] {
+  display: none;
+}
+
+#error-dismiss {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: 1em;
+}
