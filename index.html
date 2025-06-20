@@ -70,8 +70,8 @@
         </section>
 
         <!-- Brief intro -->
-        <section class="container">
-            <h2 id="intro-section">Hey there!</h2>
+        <section class="container animate-on-show">
+            <h2 id="intro-section" class="main-header">Hey there!</h2>
             <article class="layout-column align-center section-divider" aria-labelledby="section-intro">
                 <h3>Turn your ideas into unforgettable digital experiences!</h3>
                 <p>From enchanting pixel worlds to smart, seamless tools — every line of code and stroke of art here is
@@ -92,18 +92,18 @@
 
         <!-- Projects -->
         <section class="container" aria-label="Projects section">
-            <h2 id="projects-section">Projects</h2>
+            <h2 id="projects-section" class="main-header animate-on-show">Projects</h2>
             <div class="label">What I do</div>
             <div id="projects-container" class="section-divider"></div>
         </section>
 
         <!-- Skills -->
         <section class="container" aria-label="Skills section">
-            <h2 id="skills-section">Skills</h2>
+            <h2 id="skills-section" class="main-header animate-on-show">Skills</h2>
             <div class="label">What I offer</div>
             <div class="layout-column section-divider">
                 <div>
-                    <div class="flex-table">
+                    <div class="flex-table animate-on-show">
                         <div class="flex-table-cell xl transparent track-hover">
                             <div class="layout-row">
                                 <svg class="icon-large animate-icon">
@@ -155,10 +155,10 @@
 
         <!-- Tools -->
         <section class="container" aria-label="Skills section">
-            <h2 id="tools-section">Tools & Platforms</h2>
+            <h2 id="tools-section" class="main-header animate-on-show">Tools & Platforms</h2>
             <div class="label">What I use</div>
             <div class="layout-column section-divider">
-                <div class="card tools-container track-hover">
+                <div class="card tools-container track-hover animate-on-show">
                     <div class="card-content">
                         <h3>Languages</h3>
                         <div id="dev-lang-container" class="layout-row"></div>
@@ -173,39 +173,46 @@
 
         <!-- About -->
         <section class="container" aria-label="About section">
-            <h2 id="about-section">About</h2>
+            <h2 id="about-section" class="main-header animate-on-show">About</h2>
             <div class="label">Who am I</div>
-            <div class="layout-column section-divider">
-                <p>
-                    I’m a seasoned Java game developer with <strong>8 years of experience</strong> specializing in
-                    creating highly customized RPGs and handcrafted pixel art experiences. And yes—<strong>I craft every
-                        pixel myself</strong>. Every sprite, every scene, forged with care and purpose.
-                    <br><br>
-                    But I’m not just about creating <strong>fully custom-built games</strong>. I also design and
-                    build <strong>powerful Android apps</strong> using Kotlin and Jetpack
-                    Compose. From clean architecture and reactive UI to smooth performance and real-world utility—I
-                    bring ideas to life in app form. Whether it’s a smart productivity tool or a feature-rich utility, I
-                    aim to make apps that are elegant, efficient, and a joy to use.
-                    <br><br>
-                    I don’t just develop things—I create them even from scratch. Worlds, tools, ideas—brought to life
-                    from
-                    scratch with sharp attention to detail, functionality, and a bit of soul. Every project you’ll find
-                    here is a <strong>solo venture</strong>: coding, graphics, design—<em>even this very site.</em>
-                </p>
+            <div class="section-divider animate-on-show">
+                <div class="layout-column animate-on-show">
+                    <p>
+                        I’m a seasoned Java game developer with <strong>8 years of experience</strong> specializing in
+                        creating highly customized RPGs and handcrafted pixel art experiences. And yes—<strong>I craft
+                            every
+                            pixel myself</strong>. Every sprite, every scene, forged with care and purpose.
+                        <br><br>
+                        But I’m not just about creating <strong>fully custom-built games</strong>. I also design and
+                        build <strong>powerful Android apps</strong> using Kotlin and Jetpack
+                        Compose. From clean architecture and reactive UI to smooth performance and real-world utility—I
+                        bring ideas to life in app form. Whether it’s a smart productivity tool or a feature-rich
+                        utility, I
+                        aim to make apps that are elegant, efficient, and a joy to use.
+                        <br><br>
+                        I don’t just develop things—I create them even from scratch. Worlds, tools, ideas—brought to
+                        life
+                        from
+                        scratch with sharp attention to detail, functionality, and a bit of soul. Every project you’ll
+                        find
+                        here is a <strong>solo venture</strong>: coding, graphics, design—<em>even this very site.</em>
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="container" aria-label="Contact section">
-            <h2 id="contact-section">Contact me</h2>
+            <h2 id="contact-section"  class="main-header animate-on-show">Contact me</h2>
             <div class="label">Hire me!</div>
             <div class="layout-column section-divider">
                 <div class="layout-row">
-                    <div class="card contact-details-section track-hover">
+                    <div class="card contact-details-section track-hover animate-on-show">
                         <div class="card-content">
                             <div class="contact-description">
                                 <h3>Let’s build something!</h3>
-                                <p>I'd love to hear from you! Fill out the form and I'll make sure to get back to you as
+                                <p>I would love to hear from you! Fill out the form and I'll make sure to get back to
+                                    you as
                                     soon
                                     as possible.</p>
                             </div>
@@ -218,8 +225,8 @@
                                         <use href="#mail_icon"></use>
                                     </svg>
                                 </a>
-                                <a href="https:github.com/datsforge" class="button-text-icon icon-start" target="_blank"
-                                    rel="noopener noreferrer" aria-label="$Visit datsforge on github">
+                                <a href="https:github.com/datsforge/datsforge" class="button-text-icon icon-start"
+                                    target="_blank" rel="noopener noreferrer" aria-label="$Visit datsforge on github">
                                     Visit me on Github
                                     <svg class="icon">
                                         <use href="#github_icon"></use>
@@ -305,8 +312,9 @@
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
         import { setupThemeToggle } from '/assets/js/theme-toggle.js';
         import { setupNavScroll } from '/assets/js/nav-scroll.js';
-        import { loadSectionComponents } from '/assets/js/home-section-comp.js';
+        import { loadSectionComponents } from '/assets/js/home-section-comp.js'
         import { autoHover } from '/assets/js/hover-tracker.js';
+        import { animateOnShow } from '/assets/js/animate-on-show.js';
         try {
             await loadComponent({
                 url: '/assets/html/footer/footer-main.html',
@@ -322,6 +330,7 @@
             setupMobileNavToggles();
             setupThemeToggle();
             loadSectionComponents();
+            animateOnShow();
             autoHover({
                 selector: '.track-hover',
                 threshold: 120
@@ -331,6 +340,8 @@
             // ex. showErrorToUser('Failed to load component');
         }
     </script>
+
+
 </body>
 
 </html>

@@ -20,6 +20,10 @@
     font-size: var(--md-sys-typescale-display-small);
   }
 
+  .main-header{
+    margin-top: var(--md-sys-spacing-2xl);
+  }
+
   h3 {
     font-size: var(--md-sys-typescale-headline-large);
   }
@@ -110,13 +114,21 @@
     order: 1;
   }
 
-  .card.tools-container{
-    padding :var(--md-sys-spacing-md);
+  .card.tools-container {
+    padding: var(--md-sys-spacing-md);
   }
 
   img.logo {
     width: 40px;
     height: 40px;
+  }
+
+  .section-divider {
+    padding-top: var(--md-sys-spacing-lg);
+  }
+
+  .section-divider-thin {
+    padding-top: var(--md-sys-spacing-sm);
   }
 
   footer {

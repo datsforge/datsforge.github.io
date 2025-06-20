@@ -122,7 +122,7 @@
   padding: 1rem;
   border-radius: var(--md-sys-shape-extra-large);
   background-color: var(--md-sys-color-surface-container-lowest);
-  box-shadow: var(--md-sys-elevation-1);
+
 }
 
 /* orientation */
@@ -264,6 +264,7 @@
   outline: 1px var(--color-red) solid;
   border-radius: var(--md-sys-shape-medium, 1.5rem) 0 var(--md-sys-shape-medium, 1.5rem) 0;
   text-shadow: 0px 0px 3px var(--color-yellow);
+  z-index: var(--md-sys-z-index-overlay);
 }
 
 /* === SVG icon inside the button === */
@@ -594,7 +595,8 @@ img {
   text-align: start;
   transition:
     background-color 0.2s cubic-bezier(.4, 0, .2, 1),
-    box-shadow 0.2s cubic-bezier(.4, 0, .2, 1), ;
+    box-shadow 0.2s cubic-bezier(.4, 0, .2, 1),
+    opacity 0.6s ease, transform 0.6s ease;
 }
 
 .card:hover,
@@ -1177,4 +1179,60 @@ button.textbutton.filled:hover::after {
     transform: scale(4);
     opacity: 0;
   }
+}
+
+/*==== Animate on show ====*/
+
+/* popup aimation for main header intro (not using this)*/
+.main-header-intro.animate-on-show {
+  opacity: 0;
+  transform: scale(0.92) translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(.4, 0, .2, 1),
+    transform 0.7s cubic-bezier(.4, 0, .2, 1);
+  will-change: opacity, transform;
+  display: inline-block;
+}
+
+.main-header-intro.animate-on-show.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.main-header.animate-on-show {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.card.animate-on-show,
+.flex-table.animate-on-show,
+.layout-column.animate-on-show {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.container.animate-on-show:not(.slider-pane) {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.card.animate-on-show,
+.flex-table.animate-on-show {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08),
+    0 6px 18px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card.animate-on-show.show,
+.flex-table.animate-on-show.show,
+.container.animate-on-show.show:not(.slider-pane),
+.layout-column.show,
+.main-header-intro.animate-on-show.show,
+.main-header.animate-on-show.show {
+  opacity: 1;
+  transform: none;
 }

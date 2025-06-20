@@ -18,7 +18,6 @@ export function autoHover(options = {}) {
             const elCenter = rect.top + rect.height / 2;
             const dist = Math.abs(yCenter - elCenter);
             el.classList.toggle('auto-hovered', dist < threshold);
-            console.log(`Distance to center: ${dist} threshold: ${threshold}`);
         });
     };
 
