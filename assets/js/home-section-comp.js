@@ -65,7 +65,7 @@ function loadProjectsSection() {
       id: "apps",
       title: "Apps that solve real problems",
       layout: "align-right",
-      imgSrc: "assets/images/mockups/rentfinder_m3.png",
+      imgSrc: "assets/images/mockups/rentfinder_m3.webp",
       imgAlt: "Rent Finder App Mockup",
       content: [
         "Rent Finder is a mobile app designed to solve the real-world challenge of finding rental spaces.",
@@ -83,7 +83,7 @@ function loadProjectsSection() {
       id: "games",
       title: "Chill with casual games",
       layout: "align-left",
-      imgSrc: "assets/images/mockups/st-sm_m1.png",
+      imgSrc: "assets/images/mockups/st-sm_m2.webp",
       imgAlt: "Shooting Marbles and Spidee Tap Mockup",
       content: [
         "Spidee Tap and Shooting Marbles are casual mobile games developed for android, designed for quick, addictive play.<br>Both are crafted with clean visuals, responsive controls, and a focus on instant fun."
@@ -105,7 +105,7 @@ function loadProjectsSection() {
       id: "rpg",
       title: "RPG adventures!",
       layout: "align-right",
-      imgSrc: "assets/images/mockups/sal_m1.png",
+      imgSrc: "assets/images/mockups/sal_m1.webp",
       imgAlt: "Swords and Legends Mockup",
       content: [
         "Swords and Legends is a pixel RPG adventure game in active development, designed to immerse players in a vibrant, handcrafted world brimming with eccentric characters, meaningful choices, and memorable quests.",
@@ -123,7 +123,7 @@ function loadProjectsSection() {
       id: "tools",
       title: "Useful tools",
       layout: "align-left",
-      imgSrc: "assets/images/mockups/datsync_m1.png",
+      imgSrc: "assets/images/mockups/datsync_m1.webp",
       imgAlt: "datsync Mockup",
       content: [
         "datsync is a streamlined Bash tool designed to simplify file synchronization between Linux systems and external devices such as Android phones and USB drives.",
