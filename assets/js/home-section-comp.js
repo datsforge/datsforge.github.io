@@ -190,7 +190,7 @@ function loadToolsSection() {
     { section: "devLang", title: "CSS", icon_id: "css_icon" },
     { section: "devTools", title: "Linux", icon_id: "linux_full_color_icon" },
     // { section: "devTools", title: "Debian", icon_id: "debian_icon" },
-    // { section: "devTools", title: "Bash", icon_id: "bash_icon" },
+    // { section: "devLang", title: "Bash", icon_id: "bash_icon" },
     { section: "devTools", title: "Git", icon_id: "git_icon" },
     { section: "devTools", title: "Github", icon_id: "github_icon" },
     { section: "devTools", title: "Gradle", icon_id: "gradle_icon" },
