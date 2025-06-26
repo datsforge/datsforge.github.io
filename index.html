@@ -206,6 +206,26 @@
                     </p>
                 </div>
             </div>
+            <!-- Certifications -->
+            <!-- <section id="certificates">
+                <div class="card animate-on-show">
+                    <div class="card-content certificate">
+                        <h3>Certifications</h3>
+                        <p>Responsive Web Design - FreeCodeCamp</p>
+                        <div class="certificates">
+                            <a href="https://www.freecodecamp.org/certification/rasdin/responsive-web-design"
+                                class="button-text-icon" target="_blank" rel="noopener noreferrer"
+                                aria-label="View Ceritficate on freecodecamp.org">
+                                View Certificate
+                                <svg class="icon">
+                                    <use href="#open_in_new_icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
         </section>
 
         <!-- ====== Contact Section ====== -->
@@ -299,14 +319,14 @@
     <!-- ====== Load SVG Icons ====== -->
     <div id="svg-sprite-container" aria-hidden="true"></div>
     <div id="linux-svg-sprite-container" aria-hidden="true"></div>
-    <script>
+    <script defer>
         fetch('/assets/html/icons.html')
             .then(res => res.text())
             .then(svg => {
                 document.getElementById('svg-sprite-container').innerHTML = svg;
             });
     </script>
-    <script>
+    <script defer>
         fetch('/assets/html/linux_full_icon.html')
             .then(res => res.text())
             .then(svg => {
