@@ -14,16 +14,73 @@
     <meta name="author" content="dat | datsforge">
     <title>datsforge.com</title>
     <link rel="icon" type="image/png" href="assets/images/datsforge/icon/favicon.png">
-    <!-- Theme Styles -->
     <link id="dark-theme" rel="stylesheet" href="assets/css/theme/dark.css">
     <link id="light-theme" rel="stylesheet" href="assets/css/theme/light.css" disabled>
     <link rel="stylesheet" href="assets/css/theme/theme-core.css">
-    <!-- Component & Layout Styles -->
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <!-- ====== Main App Logic ====== -->
+    <script src="assets/js/home-anim.js" defer></script>
+    <script src="assets/js/contact-form-handler.js" defer></script>
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+        import { setupNavScroll } from '/assets/js/nav-scroll.js';
+        import { loadSectionComponents } from '/assets/js/home-section-comp.js'
+        import { autoHover } from '/assets/js/hover-tracker.js';
+        import { animateOnShow } from '/assets/js/animate-on-show.js';
+        import { loadSvg } from '/assets/js/icon-loader.js';
+        (async () => {
+            try {
+                // Load components in parallel where possible
+                await Promise.all([
+                    loadComponent({
+                        url: '/assets/html/footer/footer-main.html',
+                        targetSelector: '#footer-main',
+                        mountPoint: 'footer'
+                    }),
+                    loadComponent({
+                        url: '/assets/html/nav/navbar-main.html',
+                        targetSelector: '#navbar-main',
+                        mountPoint: '#navbar'
+                    })
+                ]);
+                // Load SVG assets in parallel
+                await Promise.all([
+                    loadSvg('/assets/html/icons.html', 'svg-sprite-container'),
+                    loadSvg('/assets/html/linux_full_icon.html', 'linux-svg-sprite-container')
+                ]);
+                // Initialize functionality
+                initAppBehavior();
+            } catch (err) {
+                console.error('Component load error:', err);
+                showErrorBanner();
+            }
+        })();
+        function initAppBehavior() {
+            setupNavScroll();
+            setupMobileNavToggles();
+            setupThemeToggle();
+            loadSectionComponents();
+            animateOnShow();
+            autoHover({ selector: '.track-hover', threshold: 120 });
+        }
+        function showErrorBanner() {
+            const errorBanner = document.getElementById('error-banner');
+            const errorMsg = document.getElementById('error-message');
+            const dismissBtn = document.getElementById('error-dismiss');
+            if (!errorBanner || !errorMsg) return;
+            errorMsg.textContent = 'Failed to load critical components. Some features may be unavailable.';
+            errorBanner.hidden = false;
+            if (dismissBtn) {
+                dismissBtn.onclick = () => errorBanner.hidden = true;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -312,71 +369,10 @@
         </svg>
     </button>
 
-    <!-- ====== Scripts ====== -->
-    <script src="assets/js/home-anim.js" defer></script>
-    <script src="assets/js/contact-form-handler.js" defer></script>
-
-    <!-- ====== Load SVG Icons ====== -->
+    <!-- ====== SVG Icons ====== -->
     <div id="svg-sprite-container" aria-hidden="true"></div>
     <div id="linux-svg-sprite-container" aria-hidden="true"></div>
-    <script defer>
-        fetch('/assets/html/icons.html')
-            .then(res => res.text())
-            .then(svg => {
-                document.getElementById('svg-sprite-container').innerHTML = svg;
-            });
-    </script>
-    <script defer>
-        fetch('/assets/html/linux_full_icon.html')
-            .then(res => res.text())
-            .then(svg => {
-                document.getElementById('linux-svg-sprite-container').innerHTML = svg;
-            });
-    </script>
 
-    <!-- ====== Main App Logic ====== -->
-    <script type="module">
-        import { loadComponent } from '/assets/js/component-loader.js';
-        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
-        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
-        import { setupNavScroll } from '/assets/js/nav-scroll.js';
-        import { loadSectionComponents } from '/assets/js/home-section-comp.js'
-        import { autoHover } from '/assets/js/hover-tracker.js';
-        import { animateOnShow } from '/assets/js/animate-on-show.js';
-        try {
-            await loadComponent({
-                url: '/assets/html/footer/footer-main.html',
-                targetSelector: '#footer-main',
-                mountPoint: 'footer'
-            });
-            await loadComponent({
-                url: '/assets/html/nav/navbar-main.html',
-                targetSelector: '#navbar-main',
-                mountPoint: '#navbar'
-            });
-            setupNavScroll();
-            setupMobileNavToggles();
-            setupThemeToggle();
-            loadSectionComponents();
-            animateOnShow();
-            autoHover({
-                selector: '.track-hover',
-                threshold: 120
-            });
-        } catch (err) {
-            // Show error banner to user
-            const errorBanner = document.getElementById('error-banner');
-            const errorMsg = document.getElementById('error-message');
-            console.error('Component load error:', err);
-            if (errorBanner && errorMsg) {
-                errorMsg.textContent = 'Failed to load a critical component. Some features may not work.';
-                errorBanner.hidden = false;
-                document.getElementById('error-dismiss').onclick = () => {
-                    errorBanner.hidden = true;
-                };
-            }
-        }
-    </script>
     <!-- Error Banner (hidden by default) -->
     <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
         <span id="error-message"></span>
