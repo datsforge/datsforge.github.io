@@ -5,28 +5,37 @@
 export function setupThemeToggle() {
   const dark = document.getElementById('dark-theme');
   const light = document.getElementById('light-theme');
-  const btn = document.getElementById('theme-toggle');
-  const icon = btn?.querySelector('.theme-icon use');
+  const btnOnHero = document.getElementById('theme-toggle');
+  const iconOnHero = btnOnHero?.querySelector('.theme-icon use');
+  const btnOnFooter = document.getElementById('footer-theme-toggle')
+  const iconOnFooter = btnOnFooter?.querySelector('.theme-icon use');
 
   // Helper to set theme and save preference
   function setTheme(theme) {
     if (theme === 'dark') {
       dark.disabled = false;
       light.disabled = true;
-      if (icon) {
-        icon.setAttribute('href', '#light_mode_icon');
-        btn.classList.add('toggled');
+      [iconOnHero, iconOnFooter].forEach((icon) => {
+        if (icon) {
+          icon.setAttribute('href', '#light_mode_icon');
+          btnOnHero?.classList.add('toggled');
+          btnOnFooter?.classList.add('toggled');
+        }
       }
+      )
       // Show fireflies, hide leaves
       document.querySelector('.fireflies')?.classList.remove('hidden');
       document.querySelector('.falling-leaves')?.classList.add('hidden');
     } else {
       dark.disabled = true;
       light.disabled = false;
-      if (icon) {
-        icon.setAttribute('href', '#dark_mode_icon');
-        btn.classList.remove('toggled');
-      }
+      [iconOnHero, iconOnFooter].forEach((icon) => {
+        if (icon) {
+          icon.setAttribute('href', '#dark_mode_icon');
+          btnOnHero?.classList.remove('toggled');
+          btnOnFooter?.classList.remove('toggled');
+        }
+      })
       // Show leaves, hide fireflies
       document.querySelector('.fireflies')?.classList.add('hidden');
       document.querySelector('.falling-leaves')?.classList.remove('hidden');
@@ -45,10 +54,13 @@ export function setupThemeToggle() {
   }
 
   // Only attach event if button exists
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const newTheme = dark.disabled ? 'dark' : 'light';
-      setTheme(newTheme);
-    });
-  }
+  [btnOnHero, btnOnFooter].forEach((button) => {
+    if (button) {
+      button.addEventListener('click', () => {
+        const newTheme = dark.disabled ? 'dark' : 'light';
+        setTheme(newTheme);
+      });
+    }
+  });
+
 }

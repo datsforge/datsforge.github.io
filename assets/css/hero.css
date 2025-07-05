@@ -107,9 +107,11 @@
     display: flex;
     position: absolute;
     gap: var(--md-sys-spacing-lg);
-    left: var(--md-sys-spacing-xl);
-    bottom: var(--md-sys-spacing-xl);
-    z-index: var(--md-sys-z-index-fab);
+    left: var(--md-sys-spacing-lg);
+    bottom: var(--md-sys-spacing-lg);
+    z-index: var(--md-sys-z-index-overlay);
+    /* background-color: red; */
+    padding:var(--md-sys-spacing-sm);
 }
 
 .fireflies {
