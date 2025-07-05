@@ -121,5 +121,6 @@
   /* Tooltips or most elevated items */
   --md-sys-z-index-fab: 70;
   /* Floating Action Button on top */
+  --md-sys-z-index-snackbar: 90;
 
 }

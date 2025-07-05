@@ -3,6 +3,8 @@
   Proprietary – See LICENSE for details. 
 */
 
+import { FieldSnackbar } from '/assets/js/snackbar.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const projectReqForm = document.getElementById('project-req-form');
     if (!projectReqForm) return;
@@ -52,14 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
             company: document.getElementById(config.honeypotField)
         };
 
-
         // Validate inputs
         const validation = validateForm(fields);
         if (!validation.isValid) {
-            showStatus(statusEl, validation.error, 'error');
+            FieldSnackbar.show(validation.field, validation.error);// snackbar type error notice
+            // showStatus(statusEl, validation.error, 'error'); // label type error notice
+
             // Highlight problematic field
             if (validation.field) {
-                validation.field.focus();
+                // validation.field.focus(); // What does this does here?
                 highlightInvalidField(validation.field);
             }
             return;
@@ -85,7 +88,6 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
                 `Project request from ${validation.data.name}`,
                 messageBody
             );
-
 
             // Show success status
             showStatus(statusEl, config.successMessage, 'success');
@@ -141,7 +143,6 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
         const sourceTypeInput = fields.sourceType.querySelector('input[type="hidden"]');
         const sourceType = sourceTypeInput?.value?.trim();
         const references = fields.references.value.trim();
-
 
         if (!name) {
             return {
@@ -241,7 +242,6 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
 
     function highlightInvalidField(field) {
         if (!field) return;
-
         if (field.classList.contains('custom-dropdown')) {
             const selected = field.querySelector('.dropdown-selected');
             if (selected) {

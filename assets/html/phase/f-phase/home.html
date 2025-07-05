@@ -25,7 +25,8 @@
     <!-- ====== Main App Logic ====== -->
     <script src="/assets/js/access-gate.js" defer></script>
     <script src="/assets/js/home-anim.js" defer></script>
-    <script src="/assets/js/project-req-form-handler.js" defer></script>
+    <script src="/assets/js/custom-dropdown-bahaviour.js" defer></script>
+    <script type="module" src="/assets/js/project-req-form-handler.js" defer></script>
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
@@ -34,6 +35,7 @@
         import { autoHover } from '/assets/js/hover-tracker.js';
         import { animateOnShow } from '/assets/js/animate-on-show.js';
         import { loadSvg } from '/assets/js/icon-loader.js';
+        import { updateSnackbar} from '/assets/js/snackbar.js'
         (async () => {
             try {
                 // Load components in parallel where possible
@@ -200,7 +202,7 @@
                                 <p>
                                     I’m offering this for a <strong>short time</strong>, and only to a small number of
                                     people.
-                                    Once the slots are filled or the <strong>F-Phase</strong> ends - it’s closed.
+                                    Once the slots are filled or the <br><strong>F-Phase</strong> ends - it’s closed.
                                 </p>
                                 <p>
                                     Got an idea worth building? Fill out the form below.
@@ -268,7 +270,7 @@
 
                             <div id="source-type" class="form-group custom-dropdown" data-name="source-type"
                                 data-label="How did you find datsforge? (source)">
-                                <div class="dropdown-label">How did you find datsforge? (source)</div>
+                                <div class="dropdown-label">How did you find datsforge?</div>
                                 <div class="dropdown-selected"></div>
                                 <svg class="dropdown-icon" aria-hidden="true">
                                     <use href="#dropdown_arrow_icon"></use>
@@ -324,6 +326,9 @@
     <!-- ====== Footer ====== -->
     <footer></footer>
 
+    <!-- ====== Snackbar ===== -->
+    <div id="field-snackbar" class="snackbar" role="status" aria-live="polite"></div>
+
     <!-- ====== Scroll to Top Floating Button ====== -->
     <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
         <svg class="fab-icon" aria-hidden="true">
@@ -339,47 +344,6 @@
         <span id="error-message"></span>
         <button id="error-dismiss" aria-label="Dismiss error" type="button">&times;</button>
     </div>
-
-    <script>
-        document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
-            const selected = dropdown.querySelector('.dropdown-selected');
-            const options = dropdown.querySelector('.dropdown-options');
-            const label = dropdown.querySelector('.dropdown-label');
-            const name = dropdown.dataset.name || 'dropdown';
-
-            // Create hidden input
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = name;
-            dropdown.appendChild(input);
-
-            selected.addEventListener('click', () => {
-                dropdown.classList.toggle('open');
-                options.style.display = dropdown.classList.contains('open') ? 'block' : 'none';
-            });
-
-            options.querySelectorAll('li').forEach(option => {
-                option.addEventListener('click', () => {
-                    const value = option.dataset.value;
-                    const text = option.textContent;
-
-                    input.value = value;
-                    selected.textContent = text;
-                    dropdown.classList.add('filled');
-                    dropdown.classList.remove('open');
-                    options.style.display = 'none';
-
-                });
-            });
-
-            document.addEventListener('click', e => {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('open');
-                    options.style.display = 'none';
-                }
-            });
-        });
-    </script>
 
 </body>
 

@@ -1431,3 +1431,46 @@ textarea {
   fill: var(--md-sys-color-on-surface-variant);
   pointer-events: none;
 }
+
+/** ==== SNACKBARS ==== **/
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  padding: 14px 24px;
+  border-radius: var(--md-sys-shape-medium);
+  font-size: var(--md-sys-typescale-body-medium);
+  box-shadow: var(--md-sys-elevation-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--md-sys-motion-medium);
+  z-index: var(--md-sys-z-index-snackbar);
+}
+
+.snackbar.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/** Snackbar that shows indicates field with error **/
+.field-snackbar {
+  position: absolute;
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+  padding: 8px 12px;
+  border-radius: var(--md-sys-shape-medium);
+  font-size: var(--md-sys-typescale-body-medium);
+  box-shadow: var(--md-sys-elevation-4);
+  z-index: var(--md-sys-z-index-snackbar);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--md-sys-motion-medium);
+}
+
+.field-snackbar.show {
+  opacity: 1;
+}
