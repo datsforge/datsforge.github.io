@@ -1043,7 +1043,8 @@ img {
 
 .form-group.focused label,
 .form-group input:not(:placeholder-shown)+label,
-.form-group textarea:not(:placeholder-shown)+label {
+.form-group textarea:not(:placeholder-shown)+label,
+.form-group select:not(:placeholder-shown)+label {
   top: -10px;
   left: 12px;
   font-size: var(--md-sys-typescale-label-medium);
@@ -1053,7 +1054,8 @@ img {
 }
 
 .contact-form-section input,
-.contact-form-section textarea {
+.contact-form-section textarea,
+.contact-form-section select {
   width: 100%;
   padding: 12px 10px 6px;
   border: 1px solid var(--md-sys-color-outline);
@@ -1064,15 +1066,20 @@ img {
   color: var(--md-sys-color-on-surface);
 }
 
+.contact-form-section select {
+  padding: 12px 10px 12px;
+}
+
 .contact-form-section input:focus,
-.contact-form-section textarea:focus {
+.contact-form-section textarea:focus,
+.contact-form-section select:focus {
   outline: none;
   border-color: var(--md-sys-color-primary);
   box-shadow: 0 0 0 1px var(--md-sys-color-primary);
 }
 
 .contact-form-section input::placeholder,
-.contact-form-section textarea::placeholder {
+.contact-form-section textarea::placeholder .contact-form-section select::placeholder {
   color: transparent;
 }
 
@@ -1251,7 +1258,7 @@ button.textbutton.filled:hover::after {
   justify-content: space-between;
   padding: 1em 2em;
   font-size: 1.1em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   transition: opacity 0.3s;
 }
 

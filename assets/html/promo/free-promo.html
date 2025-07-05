@@ -1,0 +1,314 @@
+<!-- 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality.">
+    <meta name="keywords" content="game development, android apps, pixel art, datsforge, libGDX, Java, Kotlin">
+    <meta name="author" content="dat | datsforge">
+    <title>Free Promo | datsforge.com</title>
+    <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png">
+    <link id="dark-theme" rel="stylesheet" href="/assets/css/theme/dark.css">
+    <link id="light-theme" rel="stylesheet" href="/assets/css/theme/light.css" disabled>
+    <link rel="stylesheet" href="/assets/css/theme/theme-core.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <!-- ====== Main App Logic ====== -->
+    <script src="/assets/js/home-anim.js" defer></script>
+    <script src="/assets/js/project-req-form-handler.js" defer></script>
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+        import { setupNavScroll } from '/assets/js/nav-scroll.js';
+        import { autoHover } from '/assets/js/hover-tracker.js';
+        import { animateOnShow } from '/assets/js/animate-on-show.js';
+        import { loadSvg } from '/assets/js/icon-loader.js';
+        (async () => {
+            try {
+                // Load components in parallel where possible
+                await Promise.all([
+                    loadComponent({
+                        url: '/assets/html/footer/footer-legal.html',
+                        targetSelector: '#footer-legal',
+                        mountPoint: 'footer'
+                    }),
+                    loadComponent({
+                        url: '/assets/html/nav/navbar-free-promo.html',
+                        targetSelector: '#navbar-free-promo',
+                        mountPoint: '#navbar'
+                    })
+                ]);
+                // Load SVG assets in parallel
+                await Promise.all([
+                    loadSvg('/assets/html/icons.html', 'svg-sprite-container'),
+                    loadSvg('/assets/html/linux_full_icon.html', 'linux-svg-sprite-container')
+                ]);
+                // Initialize functionality
+                initAppBehavior();
+            } catch (err) {
+                console.error('Component load error:', err);
+                showErrorBanner();
+            }
+        })();
+        function initAppBehavior() {
+            setupNavScroll();
+            setupMobileNavToggles();
+            setupThemeToggle();
+            animateOnShow();
+            autoHover({ selector: '.track-hover', threshold: 120 });
+        }
+        function showErrorBanner() {
+            const errorBanner = document.getElementById('error-banner');
+            const errorMsg = document.getElementById('error-message');
+            const dismissBtn = document.getElementById('error-dismiss');
+            if (!errorBanner || !errorMsg) return;
+            errorMsg.textContent = 'Failed to load critical components. Some features may be unavailable.';
+            errorBanner.hidden = false;
+            if (dismissBtn) {
+                dismissBtn.onclick = () => errorBanner.hidden = true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ====== Navigation ====== -->
+    <header>
+        <nav id="navbar" aria-label="Main Navigation"></nav>
+    </header>
+    <main>
+        <!-- ====== Hero Section ====== -->
+        <section class="hero" aria-label="Hero section">
+            <div class="wrapper">
+                <div class="slogan" aria-label="Slogan">
+                    <h1>Let’s Forge Something Real</h1>
+                    <p aria-hidden="true"> This is the beginning of <strong>datsforge’s Free Phase</strong> — where
+                        passion outweighs price.
+                        I’ll build your idea — a game, app, or site — for free or nearly free.<br>
+                        All I ask? Your honesty and a solid testimonial.
+                    </p>
+                </div>
+                <!-- Decorative animated backgrounds -->
+                <div class="fireflies" aria-hidden="true"></div>
+                <div class="falling-leaves" aria-hidden="true"></div>
+                <!-- Contact & Social Links -->
+                <div class="contact-info" aria-label="Contact Information">
+                    <button id="theme-toggle" class="icon-button animate-button" aria-label="Toggle theme"
+                        type="button">
+                        <svg class="icon theme-icon" width="24" height="24" aria-hidden="true">
+                            <use href="#dark_mode_icon"></use>
+                        </svg>
+                    </button>
+                    <a href="https://github.com/datsforge/datsforge" class="icon-button animate-button"
+                        aria-label="Visit datsforge on GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#github_icon"></use>
+                        </svg>
+                    </a>
+                    <a href="mailto:contact@datsforge.com" class="icon-button animate-button"
+                        aria-label="Email contact@datsforge.com">
+                        <svg class="icon" aria-hidden="true">
+                            <use href="#mail_icon"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-deco-bar" aria-hidden="true"></div>
+        </section>
+        <!-- ====== Intro Section ====== -->
+        <section class="container animate-on-show" aria-labelledby="intro-section">
+            <article class="layout-column align-center section-divider" aria-labelledby="intro-section">
+                <h2>The Beginning of Something Bigger…</h2>
+                <p>
+                    At the dawn of a new era for <strong>datsforge</strong>, we open our gates to the world — not to
+                    sell,
+                    but to prove.
+                    This is the <strong>Free Phase</strong> — where real apps, games, and websites are built for
+                    free or
+                    nearly free.
+                    You get real results. We get your testimonial. Deal?
+                </p>
+            </article>
+        </section>
+        <!-- ====== Offer Section ====== -->
+        <section class="container" aria-labelledby="offer-section">
+            <h2 id="offer-section" class="main-header animate-on-show">What You Can Request</h2>
+            <div class="label">The offer</div>
+            <div class="layout-column section-divider">
+                <div class="card track-hover animate-on-show">
+                    <div class="card-content">
+
+                        <ul>
+                            <li><strong>Simple Game:</strong> Java + libGDX – 2D arcade, clicker, or endless runner
+                                (PC/Android)
+                            </li>
+                            <li><strong>Android App:</strong> Kotlin + Jetpack – Utility, productivity, or UI-based apps
+                            </li>
+                            <li><strong>Website:</strong> HTML/CSS or basic React – Portfolio, landing pages, resumes
+                            </li>
+                        </ul>
+                        <p class="note">If your idea is outside these, pitch it anyway. We might still take it.</p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ====== Deal Section ====== -->
+        <section class="container" aria-labelledby="deal-section">
+            <h2 id="deal-section" class="main-header animate-on-show">Let's work together</h2>
+            <div class="label">The deal</div>
+            <div class="layout-column section-divider">
+                <div class="card track-hover animate-on-show">
+                    <div class="card-content">
+                        <p>
+                            You get a real working product.<br />
+                            We get:
+                        <ul>
+                            <li>A short, honest testimonial</li>
+                            <li>Your name and photo</li>
+                            <li>Permission to showcase your words</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- ====== Request Project Section ====== -->
+        <section class="container" aria-labelledby="form-section">
+            <h2 id="form-section" class="main-header animate-on-show">Let's Talk</h2>
+            <div class="label">Request a Project</div>
+            <div class="layout-column section-divider">
+                <div class="layout-row">
+                    <!-- Contact Details Card -->
+                    <div class="card contact-details-section track-hover animate-on-show">
+                        <div class="card-content">
+                            <div class="contact-description">
+                                <h3>Let’s build something!</h3>
+                                <p>
+                                    I would love to hear from you! Fill out the form and I'll make sure to get back to
+                                    you as soon as possible.
+                                </p>
+                            </div>
+                            <div class="contact-links">
+                                <h3>Get in touch :</h3>
+                                <a href="https://datsforge.com" class="button-text-icon icon-start" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Visit datsforge.com">
+                                    My Portfolio
+                                    <svg class="icon" aria-hidden="true">
+                                        <use href="#open_in_new_icon"></use>
+                                    </svg>
+                                </a>
+                                <a href="mailto:contact@datsforge.com" class="button-text-icon icon-start"
+                                    aria-label="Email contact@datsforge.com">
+                                    contact@datsforge.com
+                                    <svg class="icon" aria-hidden="true">
+                                        <use href="#mail_icon"></use>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/datsforge/datsforge" class="button-text-icon icon-start"
+                                    target="_blank" rel="noopener noreferrer" aria-label="Visit datsforge on github">
+                                    Visit me on Github
+                                    <svg class="icon" aria-hidden="true">
+                                        <use href="#github_icon"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Request Form Card -->
+                    <div class="contact-form-section track-hover">
+                        <form id="project-req-form" autocomplete="on" novalidate aria-labelledby="contact-section">
+                            <div class="form-group">
+                                <input type="text" id="contact-name" name="name" required autocomplete="name"
+                                    placeholder=" " aria-required="true">
+                                <label for="contact-name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contact-email" name="email" required autocomplete="email"
+                                    placeholder=" " aria-required="true">
+                                <label for="contact-email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="project-type" name="project-type" required>
+                                    <option value="">Select</option>
+                                    <option value="Game">Game (Java + libGDX)</option>
+                                    <option value="Android Application">Android App (Kotlin + Jetpack)</option>
+                                    <option value="Website">Website / Portfolio</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="project-type">Project Type</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="project-description" name="project-description" rows="5" required
+                                    placeholder=" " aria-required="true"></textarea>
+                                <label for="project-description">Project Description</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="source-type" name="source-type" required>
+                                    <option value="">Select</option>
+                                    <option value="social media">On social media</option>
+                                    <option value="a friend">From a friend</option>
+                                    <option value="direct link">Direct link</option>
+                                    <option value="search">From Search</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="source-type">How did you find out datsforge?</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="references" name="references" placeholder="" />
+                                <label for="references">Reference Links / Attachments (optional)</label>
+                            </div>
+                            <!-- Honeypot field for spam bots -->
+                            <div class="honeypot-field" aria-hidden="true">
+                                <label for="contact-company">Company (leave this blank)</label>
+                                <input type="text" id="contact-company" name="company" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="form-actions">
+                                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                                <button type="submit" class="textbutton filled" id="submit-btn">
+                                    <svg class="icon-medium" aria-hidden="true">
+                                        <use href="#send_icon"></use>
+                                    </svg>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====== Footer ====== -->
+    <footer id="footer-main"></footer>
+
+    <!-- ====== Scroll to Top Floating Button ====== -->
+    <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
+        <svg class="fab-icon" aria-hidden="true">
+            <use href="#double_up_icon"></use>
+        </svg>
+    </button>
+
+    <!-- ====== SVG Icons ====== -->
+    <div id="svg-sprite-container" aria-hidden="true"></div>
+    <div id="linux-svg-sprite-container" aria-hidden="true"></div>
+
+    <!-- Error Banner (hidden by default) -->
+    <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
+        <span id="error-message"></span>
+        <button id="error-dismiss" aria-label="Dismiss error" type="button">&times;</button>
+    </div>
+</body>
+
+</html>

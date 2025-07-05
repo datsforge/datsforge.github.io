@@ -4,8 +4,8 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
-    if (!contactForm) return;
+    const projectReqForm = document.getElementById('project-req-form');
+    if (!projectReqForm) return;
 
     // Configuration
     const config = {
@@ -18,40 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
         sendingText: 'Sending...'
     };
 
-    contactForm.addEventListener('submit', handleSubmit);
+    projectReqForm.addEventListener('submit', handleSubmit);
 
     // Add focus/blur events for floating labels
     const formGroups = document.querySelectorAll('.form-group');
     formGroups.forEach(group => {
-        const input = group.querySelector('input, textarea');
+        const input = group.querySelector('input, textarea, select');
         input.addEventListener('focus', () => group.classList.add('focused'));
         input.addEventListener('blur', () => {
             if (!input.value) group.classList.remove('focused');
         });
     });
-
-    // Add ripple effect to buttons (Doesn't work as expected, see components.css .ripple)
-    // const buttons = document.querySelectorAll('button');
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', createRipple);
-    // });
-
-    function createRipple(e) {
-        const button = e.currentTarget;
-        const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${e.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${e.clientY - button.offsetTop - radius}px`;
-        circle.classList.add('ripple');
-
-        const ripple = button.getElementsByClassName('ripple')[0];
-        if (ripple) ripple.remove();
-
-        button.appendChild(circle);
-    }
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -67,7 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const fields = {
             name: document.getElementById('contact-name'),
             email: document.getElementById('contact-email'),
-            message: document.getElementById('contact-message'),
+            projectType: document.getElementById('project-type'),
+            projectDescription: document.getElementById('project-description'),
+            sourceType: document.getElementById('source-type'),
+            references: document.getElementById('references'),
             company: document.getElementById(config.honeypotField)
         };
 
@@ -75,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const validation = validateForm(fields);
         if (!validation.isValid) {
             showStatus(statusEl, validation.error, 'error');
-
             // Highlight problematic field
             if (validation.field) {
                 validation.field.focus();
@@ -84,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     validation.field.style.borderColor = 'var(--md-sys-color-outline)';
                 }, 3000);
             }
-
             return;
         }
 
@@ -96,11 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Create mailto URL
+            console.log("references : " + validation.data.references)
+            const messageBody = `Name: ${validation.data.name}\nEmail: ${validation.data.email}\n
+Project type:\n${validation.data.projectType}\n
+Project description:\n${validation.data.projectDescription}\n
+I heard datsforge from:\n${validation.data.sourceType}\n` +
+                (validation.data.references ? `\nReference :\n${validation.data.references}` : "");
+
             const mailtoUrl = generateMailtoUrl(
                 config.recipientEmail,
-                `Contact from ${validation.data.name}`,
-                `Name: ${validation.data.name}\nEmail: ${validation.data.email}\n\nMessage:\n${validation.data.message}`
+                `Project request from ${validation.data.name}`,
+                messageBody
             );
+
 
             // Show success status
             showStatus(statusEl, config.successMessage, 'success');
@@ -111,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Reset form after delay
             setTimeout(() => {
-                contactForm.reset();
+                projectReqForm.reset();
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHtml;
                 resetStatus(statusEl);
@@ -128,6 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function validateForm(fields) {
+        console.log('references value is:', fields.references.value);
+        const refInput = document.getElementById('references');
+        console.log("Element ref:", refInput);
+        console.log("Live value:", refInput.value);
+
         // Honeypot validation
         if (fields.company.value.trim() !== '') {
             return {
@@ -140,7 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Required fields check
         const name = fields.name.value.trim();
         const email = fields.email.value.trim();
-        const message = fields.message.value.trim();
+        const projectType = fields.projectType.value.trim();
+        const projectDescription = fields.projectDescription.value.trim();
+        const sourceType = fields.sourceType.value.trim();
+        const references = fields.references.value.trim();
 
         if (!name) {
             return {
@@ -158,11 +152,27 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
-        if (!message) {
+        if (!projectType) {
+            return {
+                isValid: false,
+                error: 'Please select project type',
+                field: fields.projectType
+            };
+        }
+
+        if (!projectDescription) {
             return {
                 isValid: false,
                 error: 'Please enter your message',
-                field: fields.message
+                field: fields.projectDescription
+            };
+        }
+
+        if (!sourceType) {
+            return {
+                isValid: false,
+                error: 'Please select a source',
+                field: fields.sourceType
             };
         }
 
@@ -175,9 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
+
+        console.log("references" + references)
         return {
             isValid: true,
-            data: { name, email, message }
+            data: { name, email, projectType, projectDescription, sourceType, references }
         };
     }
 

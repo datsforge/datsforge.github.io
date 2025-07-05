@@ -144,7 +144,8 @@
   /**======== Nav bar =========**/
   .navbar-main,
   .navbar-legal,
-  .navbar-tp {
+  .navbar-tp,
+  .navbar-free-promo {
     flex-direction: row;
     padding: 0 0.2rem;
   }

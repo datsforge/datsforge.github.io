@@ -46,7 +46,8 @@
 /* === Navbar Content === */
 .navbar-main,
 .navbar-legal,
-.navbar-tp {
+.navbar-tp,
+.navbar-free-promo {
   display: flex;
   justify-content: space-between;
   align-items: center;
