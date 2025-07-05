@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             company: document.getElementById(config.honeypotField)
         };
 
+
         // Validate inputs
         const validation = validateForm(fields);
         if (!validation.isValid) {
@@ -59,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Highlight problematic field
             if (validation.field) {
                 validation.field.focus();
-                validation.field.style.borderColor = 'var(--md-sys-color-error)';
-                setTimeout(() => {
-                    validation.field.style.borderColor = 'var(--md-sys-color-outline)';
-                }, 3000);
+                highlightInvalidField(validation.field);
             }
             return;
         }
@@ -96,6 +94,7 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             await simulateAsyncDelay(1000);
             window.location.href = mailtoUrl;
 
+
             // Reset form after delay
             setTimeout(() => {
                 projectReqForm.reset();
@@ -105,6 +104,15 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
 
                 // Reset floating labels
                 formGroups.forEach(group => group.classList.remove('focused'));
+
+                // Reset all custom dropdowns
+                document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+                    const selected = dropdown.querySelector('.dropdown-selected');
+                    const input = dropdown.querySelector('input[type="hidden"]');
+                    selected.textContent = '';
+                    dropdown.classList.remove('filled');
+                    input.value = '';
+                });
             }, config.successTimeout);
 
         } catch (error) {
@@ -127,10 +135,13 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
         // Required fields check
         const name = fields.name.value.trim();
         const email = fields.email.value.trim();
-        const projectType = fields.projectType.value.trim();
+        const projectTypeInput = fields.projectType.querySelector('input[type="hidden"]');
+        const projectType = projectTypeInput?.value?.trim();
         const projectDescription = fields.projectDescription.value.trim();
-        const sourceType = fields.sourceType.value.trim();
+        const sourceTypeInput = fields.sourceType.querySelector('input[type="hidden"]');
+        const sourceType = sourceTypeInput?.value?.trim();
         const references = fields.references.value.trim();
+
 
         if (!name) {
             return {
@@ -181,8 +192,8 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             };
         }
 
-        if (!fields.agreeTerms.checked){
-             return {
+        if (!fields.agreeTerms.checked) {
+            return {
                 isValid: false,
                 error: 'Please agree terms to proceed',
                 field: fields.agreeTerms
@@ -193,6 +204,7 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             isValid: true,
             data: { name, email, projectType, projectDescription, sourceType, references }
         };
+
     }
 
     function isValidEmail(email) {
@@ -226,4 +238,24 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
     function simulateAsyncDelay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+
+    function highlightInvalidField(field) {
+        if (!field) return;
+
+        if (field.classList.contains('custom-dropdown')) {
+            const selected = field.querySelector('.dropdown-selected');
+            if (selected) {
+                selected.style.borderColor = 'var(--md-sys-color-error)';
+                setTimeout(() => {
+                    selected.style.borderColor = 'var(--md-sys-color-outline)';
+                }, 5000);
+            }
+        } else {
+            field.style.borderColor = 'var(--md-sys-color-error)';
+            setTimeout(() => {
+                field.style.borderColor = 'var(--md-sys-color-outline)';
+            }, 5000);
+        }
+    }
+
 });

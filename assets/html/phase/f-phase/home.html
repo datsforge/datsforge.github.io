@@ -247,41 +247,39 @@
                                     placeholder=" " aria-required="true">
                                 <label for="contact-email">Your Email</label>
                             </div>
-                            <div class="form-group">
-                                <select id="project-type" name="project-type" required>
-                                    <option value="">Select</option>
-                                    <option value="Game">Game (Java + libGDX)</option>
-                                    <option value="Android Application">Android App (Kotlin + Jetpack)</option>
-                                    <option value="Website">Website / Portfolio</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                <label for="project-type">Project Type</label>
+                            <div id="project-type" class="form-group custom-dropdown" data-name="project-type"
+                                data-label="Project Type">
+                                <div class="dropdown-label">Project Type</div>
+                                <div class="dropdown-selected"></div>
+                                <svg class="dropdown-icon" aria-hidden="true">
+                                    <use href="#dropdown_arrow_icon"></use>
+                                </svg>
+                                <ul class="dropdown-options">
+                                    <li data-value="Android Application">Android App (Kotlin + Jetpack)</li>
+                                    <li data-value="Website">Website / Portfolio</li>
+                                    <li data-value="Other">Other</li>
+                                </ul>
                             </div>
                             <div class="form-group">
                                 <textarea id="project-description" name="project-description" rows="5" required
                                     placeholder=" " aria-required="true"></textarea>
                                 <label for="project-description">Project Description</label>
                             </div>
-                            <div class="form-group">
-                                <select id="source-type" name="source-type" required>
-                                    <option value="">Select</option>
-                                    <option value="a friend">From a friend</option>
-                                    <option value="social media">On social media</option>
-                                    <option value="github">From Github</option>
-                                    <option value="direct link">Direct link</option>
-                                    <option value="search">From Search</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <label for="source-type">How did you find out datsforge?</label>
-                            </div>
-                            
-                            <div class="custom-dropdown" data-name="phase" data-label="Select Phase" >
-                                <div class="dropdown-label">Select Phase</div>
-                                <div class="dropdown-selected">‎</div>
+
+                            <div id="source-type" class="form-group custom-dropdown" data-name="source-type"
+                                data-label="How did you find datsforge? (source)">
+                                <div class="dropdown-label">How did you find datsforge? (source)</div>
+                                <div class="dropdown-selected"></div>
+                                <svg class="dropdown-icon" aria-hidden="true">
+                                    <use href="#dropdown_arrow_icon"></use>
+                                </svg>
                                 <ul class="dropdown-options">
-                                    <li data-value="f">F‑Phase</li>
-                                    <li data-value="a">Alpha Phase</li>
-                                    <li data-value="b">Beta Phase</li>
+                                    <li data-value="a friend">From a friend</li>
+                                    <li data-value="social media">On social media</li>
+                                    <li data-value="github">From Github</li>
+                                    <li data-value="direct link">Direct link</li>
+                                    <li data-value="search">From Search</li>
+                                    <li data-value="other">Other</li>
                                 </ul>
                             </div>
 
@@ -343,44 +341,45 @@
     </div>
 
     <script>
-  document.querySelectorAll('.md3-dropdown').forEach(dropdown => {
-    const selected = dropdown.querySelector('.dropdown-selected');
-    const options = dropdown.querySelector('.dropdown-options');
-    const label = dropdown.querySelector('.dropdown-label');
-    const name = dropdown.dataset.name || 'dropdown';
+        document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+            const selected = dropdown.querySelector('.dropdown-selected');
+            const options = dropdown.querySelector('.dropdown-options');
+            const label = dropdown.querySelector('.dropdown-label');
+            const name = dropdown.dataset.name || 'dropdown';
 
-    // Create hidden input
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = name;
-    dropdown.appendChild(input);
+            // Create hidden input
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            dropdown.appendChild(input);
 
-    selected.addEventListener('click', () => {
-      dropdown.classList.toggle('open');
-      options.style.display = dropdown.classList.contains('open') ? 'block' : 'none';
-    });
+            selected.addEventListener('click', () => {
+                dropdown.classList.toggle('open');
+                options.style.display = dropdown.classList.contains('open') ? 'block' : 'none';
+            });
 
-    options.querySelectorAll('li').forEach(option => {
-      option.addEventListener('click', () => {
-        const value = option.dataset.value;
-        const text = option.textContent;
+            options.querySelectorAll('li').forEach(option => {
+                option.addEventListener('click', () => {
+                    const value = option.dataset.value;
+                    const text = option.textContent;
 
-        input.value = value;
-        selected.textContent = text;
-        dropdown.classList.add('filled');
-        dropdown.classList.remove('open');
-        options.style.display = 'none';
-      });
-    });
+                    input.value = value;
+                    selected.textContent = text;
+                    dropdown.classList.add('filled');
+                    dropdown.classList.remove('open');
+                    options.style.display = 'none';
 
-    document.addEventListener('click', e => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-        options.style.display = 'none';
-      }
-    });
-  });
-</script>
+                });
+            });
+
+            document.addEventListener('click', e => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    options.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
 

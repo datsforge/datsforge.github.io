@@ -1328,7 +1328,6 @@ textarea {
 /* ==== CUSTOM SELECT DROP DOWN ====  */
 .custom-dropdown {
   position: relative;
-  width: 100%;
   font-family: var(--md-sys-font-family-primary);
   font-size: var(--md-sys-typescale-body-large-size);
   color: var(--md-sys-color-on-surface);
@@ -1359,7 +1358,7 @@ textarea {
 }
 
 .dropdown-selected::after {
-  content: '▾';
+  /* content: '▾'; */
   /* Down arrow icon (can replace with SVG if needed) */
   position: absolute;
   right: 12px;
@@ -1384,8 +1383,10 @@ textarea {
 }
 
 /* Change border color when dropdown is open */
-.custom-dropdown.open .dropdown-selected {
+.custom-dropdown.open .dropdown-selected,
+.custom-dropdown.open .dropdown-icon {
   border-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
 }
 
 /* Float label on open or after selection */
@@ -1419,4 +1420,14 @@ textarea {
 
 .dropdown-options li:hover {
   background: var(--md-sys-color-surface-container-highest);
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  fill: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
 }
