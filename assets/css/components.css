@@ -1037,15 +1037,15 @@ img {
 }
 
 .form-group.checkbox-group label {
-  position:unset;
+  position: unset;
   pointer-events: unset;
 }
 
 /* .form-group.focused label, */
 .form-group.focused label:not(.checkbox-label),
-.form-group input:not(:placeholder-shown) + label:not(.checkbox-label),
-.form-group textarea:not(:placeholder-shown) + label:not(.checkbox-label),
-.form-group select:not(:placeholder-shown) + label:not(.checkbox-label) {
+.form-group input:not(:placeholder-shown)+label:not(.checkbox-label),
+.form-group textarea:not(:placeholder-shown)+label:not(.checkbox-label),
+.form-group select:not(:placeholder-shown)+label:not(.checkbox-label) {
   top: -10px;
   left: 12px;
   font-size: var(--md-sys-typescale-label-medium);
@@ -1053,7 +1053,6 @@ img {
   padding: 0 8px;
   color: var(--md-sys-color-primary);
 }
-
 
 .contact-form-section input,
 .contact-form-section textarea,
@@ -1286,7 +1285,7 @@ textarea {
 .checkbox-label {
   display: flex;
   align-self: center;
-  gap:var(--md-sys-spacing-sm);
+  gap: var(--md-sys-spacing-sm);
   user-select: none;
   font-size: var(--md-sys-typescale-body-medium);
   color: var(--md-sys-color-on-surface);
@@ -1326,4 +1325,98 @@ textarea {
   color: var(--md-sys-color-primary);
 }
 
+/* ==== CUSTOM SELECT DROP DOWN ====  */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  font-family: var(--md-sys-font-family-primary);
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface);
+}
 
+.dropdown-label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: var(--md-sys-typescale-body-large);
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface);
+  padding: 0 4px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+  z-index: var(--md-sys-z-index-container);
+}
+
+.dropdown-selected {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-medium);
+  padding: 12px 12px 6px 12px;
+  cursor: pointer;
+  position: relative;
+  min-height: var(--md-sys-spacing-4xl);
+}
+
+.dropdown-selected::after {
+  content: '▾';
+  /* Down arrow icon (can replace with SVG if needed) */
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.dropdown-selected::before {
+  /* Display placeholder when no value selected */
+  content: attr(data-placeholder);
+  /* Subtle placeholder color */
+  color: var(--md-sys-color-on-surface-variant);
+  position: absolute;
+  left: 12px;
+  top: 20px;
+  pointer-events: none;
+}
+
+/* Hide placeholder when a real value is selected */
+.custom-dropdown.filled .dropdown-selected::before {
+  display: none;
+}
+
+/* Change border color when dropdown is open */
+.custom-dropdown.open .dropdown-selected {
+  border-color: var(--md-sys-color-primary);
+}
+
+/* Float label on open or after selection */
+.custom-dropdown.open .dropdown-label,
+.custom-dropdown.filled .dropdown-label {
+  top: -8px;
+  font-size: var(--md-sys-typescale-label-large);
+  color: var(--md-sys-color-primary);
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  margin-top: 4px;
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--md-sys-shape-large);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-options li {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: var(--md-sys-shape-large);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-options li:hover {
+  background: var(--md-sys-color-surface-container-highest);
+}
