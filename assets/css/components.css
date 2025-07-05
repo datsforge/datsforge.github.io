@@ -1036,10 +1036,16 @@ img {
   font: var(--md-sys-typescale-body-small);
 }
 
-.form-group.focused label,
-.form-group input:not(:placeholder-shown)+label,
-.form-group textarea:not(:placeholder-shown)+label,
-.form-group select:not(:placeholder-shown)+label {
+.form-group.checkbox-group label {
+  position:unset;
+  pointer-events: unset;
+}
+
+/* .form-group.focused label, */
+.form-group.focused label:not(.checkbox-label),
+.form-group input:not(:placeholder-shown) + label:not(.checkbox-label),
+.form-group textarea:not(:placeholder-shown) + label:not(.checkbox-label),
+.form-group select:not(:placeholder-shown) + label:not(.checkbox-label) {
   top: -10px;
   left: 12px;
   font-size: var(--md-sys-typescale-label-medium);
@@ -1047,6 +1053,7 @@ img {
   padding: 0 8px;
   color: var(--md-sys-color-primary);
 }
+
 
 .contact-form-section input,
 .contact-form-section textarea,
@@ -1269,3 +1276,54 @@ textarea {
   cursor: pointer;
   margin-left: 1em;
 }
+
+/* ==== Check Box ==== */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkbox-label {
+  display: flex;
+  align-self: center;
+  gap:var(--md-sys-spacing-sm);
+  user-select: none;
+  font-size: var(--md-sys-typescale-body-medium);
+  color: var(--md-sys-color-on-surface);
+  margin-left: var(--md-sys-spacing-sm);
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-extra-small);
+  position: relative;
+  transition: border-color 0.2s, background-color 0.2s;
+  background-color: transparent;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--md-sys-color-on-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-text a {
+  text-decoration: underline;
+  color: var(--md-sys-color-primary);
+}
+
+

@@ -38,6 +38,11 @@
                 // Load components in parallel where possible
                 await Promise.all([
                     loadComponent({
+                        url: '/assets/html/footer/footer-legal.html',
+                        targetSelector: '#footer-legal',
+                        mountPoint: 'footer'
+                    }),
+                    loadComponent({
                         url: '/assets/html/nav/navbar-free-promo.html',
                         targetSelector: '#navbar-free-promo',
                         mountPoint: '#navbar'
@@ -46,7 +51,7 @@
                 // Load SVG assets in parallel
                 await Promise.all([
                     loadSvg('/assets/html/icons.html', 'svg-sprite-container'),
-                 ]);
+                ]);
                 // Initialize functionality
                 initAppBehavior();
             } catch (err) {
@@ -143,7 +148,6 @@
             <div class="layout-column section-divider">
                 <div class="card track-hover animate-on-show">
                     <div class="card-content">
-
                         <ul>
                             <li><strong>Simple Game:</strong> Java + libGDX – 2D arcade, clicker, or endless runner
                                 (PC/Android)
@@ -166,14 +170,16 @@
                 <div class="card track-hover animate-on-show">
                     <div class="card-content">
                         <p>
-                            You get a real working product.<br />
+                            You get a real working product.
+                        </p>
+                        <p>
                             We get:
+                        </p>
                         <ul>
                             <li>A short, honest testimonial</li>
                             <li>Your name and photo</li>
                             <li>Permission to showcase your words</li>
                         </ul>
-                        </p>
                     </div>
                 </div>
         </section>
@@ -188,10 +194,15 @@
                     <div class="card contact-details-section track-hover animate-on-show">
                         <div class="card-content">
                             <div class="contact-description">
-                                <h3>Let’s build something!</h3>
+                                <h3>This is a limited-time offer with only a few slots available.</h3>
                                 <p>
-                                    I would love to hear from you! Fill out the form and I'll make sure to get back to
-                                    you as soon as possible.
+                                    I’m offering this for a <strong>short time</strong>, and only to a small number of people.
+                                    Once the slots are filled or the <strong>Free Phase</strong> ends - it’s closed.
+                                </p>
+                                <p>
+                                    Got an idea worth building? Fill out the form below.
+                                    If your request is accepted, I’ll get back to you personally.
+                                    Let’s forge <strong>something real</strong> - together.
                                 </p>
                             </div>
                             <div class="contact-links">
@@ -251,8 +262,9 @@
                             <div class="form-group">
                                 <select id="source-type" name="source-type" required>
                                     <option value="">Select</option>
-                                    <option value="social media">On social media</option>
                                     <option value="a friend">From a friend</option>
+                                    <option value="social media">On social media</option>
+                                    <option value="github">From Github</option>
                                     <option value="direct link">Direct link</option>
                                     <option value="search">From Search</option>
                                     <option value="other">Other</option>
@@ -263,6 +275,17 @@
                                 <input type="text" id="references" name="references" placeholder="" />
                                 <label for="references">Reference Links (optional)</label>
                             </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="agree-terms" name="agree-terms" required>
+                                <label for="agree-terms" class="checkbox-label">
+                                    <span class="checkbox-text">
+                                        I agree to the <a href="/promo/free-promo-terms.html" target="_blank"
+                                            rel="noopener">terms and conditions</a>
+                                    </span>
+                                </label>
+                            </div>
+
+
                             <!-- Honeypot field for spam bots -->
                             <div class="honeypot-field" aria-hidden="true">
                                 <label for="contact-company">Company (leave this blank)</label>
@@ -287,19 +310,7 @@
     </main>
 
     <!-- ====== Footer ====== -->
-    <footer>
-        <div class="footer-main">
-            <div class="container align-start">
-                <button id="footer-theme-toggle" class="icon-button" aria-label="Toggle theme" type="button">
-                    <svg class="icon theme-icon" width="24" height="24">
-                        <use href="#dark_mode_icon"></use>
-                    </svg>
-                </button>
-            </div>
-            <p>© 2025 datsforge. All rights reserved.</p>
-            <a href="/assets/html/promo/free-promo-terms.html" target="_blank" rel="noreferrer noopener">Terms and Conditions</a>
-        </div>
-    </footer>
+    <footer></footer>
 
     <!-- ====== Scroll to Top Floating Button ====== -->
     <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
@@ -310,7 +321,7 @@
 
     <!-- ====== SVG Icons ====== -->
     <div id="svg-sprite-container" aria-hidden="true"></div>
-   
+
     <!-- Error Banner (hidden by default) -->
     <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
         <span id="error-message"></span>

@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projectDescription: document.getElementById('project-description'),
             sourceType: document.getElementById('source-type'),
             references: document.getElementById('references'),
+            agreeTerms: document.getElementById('agree-terms'),
             company: document.getElementById(config.honeypotField)
         };
 
@@ -114,11 +115,6 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
     }
 
     function validateForm(fields) {
-        console.log('references value is:', fields.references.value);
-        const refInput = document.getElementById('references');
-        console.log("Element ref:", refInput);
-        console.log("Live value:", refInput.value);
-
         // Honeypot validation
         if (fields.company.value.trim() !== '') {
             return {
@@ -185,8 +181,14 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             };
         }
 
+        if (!fields.agreeTerms.checked){
+             return {
+                isValid: false,
+                error: 'Please agree terms to proceed',
+                field: fields.agreeTerms
+            };
+        }
 
-        console.log("references" + references)
         return {
             isValid: true,
             data: { name, email, projectType, projectDescription, sourceType, references }
