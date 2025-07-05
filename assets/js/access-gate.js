@@ -5,7 +5,7 @@
 
 (function () {
     const query = new URLSearchParams(window.location.search);
-    const allowedToken = 'forgeonly';
+    const allowedToken = 'forgeonlybydat';
     const userToken = query.get('access');
     if (userToken !== allowedToken) {
         window.location.href = '/';
