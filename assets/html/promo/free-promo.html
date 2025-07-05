@@ -38,11 +38,6 @@
                 // Load components in parallel where possible
                 await Promise.all([
                     loadComponent({
-                        url: '/assets/html/footer/footer-legal.html',
-                        targetSelector: '#footer-legal',
-                        mountPoint: 'footer'
-                    }),
-                    loadComponent({
                         url: '/assets/html/nav/navbar-free-promo.html',
                         targetSelector: '#navbar-free-promo',
                         mountPoint: '#navbar'
@@ -51,8 +46,7 @@
                 // Load SVG assets in parallel
                 await Promise.all([
                     loadSvg('/assets/html/icons.html', 'svg-sprite-container'),
-                    loadSvg('/assets/html/linux_full_icon.html', 'linux-svg-sprite-container')
-                ]);
+                 ]);
                 // Initialize functionality
                 initAppBehavior();
             } catch (err) {
@@ -99,7 +93,7 @@
                     </p>
                 </div>
                 <a class="textbutton filled" href="#project-req-form">
-                      Request A Project
+                    Request A Project
                 </a>
                 <!-- Decorative animated backgrounds -->
                 <div class="fireflies" aria-hidden="true"></div>
@@ -293,7 +287,19 @@
     </main>
 
     <!-- ====== Footer ====== -->
-    <footer></footer>
+    <footer>
+        <div class="footer-main">
+            <div class="container align-start">
+                <button id="footer-theme-toggle" class="icon-button" aria-label="Toggle theme" type="button">
+                    <svg class="icon theme-icon" width="24" height="24">
+                        <use href="#dark_mode_icon"></use>
+                    </svg>
+                </button>
+            </div>
+            <p>© 2025 datsforge. All rights reserved.</p>
+            <a href="/assets/html/promo/free-promo-terms.html" target="_blank" rel="noreferrer noopener">Terms and Conditions</a>
+        </div>
+    </footer>
 
     <!-- ====== Scroll to Top Floating Button ====== -->
     <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
@@ -304,8 +310,7 @@
 
     <!-- ====== SVG Icons ====== -->
     <div id="svg-sprite-container" aria-hidden="true"></div>
-    <div id="linux-svg-sprite-container" aria-hidden="true"></div>
-
+   
     <!-- Error Banner (hidden by default) -->
     <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
         <span id="error-message"></span>

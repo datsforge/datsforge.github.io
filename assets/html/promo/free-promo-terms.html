@@ -1,0 +1,122 @@
+<!-- 
+  © 2025 datsforge 
+  Proprietary – See LICENSE for details. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="datsforge: a creative lab where ideas are forged into reality." />
+    <title>sal Terms of Use | datsforge.com</title>
+    <link rel="icon" type="image/png" href="/assets/images/datsforge/icon/favicon.png" />
+    <link id="dark-theme" rel="stylesheet" href="/assets/css/theme/dark.css">
+    <link id="light-theme" rel="stylesheet" href="/assets/css/theme/light.css" disabled>
+    <link rel="stylesheet" href="/assets/css/theme/theme-core.css" />
+    <link rel="stylesheet" href="/assets/css/nav.css" />
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+
+    <!-- ====== Main App Logic ====== -->
+    <script src="/assets/js/home-anim.js" defer></script>
+    <script src="/assets/js/project-req-form-handler.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script type="module">
+        import { loadComponent } from '/assets/js/component-loader.js';
+        import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
+        import { setupThemeToggle } from '/assets/js/theme-toggle.js';
+        import { setupNavScroll } from '/assets/js/nav-scroll.js';
+        import { loadSvg } from '/assets/js/icon-loader.js';
+        import { renderMarkdownFromFile } from '/assets/js/markdown-renderer.js';
+        (async () => {
+            try {
+                // Load components in parallel where possible
+                await Promise.all([
+                    loadComponent({
+                        url: '/assets/html/footer/footer-legal.html',
+                        targetSelector: '#footer-legal',
+                        mountPoint: 'footer'
+                    }),
+                    loadComponent({
+                        url: '/assets/html/nav/navbar-base.html',
+                        targetSelector: '#navbar-base',
+                        mountPoint: '#navbar'
+                    })
+                ]);
+                // Load SVG assets in parallel
+                await Promise.all([
+                    loadSvg('/assets/html/icons.html', 'svg-sprite-container')
+                ]);
+                // Initialize functionality
+                renderMarkdownFromFile('/assets/html/promo/free-promo-terms.md', 'terms-content');
+                initAppBehavior();
+            } catch (err) {
+                console.error('Component load error:', err);
+                showErrorBanner();
+            }
+        })();
+        function initAppBehavior() {
+            setupNavScroll();
+            setupMobileNavToggles();
+            setupThemeToggle();
+        }
+        function showErrorBanner() {
+            const errorBanner = document.getElementById('error-banner');
+            const errorMsg = document.getElementById('error-message');
+            const dismissBtn = document.getElementById('error-dismiss');
+            if (!errorBanner || !errorMsg) return;
+            errorMsg.textContent = 'Failed to load critical components. Some features may be unavailable.';
+            errorBanner.hidden = false;
+            if (dismissBtn) {
+                dismissBtn.onclick = () => errorBanner.hidden = true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ====== Navigation ====== -->
+    <header>
+        <nav id="navbar" aria-label="Main Navigation"></nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+        <div class="container align-center">
+            <h1>Free Phase Terms & Conditions</h1>
+            <p>
+                Welcome to the <strong>Free Phase</strong> of <strong>datsforge</strong>.
+                By submitting a project request, you agree to the terms outlined below. These terms exist to ensure
+                clarity, mutual respect, and a fair exchange - even when money isn’t involved.
+            </p>
+        </div>
+        <div class="container  section-divider ">
+            <section id="terms-of-use" aria-labelledby="terms-heading" class="layout-legal-page">
+                <div id="terms-content">Loading Terms of use...</div>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- ====== Scroll to Top Floating Button ====== -->
+    <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
+        <svg class="fab-icon" aria-hidden="true">
+            <use href="#double_up_icon"></use>
+        </svg>
+    </button>
+
+    <!-- ====== SVG Icons ====== -->
+    <div id="svg-sprite-container" aria-hidden="true"></div>
+
+    <!-- Error Banner (hidden by default) -->
+    <div id="error-banner" class="error-banner" role="alert" aria-live="assertive" hidden>
+        <span id="error-message"></span>
+        <button id="error-dismiss" aria-label="Dismiss error" type="button">&times;</button>
+    </div>
+</body>
+
+</html>
