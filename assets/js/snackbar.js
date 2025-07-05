@@ -4,48 +4,61 @@
 */
 
 export class FieldSnackbar {
-    static active = null;
+  static active = null;
 
-    static show(target, message, options = {}) {
-        if (!target || !message) return;
+  static show(target, message, options = {}) {
+    if (!message) return;
 
-        const {
-            duration = 3000,
-            position = 'bottom',
-            offset = 4
-        } = options;
+    const {
+      duration = 3000,
+      position = 'bottom',
+      offset = 4,
+      type = 'error' // 'success', 'info', 'warning', 'error'
+    } = options;
 
-        FieldSnackbar.remove(); // cleanup old
+    FieldSnackbar.remove(); // clean up old snackbar
 
-        const snackbar = document.createElement('div');
-        snackbar.className = 'field-snackbar show';
-        snackbar.textContent = message;
-        document.body.appendChild(snackbar);
+    const snackbar = document.createElement('div');
+    snackbar.className = `field-snackbar show ${type}`;
+    snackbar.textContent = message;
+    document.body.appendChild(snackbar);
 
-        const rect = target.getBoundingClientRect();
-        const scrollY = window.scrollY || document.documentElement.scrollTop;
-        const scrollX = window.scrollX || document.documentElement.scrollLeft;
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' }); // scroll to the target field
-        const top = position === 'top'
-            ? rect.top + scrollY - snackbar.offsetHeight - offset
-            : rect.bottom + scrollY + offset;
+    // Default positioning
+    snackbar.style.position = 'fixed';
 
-        snackbar.style.position = 'absolute';
-        snackbar.style.top = `${top}px`;
-        snackbar.style.left = `${rect.left + scrollX}px`;
+    if (target instanceof Element) {
+      const rect = target.getBoundingClientRect();
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const scrollX = window.scrollX || document.documentElement.scrollLeft;
 
-        FieldSnackbar.active = snackbar;
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-        setTimeout(() => FieldSnackbar.remove(), duration);
+      const top = position === 'top'
+        ? rect.top + scrollY - snackbar.offsetHeight - offset
+        : rect.bottom + scrollY + offset;
+
+      snackbar.style.position = 'absolute';
+      snackbar.style.top = `${top}px`;
+      snackbar.style.left = `${rect.left + scrollX}px`;
+    } else {
+      snackbar.style.bottom = '20px';
+      snackbar.style.left = '50%';
+      snackbar.style.transform = 'translateX(-50%)';
     }
 
-    static remove() {
-        if (FieldSnackbar.active) {
-            FieldSnackbar.active.remove();
-            FieldSnackbar.active = null;
-        }
+    FieldSnackbar.active = snackbar;
+    setTimeout(() => FieldSnackbar.remove(), duration);
+  }
+
+  static remove() {
+    if (FieldSnackbar.active) {
+      FieldSnackbar.active.remove();
+      FieldSnackbar.active = null;
     }
+  }
 }
+
+
 
 function showSnackbar(message, duration = 3000) {
     const snackbar = document.getElementById('snackbar');

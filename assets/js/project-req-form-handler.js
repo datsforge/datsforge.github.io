@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Validate inputs
         const validation = validateForm(fields);
         if (!validation.isValid) {
-            FieldSnackbar.show(validation.field, validation.error);// snackbar type error notice
+            FieldSnackbar.show(validation.field, validation.error, { type: 'error' });// snackbar type error notice
             // showStatus(statusEl, validation.error, 'error'); // label type error notice
 
             // Highlight problematic field
@@ -90,7 +90,8 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             );
 
             // Show success status
-            showStatus(statusEl, config.successMessage, 'success');
+            FieldSnackbar.show(null, config.successMessage, { type: 'success' });
+            // showStatus(statusEl, config.successMessage, 'success'); // label type notice
 
             // Open email client after a short delay
             await simulateAsyncDelay(1000);
@@ -118,7 +119,9 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
             }, config.successTimeout);
 
         } catch (error) {
-            showStatus(statusEl, 'Failed to open email client. Please try again.', 'error');
+            const errorMsg = 'Failed to open email client. Please try again.';
+            FieldSnackbar.show(null, errorMsg, { type: 'error' });
+            // showStatus(statusEl, errorMsg, 'error'); // label type error notice
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHtml;
         }
@@ -220,6 +223,7 @@ I heard datsforge from:\n${validation.data.sourceType}\n` +
         }).toString();
         return `mailto:${recipient}?${params.replace(/\+/g, '%20')}`;
     }
+    
     function showStatus(element, message, type) {
         element.textContent = message;
         element.className = `form-status ${type}`;
