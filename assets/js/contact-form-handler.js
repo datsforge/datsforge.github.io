@@ -3,6 +3,8 @@
   Proprietary – See LICENSE for details. 
 */
 
+import { FieldSnackbar } from '/assets/js/snackbar.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
@@ -73,8 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Validate inputs
         const validation = validateForm(fields);
-        if (!validation.isValid) {
-            showStatus(statusEl, validation.error, 'error');
+        if (!validation.isValid) { 
+            FieldSnackbar.show(validation.field, validation.error, { type: 'error' });// snackbar type error notice
+            // showStatus(statusEl, validation.error, 'error'); // label type error notice
 
             // Highlight problematic field
             if (validation.field) {
@@ -103,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             // Show success status
-            showStatus(statusEl, config.successMessage, 'success');
+            FieldSnackbar.show(null, config.successMessage, { type: 'success' });
+            // showStatus(statusEl, config.successMessage, 'success'); // label type notice
 
             // Open email client after a short delay
             await simulateAsyncDelay(1000);
@@ -121,7 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }, config.successTimeout);
 
         } catch (error) {
-            showStatus(statusEl, 'Failed to open email client. Please try again.', 'error');
+            const errorMsg = 'Failed to open email client. Please try again.';
+            FieldSnackbar.show(null, errorMsg, { type: 'error' });
+            // showStatus(statusEl, errorMsg, 'error'); // label type error notice
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnHtml;
         }

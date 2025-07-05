@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/mobile.css">
     <!-- ====== Main App Logic ====== -->
     <script src="assets/js/home-anim.js" defer></script>
-    <script src="assets/js/contact-form-handler.js" defer></script>
+    <script type="module" src="assets/js/contact-form-handler.js" defer></script>
     <script type="module">
         import { loadComponent } from '/assets/js/component-loader.js';
         import { setupMobileNavToggles } from '/assets/js/mobile-nav-menu-handler.js';
@@ -362,6 +362,9 @@
 
     <!-- ====== Footer ====== -->
     <footer></footer>
+
+    <!-- ====== Snackbar ===== -->
+    <div id="field-snackbar" class="snackbar" role="status" aria-live="polite"></div>
 
     <!-- ====== Scroll to Top Floating Button ====== -->
     <button class="fab fab-hide fab-bounce-hover" id="fab-scroll-top" aria-label="Scroll to top">
