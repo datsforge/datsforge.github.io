@@ -36,6 +36,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.protected-page {
+ visibility: hidden;
+}
 
 h1 {
   font-size: var(--md-sys-typescale-display-large);

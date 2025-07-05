@@ -27,7 +27,7 @@
     background-image: url('/assets/images/datsforge/hero/datsforge_banner_v003_1920x1080.png');
 }
 
-.hero.hero-free-promo {
+.hero.hero-f-phase {
     background-color: var(--md-sys-color-surface-container-lowest);
 }
 
@@ -97,7 +97,7 @@
     color: var(--color-yellow);
 }
 
-.hero.hero.hero-free-promo .slogan strong {
+.hero.hero.hero-f-phase .slogan strong {
     border-radius: var(--md-sys-shape-small);
     padding:var(--md-sys-spacing-xs);
     background-color: rgba(0, 0, 0, 0.4);

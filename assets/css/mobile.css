@@ -146,7 +146,7 @@
   .navbar-main,
   .navbar-legal,
   .navbar-tp,
-  .navbar-free-promo {
+  .navbar-f-phase {
     flex-direction: row;
     padding: 0 0.2rem;
   }

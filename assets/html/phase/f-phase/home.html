@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/assets/css/components.css">
     <link rel="stylesheet" href="/assets/css/mobile.css">
     <!-- ====== Main App Logic ====== -->
+    <!-- <script src="/assets/js/access-gate.js" defer></script> -->
     <script src="/assets/js/home-anim.js" defer></script>
     <script src="/assets/js/project-req-form-handler.js" defer></script>
     <script type="module">
@@ -43,8 +44,8 @@
                         mountPoint: 'footer'
                     }),
                     loadComponent({
-                        url: '/assets/html/nav/navbar-free-promo.html',
-                        targetSelector: '#navbar-free-promo',
+                        url: '/assets/html/nav/navbar-f-phase.html',
+                        targetSelector: '#navbar-f-phase',
                         mountPoint: '#navbar'
                     })
                 ]);
@@ -80,14 +81,14 @@
     </script>
 </head>
 
-<body>
+<body >
     <!-- ====== Navigation ====== -->
     <header>
         <nav id="navbar" aria-label="Main Navigation"></nav>
     </header>
     <main>
         <!-- ====== Hero Section ====== -->
-        <section class="hero hero-free-promo" aria-label="Hero section">
+        <section class="hero hero-f-phase" aria-label="Hero section">
             <div class="wrapper">
                 <div class="slogan" aria-label="Slogan">
                     <h1>Let’s Forge Something Real</h1>
@@ -196,7 +197,8 @@
                             <div class="contact-description">
                                 <h3>This is a limited-time offer with only a few slots available.</h3>
                                 <p>
-                                    I’m offering this for a <strong>short time</strong>, and only to a small number of people.
+                                    I’m offering this for a <strong>short time</strong>, and only to a small number of
+                                    people.
                                     Once the slots are filled or the <strong>Free Phase</strong> ends - it’s closed.
                                 </p>
                                 <p>
@@ -279,7 +281,7 @@
                                 <input type="checkbox" id="agree-terms" name="agree-terms" required>
                                 <label for="agree-terms" class="checkbox-label">
                                     <span class="checkbox-text">
-                                        I agree to the <a href="/promo/free-promo-terms.html" target="_blank"
+                                        I agree to the <a href="terms.html" target="_blank"
                                             rel="noopener">terms and conditions</a>
                                     </span>
                                 </label>
