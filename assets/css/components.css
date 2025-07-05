@@ -3,11 +3,6 @@
   Proprietary – See LICENSE for details. 
 */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 /* === CONTAINER === */
 /* Surface background for content wrapping */
@@ -1138,13 +1133,13 @@ textarea {
 
 /* ======== Text Button ======== */
 
-button.textbutton.filled {
+.textbutton.filled {
   background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
   border: none;
   padding: 11px 17px;
   border-radius: var(--md-sys-shape-extra-large);
-  font-size: var(--md-sys-typescale-label-medium);
+  font-size: var(--md-sys-typescale-label-large);
   font-weight: 500;
   cursor: pointer;
   display: flex;
@@ -1157,16 +1152,16 @@ button.textbutton.filled {
   box-shadow: var(--md-elevation-1);
 }
 
-.form-actions button.textbutton.filled {
+.form-actions .textbutton.filled {
   align-self: flex-end;
 }
 
-button.textbutton.filled:hover {
+.textbutton.filled:hover {
   box-shadow: var(--md-elevation-2);
   color: var(--md-sys-color-on-secondary);
 }
 
-button.textbutton.filled::after {
+.textbutton.filled::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1176,7 +1171,7 @@ button.textbutton.filled::after {
   pointer-events: none;
 }
 
-button.textbutton.filled:hover::after {
+.textbutton.filled:hover::after {
   box-shadow: var(--md-elevation-2);
   opacity: 0.08;
 }

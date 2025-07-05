@@ -207,7 +207,7 @@
   /*======= Hero =======*/
   .hero {
     flex-direction: column;
-    height: var(--hero-height-mobile);
+    /* height: var(--hero-height-mobile); */
     min-height: var(--hero-height-mobile);
     text-align: center;
   }

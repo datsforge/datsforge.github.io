@@ -2,6 +2,13 @@
   © 2025 datsforge 
   Proprietary – See LICENSE for details. 
 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
